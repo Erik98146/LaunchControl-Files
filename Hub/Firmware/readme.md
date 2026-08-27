@@ -1,4 +1,4 @@
-Changes
+v0.2.0 Changes
 - Added this
 - Changed that
 - Fixed another thing
