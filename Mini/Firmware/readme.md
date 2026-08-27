@@ -1,4 +1,5 @@
-mini v0.2.2
+v0.2.3
+New stuff
 
-(Write the release notes here -- they are shown next to the update on every hub.)
+v0.2.2
 Some things

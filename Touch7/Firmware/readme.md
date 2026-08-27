@@ -1,4 +1,8 @@
-touch7 v0.2.1
+v0.2.2
+Newer things
 
-(Write the release notes here -- they are shown next to the update on every hub.)
+v0.2.1
+Older things
+
+v 0.2.0
 Some things
