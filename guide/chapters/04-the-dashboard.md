@@ -88,9 +88,9 @@ Note: Charger enable ties to 1FFC7.
 | Card element | DGN name | DGN | Field |
 | Room Temp | Thermostat | 1FF9C | Temperature |
 | Setpoint | Thermostat | 1FFE2 | Setpoint Cool/Heat |
-| Mode | Thermostat | — | Mode |
-| Fan Mode | Thermostat | — | Fan Mode |
-| Fan Speed | Thermostat | — | Fan Speed |
+| Mode | Thermostat | 1FFE2 | Mode |
+| Fan Mode | Thermostat | 1FFE2 | Fan Mode |
+| Fan Speed | Thermostat | 1FFE2 | Fan Speed |
 :::
 
 ::: technical
