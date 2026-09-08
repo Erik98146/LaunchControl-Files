@@ -45,8 +45,9 @@ The dashboard grid adapts to screen size, so the same configuration can be used 
 | Automation / Macro | Rules and one-tap action groups. |
 | Clock / Generic | Clock and general-purpose sensor value cards. |
 | Starlink / Travel Router | Internet equipment status and controls. |
+| Slide | Room slide controls |
 
-Victron-specific cards appear after the Victron integration is configured. In device pickers, Victron entries are grouped separately so they are easy to identify.
+Victron-specific cards appear after the Victron integration is configured. Victron cards can also be auto-created and will include all bindings.
 
 ## Binding cards to devices
 

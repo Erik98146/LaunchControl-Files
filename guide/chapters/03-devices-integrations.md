@@ -18,13 +18,13 @@ RV-C devices will show up on the RV-C Add Device list as soon as they send data.
 A single device, such as a lighting dimmer, may have multiple “instances”. In the case of the dimmer, the instances define multiple switched lighting zones. Some experimentation may be necessary to figure out which physical device corresponds to which RV-C device and instance. This is best done using the test and status displays for the device. See section 14 – Technical Reference for additional detail.
 :::
 
-::: note "Expert Mode"
-To keep the found devices decluttered, some devices are hidden by default. If you can't find your RV-C device, use the Expert button to show all RV-C devices found on the bus.
+::: technical "Expert Mode"
+To keep the found devices decluttered, some devices are hidden by default. If you can't find your RV-C device, use the Expert button to show all RV-C devices found on the bus. See chapter 14 for additional detail.
 :::
 
 ## Victron equipment
 
-If your coach has a Victron GX device such as a Cerbo GX, LaunchControl can read and control supported Victron equipment including MultiPlus inverter/chargers, battery monitors, solar chargers, GPS, and temperature sensors.
+If your coach has a Victron GX device such as a Cerbo GX, LaunchControl can read and control supported Victron equipment including MultiPlus inverter/chargers, battery monitors, solar chargers, GPS, and temperature sensors. This is always the best way to connect to Victron equipment and any third-party devices that use MQTT.
 
 1. **Enable MQTT services on the Cerbo GX device: Settings → Integrations → MQTT Access On**
 2. **Open Settings → Integrations.** Enable the MQTT broker and enter the Cerbo IP address and port (1883) then save. A user name and password is not required for this integration. Scroll down and enable the Victron GX integration. Auto-discover the Portal ID and save. Confirm the MQTT Broker and Victron GX integrations both show connected.
@@ -34,14 +34,16 @@ If your coach has a Victron GX device such as a Cerbo GX, LaunchControl can read
 
 ::: technical
 The Hub is an MQTT client. Victron field values arrive through the GX device’s MQTT topic tree; writable fields such as inverter mode, input current limit, and setpoints are written back through MQTT. The Cerbo is the best place to add non RV-C equipment like Bluetooth Ruuvi temperature sensors, Shelly devices, or ESP Home devices. See the Wi-Fi setup guide found on the [launchcontrol.tech FAQ](https://launchcontrol.tech/pages/support-faq) for additional networking details.
+
+The hub always needs to know where to find the Cerbo GX. The Cerbo GX can be accessed directly over it's own hosted access point with a static IP, or may be accessed through your RV router. If you are using an RV router, the Cerbo GX will need static IP address. See the Wi-Fi setup guide at launchcontrol.tech for additional detail.
 :::
 
 ## Bluetooth sensors
 
 The Hub can listen directly to supported Bluetooth broadcasts without normal Bluetooth pairing:
 
-- **Victron Instant Readout —** SmartShunts, SmartSolar chargers, and similar supported devices can broadcast readings directly, so a Cerbo is not required for those values.
-- **Ruuvi tags —** battery-powered temperature and humidity sensors suitable for locations such as a refrigerator or outdoor reading.
+- **Victron Instant Readout —** SmartShunts, SmartSolar chargers, and similar supported devices can broadcast readings directly, but a Cerbo GX is preferred if available.
+- **Ruuvi tags —** battery-powered temperature and humidity sensors suitable for locations such as a refrigerator or outdoor reading.  
 
 Turn Bluetooth on in Settings → Integrations, restart the Hub when prompted, then add discovered sensors from the Devices page.
 
@@ -51,7 +53,7 @@ Bluetooth is off by default. Turning it on or off changes how Hub memory is allo
 
 ## Starlink
 
-The Starlink card can show dish state and local statistics including connectivity, obstructions, ping success, and throughput. Enable Starlink in Settings → Integrations. If the card is also bound to a switched power circuit, its toggle can control dish power.
+The Starlink card can show ping success when integration is activated, which is the best indicator of reliable internet. Enable Starlink in Settings → Integrations. If the card is also bound to a switched power circuit, its toggle can control dish power.
 
 ## GL.iNet travel router
 

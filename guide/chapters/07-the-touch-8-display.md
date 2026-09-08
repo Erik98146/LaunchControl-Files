@@ -1,7 +1,8 @@
 # The Touch 8 Display
 
 ::: lead
-Touch 8 mirrors the dashboard you build on the web: the same panels, cards, names, positions, and theme, with touch control for supported cards. When you change the web dashboard layout, Touch 8 updates to match.
+Touch 8 mirrors the dashboard you build on the web: the same panels, cards, names, positions, and theme, with touch control for supported cards. When you change the web dashboard layout, Touch 8 updates to match. It connects to the Hub’s own hotspot and continues to work when the RV router is off.
+:::
 :::
 
 ## Set up a Touch 8
