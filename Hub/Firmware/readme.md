@@ -1,4 +1,13 @@
-#### v0.5.30  
+
+### v0.5.37  
+9-7-2026
+
+##### Features:
+- Starlink integration is enabled by default when adding a Starlink card. This will display a color-coded ping success rate on the card when turned on.
+- Release notes are always available when viewing System>Online Updates
+- Added Touch 8 display compatability
+
+### v0.5.30  
 9-6-2026
 
 ##### Features:
@@ -19,5 +28,5 @@
 - Shore power input current limit can now be set from the Shore Power card, the Power Diagram, the Devices page and MQTT on RV-C inverter/chargers that support CHARGER_CONFIGURATION_COMMAND_2.
 - The hub clock source (and timezone) could switch back to RV-C after a reboot if a Settings page was left open on another device. Clock settings now stay as saved.
 
-#### v0.5.0
+### v0.5.0
 Initial release
