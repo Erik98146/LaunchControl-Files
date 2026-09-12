@@ -4,7 +4,7 @@ The published guide is `index.html` in the repo root. **Never edit that file by 
 generated. Edit the files in this folder, then rebuild:
 
 ```
-python guide/build_guide.py
+python C:\dev\LaunchControl-Files\guide\build_guide.py
 ```
 
 That rewrites `index.html`. Open it in a browser to check, then commit both the sources

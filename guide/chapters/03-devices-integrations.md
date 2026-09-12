@@ -6,7 +6,27 @@ The Devices page is where LaunchControl manages the equipment it knows about. If
 
 ## RV-C devices
 
-RV-C devices are the coach’s built-in equipment: lights, tanks, thermostats, pumps, awnings, slides, generators, and similar systems. Use Add a Device → Add RV-C Device to scan the bus, identify active devices, name them, and add them to LaunchControl. A loaded floor plan performs this work for supported equipment.
+RV-C devices are the coach’s built-in equipment: lights, tanks, thermostats, pumps, awnings, slides, generators, and similar systems. 
+
+### Adding and Managing Devices
+
+The Devices page lists all devices configured on the Hub. Devices are organized into groups such as RV-C Devices and Victron Devices. 
+
+**Adding Devices:** Select Add Devices and choose the device type to begin.
+
+When adding RV-C equipment, the Scan RV-C Devices page displays the device types and instances found on the coach network. Select Add beside the desired instance, give the device a recognizable name, and complete its available settings.
+
+**Identifying an RV-C Device:** If you are unsure which instance represents a physical device in the RV, use Identify a Device and select Start Identifying.
+
+Turn one device on or off or adjust its settings in the coach. Devices reporting recent activity move toward the top of the list and are highlighted in green. A Changed Now indicator marks the most recent activity.
+
+Select Add beside the device you were changing, give it a recognizable name, and complete its settings. Repeat the process for additional devices, or select Stop Identifying when finished.
+
+Some devices that report continuously may be ignored during identification so they do not obscure the device you are trying to find. Those devices will need to be added from the scanned list.
+
+**Editing or removing a Device:** From the Devices page, select the device name or open its three-dot menu and select Edit or Remove. Make the desired changes, then save the device.
+
+To remove multiple devices, select their checkboxes and choose Remove Selected from the bulk-action bar. Removing a device deletes its LaunchControl configuration but does not affect the physical device or the RV’s original control system.
 
 ::: note "Adding RV-C devices"
 RV-C devices will show up on the RV-C Add Device list as soon as they send data. For many devices this takes just a few seconds because they regularly send status updates (like temperature, or tank status). For other devices, like light switches or awnings, you will need to toggle the device elsewhere to see it appear in the list.
