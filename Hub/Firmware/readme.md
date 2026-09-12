@@ -1,3 +1,12 @@
+### v0.5.61
+9-12-2026
+
+##### Features:
+- Added Victron SmartShunt Support
+- Added device identification assistant
+
+##### Fixed:
+- System restore was missing some items
 
 ### v0.5.37  
 9-7-2026
