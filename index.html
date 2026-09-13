@@ -349,6 +349,21 @@ The process of pointing a control on a card (like the setpoint on a thermometer)
 <section class="level2"><h2 id="custom-mqtt-devices">3.6 Custom MQTT devices</h2>
 <p>Advanced users can add devices that publish to an MQTT broker. Map MQTT topics to LaunchControl fields for card bindings; writable topics can accept commands. This provides a general integration path for equipment that LaunchControl does not support natively.</p>
 </section>
+<section class="level2"><h2 id="tank-geometry-calibration-optional">3.7 Tank Geometry Calibration (Optional)</h2>
+<p>Tank sensors report the liquid level at the sensor, which may not accurately represent the amount of liquid in an irregularly shaped tank. LaunchControl’s optional Geometry Lookup feature corrects this by comparing the sensor reading with the tank’s actual contents. After calibration the tank will report the actual percentage and amount remaining.</p>
+<p>One-time tank calibration process:</p>
+<ul>
+<li>Level the RV.</li>
+<li>Open Devices and edit the tank device.</li>
+<li>Enable Geometry Lookup.</li>
+<li>Begin with the tank empty, then fill it in measured increments (a water flow meter is very helpful).</li>
+<li>The more increments recorded, the better results. We suggest entering data around 1 or 2 gal increments.</li>
+<li>At each step, enter the amount of liquid added.</li>
+<li>Finish the calibration when full and this will also record the maximum size of the tank</li>
+</ul>
+<p>LaunchControl uses these calibration points to calculate a corrected percentage and estimate the amount remaining. Volume is displayed in gallons or liters according to the Hub-wide units setting.</p>
+<p>Calibration tables can be exported as CSV files for backup or reuse. You can also import a compatible CSV table instead of entering the calibration points manually.</p>
+</section>
 <a class="lc-back-to-top" href="#top">Back to top ↑</a></section>
 <section class="level1"><div class="lc-chapter-label">Chapter 04</div><h1 id="the-dashboard">4. The Dashboard</h1>
 <div class="lc-lead"><p>The dashboard is a set of live cards organized into panels. Cards update in real time; cards that support control respond when tapped.</p></div>

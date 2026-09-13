@@ -82,3 +82,21 @@ With a supported GL.iNet router such as the Beryl or Slate family, the Travel Ro
 ## Custom MQTT devices
 
 Advanced users can add devices that publish to an MQTT broker. Map MQTT topics to LaunchControl fields for card bindings; writable topics can accept commands. This provides a general integration path for equipment that LaunchControl does not support natively.
+
+## Tank Geometry Calibration (Optional)
+
+Tank sensors report the liquid level at the sensor, which may not accurately represent the amount of liquid in an irregularly shaped tank. LaunchControl’s optional Geometry Lookup feature corrects this by comparing the sensor reading with the tank’s actual contents. After calibration the tank will report the actual percentage and amount remaining.
+
+One-time tank calibration process:
+
+- Level the RV.
+- Open Devices and edit the tank device.
+- Enable Geometry Lookup.
+- Begin with the tank empty, then fill it in measured increments (a water flow meter is very helpful).
+- The more increments recorded, the better results. We suggest entering data around 1 or 2 gal increments.
+- At each step, enter the amount of liquid added.
+- Finish the calibration when full and this will also record the maximum size of the tank
+
+LaunchControl uses these calibration points to calculate a corrected percentage and estimate the amount remaining. Volume is displayed in gallons or liters according to the Hub-wide units setting.
+
+Calibration tables can be exported as CSV files for backup or reuse. You can also import a compatible CSV table instead of entering the calibration points manually.
