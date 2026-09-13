@@ -1,8 +1,11 @@
-### v0.5.92
+### v0.5.97
 9-13-2026
 
 ##### Fixed:
 - Improved online update tool
+- Fixed mobile rendering on Devices page
+- Improved handling of margininal Wi-Fi
+- Improved dashboard initial loading time
 
 ### v0.5.78
 9-12-2026
