@@ -85,6 +85,28 @@ A floor plan includes devices and dashboards. Because passwords and integration 
 
 If your coach does not have a published floor plan, the setup path is still straightforward: discover the equipment first, then create dashboard cards and bind those cards to the fields you want to display or control.
 
+### Understanding Dashboards, Cards, Devices, and Bindings
+
+These four elements work together to turn information from your RV’s equipment into an organized control panel.
+
+**Dashboard**
+A dashboard contains cards arranged to suit your RV and how you use it. You can create multiple dashboards for different purposes, such as Main, Climate, Power, or Bedroom.
+
+**Card**
+A visual control or information panel placed on a dashboard for a device. A card might control one light, display tank levels, manage climate settings, or show battery and power information. Some cards use information from more than one device.
+
+**Device**
+A device usually represents physical equipment in the RV, such as a light, thermostat, tank sensor, inverter, or battery monitor. Devices may be discovered through RV-C or added through integrations such as Victron, Bluetooth, or MQTT.
+
+**Binding**
+The process of pointing a control on a card (like the setpoint on a thermometer) to a device control. For example, a Climate card’s setpoint may be bound to a thermostat’s setpoint field, while its fan control is bound to a different thermostat field.
+
+The relationship works like this:
+
+Device → Binding → Card → Dashboard
+
+The device provides data and controls. Bindings tell the card which device fields to use. Cards present those controls and readings to the user, and dashboards organize the cards into complete control panels.
+
 1. **Scan and add RV-C devices.** Open Devices, choose Add a Device → Add RV-C Device, scan the bus, then name and add the equipment you recognize. See section 3 for details.
 2. **Create or choose a dashboard panel.** Enter dashboard edit mode. Add a panel if you need one, or work in an existing panel. See section 4 for details.
 3. **Add a card.** Choose + Add Card, select the card type, name it, and choose its size/layout.
