@@ -1,3 +1,9 @@
+### v0.5.92
+9-13-2026
+
+##### Fixed:
+- Improved online update tool
+
 ### v0.5.78
 9-12-2026
 
