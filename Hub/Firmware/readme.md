@@ -1,4 +1,4 @@
-### v0.5.100
+### v0.5.108
 9-13-2026
 
 ##### Fixed:
@@ -6,6 +6,7 @@
 - Fixed mobile rendering on Devices page
 - Improved handling of margininal Wi-Fi
 - Improved dashboard initial loading time
+- After adding an RV-C device, return to the scan
 
 ### v0.5.78
 9-12-2026
