@@ -8,6 +8,8 @@
 - Improved dashboard initial loading time
 - After adding an RV-C device, return to the scan
 
+---------------------------------
+
 ### v0.5.78
 9-12-2026
 
@@ -18,6 +20,8 @@
 
 ##### Fixed:
 - System restore was missing some items
+
+----------------------------------
 
 ### v0.5.37  
 9-7-2026
