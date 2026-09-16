@@ -79,7 +79,7 @@ A missing or incorrect binding may cause a card to display a dash, omit a contro
 
 :::
 
-![Card bindings](images/ch04-card-bindings.png)
+![Card bindings](images/card-settings01.png)
 
 The following table illustrates typical bindings for cards that refer to multiple source devices.
 

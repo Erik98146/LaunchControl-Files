@@ -58,7 +58,7 @@ Select a device, review or change its name, and choose Save and Add More until e
 ### Automatically create dashboard cards
 When you select Done after adding devices, LaunchControl offers to create matching dashboard cards.
 
-![Add Device – Found RV-C devices page](images/ch03-add-device-found-rv-c-devices-page.png)
+![Add Device – Found RV-C devices page](images/devices01.png)
 
 ::: technical "Technical detail"
 A single device, such as a lighting dimmer, may have multiple “instances”. In the case of the dimmer, the instances define multiple switched lighting zones. Some experimentation may be necessary to figure out which physical device corresponds to which RV-C device and instance. This is best done using the test and status displays for the device. See section 14 – Technical Reference for additional detail.
