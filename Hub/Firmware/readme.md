@@ -1,4 +1,11 @@
-### v0.5.110
+### v0.6.1
+9-16-2026
+
+##### Features:
+- New Devices & Dashboard flow.  This version revises how devices are added to the system and how dashboard cards are automatically created.
+
+---------------------------------
+
 9-14-2026
 
 ##### Fixed:
