@@ -12,12 +12,13 @@ The dashboard is a set of live cards organized into panels. Cards update in real
 - **Graph History —** each panel sets the history window used by graphs on that panel.
 - **Panel editing —** panels can be added, renamed, reordered, duplicated, and deleted from edit mode.
 
-## Edit mode: arrange the dashboard
+## Create and arrange the dashboard
+Version 0.6 can automatically create dashboard cards when devices are added. This is the fastest way to build a new dashboard because the card type, device source, and normal bindings are configured together.
 
-1. **Enter edit mode from the dashboard.**
-2. **Use + Add Card.** Choose a card type, name, size/layout, and device bindings.
-3. **Drag cards to reposition them.** Cards snap into the dashboard grid.
-4. **Use a card’s gear menu.** Edit, resize, or remove the card.
+###Arrange the cards
+1. **Open the Dashboard and enter panel edit mode**
+2. **Drag cards into desired positions** The grab handle is in the top left of the card. Cards snap into the dashboard grid.
+3. **Open card settings to edit, duplicate or remove.** 
 5. **Exit edit mode.** The layout is stored on the Hub and is used by phones, browsers, and Touch 8 displays.
 
 ::: note "Responsive layout"
@@ -49,12 +50,31 @@ The dashboard grid adapts to screen size, so the same configuration can be used 
 
 Victron-specific cards appear after the Victron integration is configured. Victron cards can also be auto-created and will include all bindings.
 
-## Binding cards to devices
+## Card Bindings
+A binding connects an element on a dashboard card to information or controls provided by a device.
 
-A card shows live data because it is bound to a device field. When you add or edit a card, LaunchControl provides a list of functions associated with the card. Select the device field that should be mapped (bound) to that function. Floor-plan cards normally arrive already bound.
+For example:
+- A Tank card’s level display is bound to the level field of a tank device.
+- A Light Dimmer card is bound to the status and brightness controls of a lighting device.
+- A Thermostat card is bound to temperature, setpoint, operating mode, and fan fields.
+- A Battery + Power card may combine information from a battery, shunt, and other power devices.
 
-::: note "What “binding” means"
-A binding is simply the link between a dashboard card and the underlying device data. For example, a Tank card might be bound to the level field of the Fresh Water Tank device; a Light Dimmer card is bound to the control and status fields for one light.
+### Automatic bindings
+When LaunchControl creates a card from the device-setup workflow, it automatically supplies the normal bindings for that card. Most users will not need to configure bindings manually.
+
+Test each newly created card from the dashboard. If its values appear correctly and its controls operate the intended equipment, no additional binding configuration is necessary.
+
+### Review or change bindings
+To inspect a card's bindings:
+1. Enter dashboard edit mode.
+2. Open the card’s edit menu.
+3. Review the device selected as the card’s data source.
+4. Change advanced bindings only when the suggested source is incorrect or the card needs information from another device.
+
+Cards that combine several functions may expose multiple named bindings. A Thermostat card, for example, can have separate bindings for room temperature, setpoint, operating mode, fan mode, and fan speed.
+
+A missing or incorrect binding may cause a card to display a dash, omit a control, or operate the wrong device. Return to the card editor and confirm both the device source and the individual field assignments.
+
 :::
 
 ![Card bindings](images/ch04-card-bindings.png)

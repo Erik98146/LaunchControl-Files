@@ -6,31 +6,55 @@ The Devices page is where LaunchControl manages the equipment it knows about. If
 
 ## RV-C devices
 
-RV-C devices are the coach’s built-in equipment: lights, tanks, thermostats, pumps, awnings, slides, generators, and similar systems. 
+RV-C devices include the coach’s built-in lights, pumps, tanks, thermostats, awnings, slides, generators, batteries, inverters, and similar equipment.
 
-### Adding and Managing Devices
+The Devices page lists everything currently configured on the Hub. Devices are organized into groups based on their source, such as RV-C Devices and Victron Devices.
 
-The Devices page lists all devices configured on the Hub. Devices are organized into groups such as RV-C Devices and Victron Devices. 
+### Scan for RV-C devices
 
-**Adding Devices:** Select Add Devices and choose the device type to begin.
+1. **Open Devices.**
+2. **Select Add Devices.** 
+3. **Begin the scan.**
 
-When adding RV-C equipment, the Scan RV-C Devices page displays the device types and instances found on the coach network. Select Add beside the desired instance, give the device a recognizable name, and complete its available settings.
+LaunchControl listens to the RV-C network and displays the device types it finds.
 
-**Identifying an RV-C Device:** If you are unsure which instance represents a physical device in the RV, use Identify a Device and select Start Identifying.
+Some equipment, including thermostats, tank sensors, batteries, and inverters, regularly reports its status and normally appears without any additional action.
 
-Turn one device on or off or adjust its settings in the coach. Devices reporting recent activity move toward the top of the list and are highlighted in green. A Changed Now indicator marks the most recent activity.
+Other equipment, including lights, pumps, awnings, and switched circuits, may not appear until it is operated.
 
-Select Add beside the device you were changing, give it a recognizable name, and complete its settings. Repeat the process for additional devices, or select Stop Identifying when finished.
+### Identify lights, pumps, and other switched devices
+The easiest way to identify a switched device is to operate it from the RV’s original control panel or switch.
+1. **Begin and RV-C device scan.**
+2. **Turn a device on then off.** 
+3. **Watch the results.** The most recent device reporting the change moves toward the top of the list and is highlighted.
+4. **Select the identified device.** 
+5. **Give it a meaningful name** 
+Repeat the process as needed.
 
-Some devices that report continuously may be ignored during identification so they do not obscure the device you are trying to find. Those devices will need to be added from the scanned list.
+Work with one device at a time so it is clear which RV-C instance corresponds to each physical control.
 
-**Editing or removing a Device:** From the Devices page, select the device name or open its three-dot menu and select Edit or Remove. Make the desired changes, then save the device.
+When you have finished identifying devices, select Done. LaunchControl can then create dashboard cards for the devices you added.
 
-To remove multiple devices, select their checkboxes and choose Remove Selected from the bulk-action bar. Removing a device deletes its LaunchControl configuration but does not affect the physical device or the RV’s original control system.
+Confirm device and card types
 
-::: note "Adding RV-C devices"
-RV-C devices will show up on the RV-C Add Device list as soon as they send data. For many devices this takes just a few seconds because they regularly send status updates (like temperature, or tank status). For other devices, like light switches or awnings, you will need to toggle the device elsewhere to see it appear in the list.
-:::
+LaunchControl normally recognizes the appropriate device type, but several different RV functions may appear as generic switches on the RV-C network.
+
+Before creating the dashboard cards, review each detected type. For example, change a generic switch to Water Pump when it controls the pump. Choosing the correct type gives the card the proper name, icon, controls, and behavior.
+
+### Add continuously reporting devices
+After identifying switches and lights, run another scan to add equipment that is already visible on the network. This may include:
+
+- House batteries
+- Inverters and chargers
+- Fresh, gray, and black tanks
+- Thermostats
+- Generator information
+- Solar and other power equipment
+
+Select a device, review or change its name, and choose Save and Add More until everything needed has been added.
+
+### Automatically create dashboard cards
+When you select Done after adding devices, LaunchControl offers to create matching dashboard cards.
 
 ![Add Device – Found RV-C devices page](images/ch03-add-device-found-rv-c-devices-page.png)
 
@@ -48,7 +72,7 @@ If your coach has a Victron GX device such as a Cerbo GX, LaunchControl can read
 
 1. **Enable MQTT services on the Cerbo GX device: Settings → Integrations → MQTT Access On**
 2. **Open Settings → Integrations.** Enable the MQTT broker and enter the Cerbo IP address and port (1883) then save. A user name and password is not required for this integration. Scroll down and enable the Victron GX integration. Auto-discover the Portal ID and save. Confirm the MQTT Broker and Victron GX integrations both show connected.
-3. **Open Devices and run a Victron scan.** Add the discovered equipment. LaunchControl can also create matching dashboard cards.
+3. **Open Devices and run a Victron scan.** Add the discovered equipment. LaunchControl will create matching dashboard cards.
 
 ![Devices added after a Victron scan](images/ch03-devices-added-after-a-victron-scan.png)
 
@@ -77,7 +101,7 @@ The Starlink card can show ping success when integration is activated, which is 
 
 ## GL.iNet travel router
 
-With a supported GL.iNet router such as the Beryl or Slate family, the Travel Router card can show the active uplink, signal strength, and internet reachability. Tap the card to scan for and join campground or home Wi-Fi without opening the router administration page. Enter the router admin password once under Settings → Network.
+With a supported GL.iNet router such as the Beryl or Slate family, the Travel Router card can show the active uplink, signal strength, and internet reachability. Tap the card to scan for and join campground or home Wi-Fi without opening the router administration page. Enable the integrations and enter the router admin password once under Settings → Integrations.
 
 ## Custom MQTT devices
 

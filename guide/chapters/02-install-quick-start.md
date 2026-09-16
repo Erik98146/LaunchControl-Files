@@ -83,37 +83,35 @@ A floor plan includes devices and dashboards. Because passwords and integration 
 
 ## No floor plan available? Build the coach manually
 
-If your coach does not have a published floor plan, the setup path is still straightforward: discover the equipment first, then create dashboard cards and bind those cards to the fields you want to display or control.
+If a floor plan is not available for your coach, LaunchControl can guide you through discovering devices and building the initial dashboard. In most cases, cards and bindings are created automatically as part of this process.
 
-### Understanding Dashboards, Cards, Devices, and Bindings
+### Understanding Devices, Cards, and Dashboards
 
 These four elements work together to turn information from your RV’s equipment into an organized control panel.
 
-**Dashboard**
-A dashboard contains cards arranged to suit your RV and how you use it. You can create multiple dashboards for different purposes, such as Main, Climate, Power, or Bedroom.
+**Device**
+A device represents equipment or a function in the RV, such as a light, water pump, thermostat, tank sensor, inverter, or battery monitor. Devices may be discovered through RV-C or added through integrations such as Victron, Bluetooth, or MQTT.
 
 **Card**
-A visual control or information panel placed on a dashboard for a device. A card might control one light, display tank levels, manage climate settings, or show battery and power information. Some cards use information from more than one device.
+A card is the control or information display for a device. For example, a Light Dimmer card controls a light, a Tank card shows a tank level, and a Thermostat card displays and controls the climate system.
 
-**Device**
-A device usually represents physical equipment in the RV, such as a light, thermostat, tank sensor, inverter, or battery monitor. Devices may be discovered through RV-C or added through integrations such as Victron, Bluetooth, or MQTT.
+**Dashboard**
+The dashboard contains cards organized into one or more panels. Cards can be rearranged to match how you use your RV.
 
 **Binding**
-The process of pointing a control on a card (like the setpoint on a thermometer) to a device control. For example, a Climate card’s setpoint may be bound to a thermostat’s setpoint field, while its fan control is bound to a different thermostat field.
+A binding links a card to the device information it displays or controls. Version 0.6 creates the normal card bindings automatically when you add devices. Advanced users can review or change these bindings later.
 
-The relationship works like this:
+The normal setup process is:
 
-Device → Binding → Card → Dashboard
-
-The device provides data and controls. Bindings tell the card which device fields to use. Cards present those controls and readings to the user, and dashboards organize the cards into complete control panels.
-
-1. **Scan and add RV-C devices.** Open Devices, choose Add a Device → Add RV-C Device, scan the bus, then name and add the equipment you recognize. See section 3 for details.
-2. **Create or choose a dashboard panel.** Enter dashboard edit mode. Add a panel if you need one, or work in an existing panel. See section 4 for details.
-3. **Add a card.** Choose + Add Card, select the card type, name it, and choose its size/layout.
-4. **Bind the card.** Choose the device and field or fields that provide the card’s live data and controls. Structured cards such as Thermostat expose named slots for items such as mode, setpoint, and fan.
-5. **Arrange and repeat.** Move cards into the layout you want, then repeat for the rest of the coach.
-6. **Create a backup.** When the dashboard is working correctly, go to Settings → System → Backup and save a copy.
+1. **Scan for devices.** Open Devices, select Add Devices, and begin an RV-C scan. LaunchControl listens to the coach network and displays the devices it finds.
+2. **Identify switches, lights and pumps.** Operate one item from the RV’s original controls. For example, turn on a light or water pump. The device that just changed moves to the top of the list and is highlighted.
+3. **Name the device.** Select the identified device and give it a recognizable name, such as Bench Light, Kitchen Light, or Water Pump. Select Save and Add More to continue identifying devices.
+4. **Create dashboard cards.** When you have finished identifying the initial devices, select Done. LaunchControl offers to create their dashboard cards automatically.
+5. **Confirm each device type.** Review the suggested card type for each device. LaunchControl usually selects the correct type automatically, but some switch devices may need to be identified as a water pump, Starlink power, or another specific function. The selected type determines the card’s appearance and controls.
+6. **Add additional devices.** Return to Add Devices and scan again. Add equipment that does not need to be operated for identification, such as batteries, inverters, tank sensors, and thermostats.
+7. **Arrange the dashboard.** Enter panel edit mode and move the cards into the desired positions. You can also adjust panel settings, add header information, or create additional panels.
 
 ![LaunchControl interface screenshot](images/ch02-launchcontrol-interface-screenshot.png "")
 
-The system is ready for use. For customizations, continue with Chapter 3.
+Your LaunchControl system is now ready for normal use. Chapters 3 and 4 explain how to edit devices and further customize the dashboard.
+
