@@ -15,7 +15,8 @@ The dashboard is a set of live cards organized into panels. Cards update in real
 ## Create and arrange the dashboard
 Version 0.6 can automatically create dashboard cards when devices are added. This is the fastest way to build a new dashboard because the card type, device source, and normal bindings are configured together.
 
-###Arrange the cards
+### Arrange the cards
+
 1. **Open the Dashboard and enter panel edit mode**
 2. **Drag cards into desired positions** The grab handle is in the top left of the card. Cards snap into the dashboard grid.
 3. **Open card settings to edit, duplicate or remove.** 
@@ -66,6 +67,7 @@ Test each newly created card from the dashboard. If its values appear correctly 
 
 ### Review or change bindings
 To inspect a card's bindings:
+
 1. Enter dashboard edit mode.
 2. Open the card’s edit menu.
 3. Review the device selected as the card’s data source.

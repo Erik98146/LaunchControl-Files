@@ -24,11 +24,13 @@ Other equipment, including lights, pumps, awnings, and switched circuits, may no
 
 ### Identify lights, pumps, and other switched devices
 The easiest way to identify a switched device is to operate it from the RV’s original control panel or switch.
+
 1. **Begin and RV-C device scan.**
 2. **Turn a device on then off.** 
 3. **Watch the results.** The most recent device reporting the change moves toward the top of the list and is highlighted.
 4. **Select the identified device.** 
 5. **Give it a meaningful name** 
+
 Repeat the process as needed.
 
 Work with one device at a time so it is clear which RV-C instance corresponds to each physical control.
