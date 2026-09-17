@@ -3,7 +3,7 @@
 
 ##### Features:
 - New Devices & Dashboard flow.  This version revises how devices are added to the system and how dashboard cards are automatically created.
-- Add support file download to Settings>System
+- Add support file download to Settings>Status
 
 ---------------------------------
 
