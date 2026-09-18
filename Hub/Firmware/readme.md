@@ -8,8 +8,8 @@
 - Notifications feature: Phone and SMS notifications can be tied to automations to alert on tank levels, temperatures, or any other device status. Enable in Settings>Integrations and setup by adding and editing an Automations card.
 - Clock cards now come in 2×1, 4×1, 2×2 and 4×2, with the time centred and sized to fill the card in the same typeface as the dashboard header clock. There is no card outline or background. Press and hold a clock card to jump straight to the clock settings.
 - TV/Kiosk mode: Show any dashboard panel full-screen on a TV, HDMI stick or wall tablet. Setup from from Settings → Displays, then tune the size, scaling, and safe-area sliders from your phone while watching the screen. 
-- The Devices list marks anything that has no card yet with a yellow "Not on Dashboard".
--When creating cards for new devices, you can now choose which panel each switched output's card goes on, right next to the card-type choice.
+- The Devices list marks anything that does not have a card yet with a yellow "Not on Dashboard".
+- When creating cards for new devices, you can now choose which panel each switched output's card goes on.
 
 ##### Fixed:
 - Climate card schedule no longer requires a long press
