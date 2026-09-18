@@ -8,31 +8,26 @@ Any TV, HDMI streaming stick, or wall tablet with a web browser can show one of 
 
 A web kiosk is the ordinary LaunchControl dashboard, in a display mode: one panel, edge to edge, no tabs or menus, scaled up to fill the screen. It shows exactly what your phone shows, because it *is* the same dashboard — so every card you have, and every card added in a future update, works on a TV with nothing extra to set up.
 
-A kiosk is **read-only on purpose**. It never sends a command, so a TV cannot accidentally switch your lights off and nobody can change the coach from the living-room screen. If one of your displays is a touchscreen and you do want to control from it, turn **Allow touch** on for that display alone.
+A kiosk is **read-only on purpose**. It never sends a command. If one of your displays is a touchscreen or your TV has cursor mode and you do want to control from it, turn **Allow touch** on for that display alone.
 
 ::: note "It updates every few seconds, not instantly"
-A kiosk checks in with the Hub every 12 seconds by default, rather than holding a live connection the way your phone does. That is what keeps several of them almost free for the Hub to serve. Values on a TV can be a few seconds behind — for a screen you glance at across a room, that is the right trade.
+A kiosk checks in with the Hub every 12 seconds by default, rather than holding a live connection the way your phone does. That is what keeps several of them almost free for the Hub to serve. You can change this if desired. Values on a TV can be a few seconds behind — for a screen you glance at across a room, that is the right trade.
 :::
 
 ## What to plug into the TV
 
 ::: note "Best: a streaming stick with a kiosk browser"
-An **Amazon Fire TV Stick** with the **Fully Kiosk Browser** app (a few dollars, one-time) is the most reliable setup: it starts on its own when the TV powers on, keeps the screen awake, and reloads on a schedule. Any Android TV box, or a Raspberry Pi running Chromium in kiosk mode, works the same way.
-:::
-
-::: warning "A TV's own built-in browser is a fallback, not a first choice"
-Samsung (Tizen) and LG (webOS) televisions have a browser that can show the dashboard, but neither can launch itself when the TV turns on, and the TV may put it to sleep on its own — so somebody has to open it by hand each time. Apple TV and Roku have no browser at all, so they cannot show a kiosk; use a stick.
+An **Amazon Fire TV Stick** with the **Fully Kiosk Browser** app (a few dollars, one-time) is the most reliable setup: it starts on its own when the TV powers on, keeps the screen awake, and reloads on a schedule. Any Android TV box, or a tablet in kiosk mode, works the same way.
 :::
 
 A wall-mounted tablet is also a good kiosk. On an iPad, add the page to the Home Screen so it opens without Safari's toolbars; on Android, use Fully Kiosk Browser as above.
 
 ## Set up a display
 
-1. **Find the Hub's address.** Open Settings → Displays on your phone. The **TV Display** section shows the address to use, something like `http://launchcontrol-a1b2/`. Use that name rather than an IP address where you can — it keeps working if the Hub's address changes.
-2. **Open that address with `/?tv` on the end.** On the TV or stick, type `http://launchcontrol-a1b2/?tv`. The screen shows four large characters — that is the display's pairing code. Nothing else has to be typed on the TV, ever.
-3. **Add it from your phone.** Back in Settings → Displays → TV Display, the new display appears with the same four characters. Tap it, give it a name like "Living room TV", and choose which panel it should show.
-4. **Set the size while watching the TV.** The controls under that display's name take effect on the screen within a few seconds — no reloading, no walking back and forth. Adjust them with the TV in view.
-5. **Make it start by itself.** In your kiosk browser's settings, set the same `/?tv` address as the start page, and turn on "launch on boot" and "keep screen on" if it offers them.
+1. Go to **Settings>Displays** to find the web address that you should point your TV or stick to. 
+2. **Open that address on your TV or stick** The device needs to be on the same network as the Hub.
+3. **Set the size while watching the TV.** The controls under that display's name take effect on the screen within a few seconds — no reloading, no walking back and forth. Adjust them with the TV in view.
+4. **Make it start by itself.** In your kiosk browser's settings, set the same address as the start page, and turn on "launch on boot" and "keep screen on" if it offers them.
 
 ## If the edges are cut off
 

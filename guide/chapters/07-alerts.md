@@ -1,7 +1,7 @@
 # Alerts
 
 ::: lead
-Have the Hub tell you when something happens in the coach — a tank filling, a battery running low, the shore power dropping. Alerts go to your phone as a notification or as a text message, and they are sent by an automation you set up.
+Have the Hub tell you when something happens in the coach — a tank filling, a battery running low, the shore power dropping, or approaching a temperate threshold. Alerts go to your phone as a notification or as a text message, and they are sent by an automation you set up.
 :::
 
 ## How it fits together
@@ -12,11 +12,7 @@ An alert is an **action on an automation**, in the same list as "turn the pump o
 2. Add an Automation card and tell it what to watch.
 3. Add **Send alert** as one of its actions, and write the message.
 
-You pay the service, not us. Both are cheap; one is free.
-
-::: warning "The Hub sends alerts over the internet without encryption"
-Anyone able to watch the coach's internet connection could read your alert messages and the topic or key they are sent with. That is why we only support services where the worst case is small: a notification topic you can replace in one click, and a prepaid text balance. Do not put anything private in an alert message.
-:::
+Alerts are free. SMS is cheap, you pay the service, not us.
 
 ## Push notifications (free)
 
@@ -29,25 +25,17 @@ This uses **ntfy**, a free notification service with an app for iPhone and Andro
 
 Repeat steps 2–4 on every phone that should get alerts.
 
-::: warning "The topic name is the password"
-There is no login. Anyone who knows your topic can read every alert you send. Do not post it anywhere or put it in a photo. If you think it has got out, press **New topic** — but remember every phone then has to subscribe to the new one.
-:::
-
 ## Text messages (prepaid)
 
 This uses **Textbelt**, where you buy a block of messages up front.
 
-1. **Buy credits.** Open [textbelt.com/purchase](https://textbelt.com/purchase/) and choose **generate a new API key**. Pick United States / Canada, choose a pack, and pay. Packs start around $3 for 50 messages.
+1. **Buy credits.** Open [textbelt.com/purchase](https://textbelt.com/purchase/) and choose **generate a new API key**. Choose a pack, and pay. Packs start around $3 for 50 messages. **SAVE THE KEY. It cannot be retreived if lost.**
 2. **Set a sender name.** On the Textbelt Account page, fill in the sender name. **Textbelt will not send anything until you do**, and it is the step almost everyone misses.
 3. **Paste the key** into Settings → Integrations → **SMS Alerts**, add your 10-digit phone number, turn **Enabled** on, and press **Save**.
 4. **Send test.** This sends a real message and uses one credit.
 
 ::: note "Watch the credit count"
 The Settings card shows how many credits are left, checked after each message. The Hub will send you a notification when they run low — by push, never by text, since that would spend one of the last credits. Credits expire after a year with nothing sent.
-:::
-
-::: warning "Accented characters cost double"
-A text message holds 160 plain characters. A single accented or special character switches the whole message to a format that holds only 70, so one alert can quietly cost two credits. The Hub strips those characters before sending — degree signs become plain letters — and the message box warns you as you approach the limit.
 :::
 
 ## Adding an alert to an automation
