@@ -1,4 +1,15 @@
-### v0.6.352
+### v0.6.54
+9-22-2026
+
+##### Features:
+- The "Create cards for new devices" pop-out can now make a new dashboard by going to the bottom of the dashboard list.
+
+##### Fixed:
+- Fixed the Down button on awning and shade cards sending the same command as Up in some cicumstances, so the shade only ever moved one way.
+
+---------------------------------
+
+### v0.6.52
 9-21-2026
 
 ##### Features:
