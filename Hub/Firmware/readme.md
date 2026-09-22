@@ -1,3 +1,22 @@
+### v0.6.352
+9-21-2026
+
+##### Features:
+- The Lighting card's two master groups are now called Zone 1 and Zone 2, and each can be renamed from the card's settings
+- When scanning for devices you can now tick several in the All Detected Devices list and add them in one go, reviewing and renaming them in a table first
+- A card can now be moved or copied to another dashboard from its gear menu, and a copy brings its settings with it
+- The Lighting card's device lists now separate likely lights from other switched outputs, with the rest available at the bottom
+- A tank in alarm now flashes its liquid red as well as its outline, on waste, grey and black tanks.
+
+##### Fixed:
+- Increased max tracked states
+- In panel edit mode the Lighting card's automation clock no longer sits underneath the card-options gear
+- Cards on a phone now keep the same shape they have on a laptop — tank bars, thermostats and square tiles are no longer stretched sideways.
+- Lighting scene 2nd row labels clarified in edit mode
+- Shades and awnings have been revised as devices and cards
+
+----------------------------------
+
 ### v0.6.35
 9-17-2026
 
