@@ -1,3 +1,11 @@
+### v0.6.57
+9-22-2026
+
+##### Features:
+- Awning, shade and slide cards have a "Swap direction" option, for when the coach's motor is wired so that Extend and Retract come out the wrong way round. Found on the card gear menu and may be applied individually or globally.
+
+------------------------------------------------
+
 ### v0.6.54
 9-22-2026
 
