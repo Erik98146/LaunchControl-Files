@@ -55,6 +55,27 @@ After identifying switches and lights, run another scan to add equipment that is
 
 Select a device, review or change its name, and choose Save and Add More until everything needed has been added.
 
+### Add many devices at once
+On a coach with many lights, adding them one by one is slow. The **All Detected Devices** list has a tick box on every row for adding several devices in one pass.
+
+1. **Tick the devices to add.** Use **Select all** or **Select none** to tick or clear every row on screen.
+2. **Select Add all selected.** A review table lists each ticked device with its type, DGN, and instance.
+3. **Name each device.** Type a name in each row, or select **Remove** to leave a device out.
+4. **Select Add all.** The devices are added one at a time. If any cannot be added, the page lists them and the rest are still added. LaunchControl then offers to create their dashboard cards.
+
+### Identify from the review table (ID button)
+Operating a switch in the coach tells you which device is which. The **ID** button works the other way around: it switches a device on from the Hub so you can see which light comes on. This is the easiest way to tell a dozen identical lighting channels apart.
+
+- Select **ID** once to switch the output on. The button stays highlighted while it is on.
+- Select **ID** again to switch it back off.
+- The line at the top of the table counts how many outputs Identify has left switched on. Switch them all off before selecting Add all; nothing switches them off for you.
+
+ID is offered only for lights and switched circuits. Awnings, slides, shades, and other moving equipment show a dash instead, because they should never be operated without someone watching them.
+
+::: warning "Door locks"
+If a switched circuit drives a door lock, pressing ID on it will operate the lock.
+:::
+
 ### Automatically create dashboard cards
 When you select Done after adding devices, LaunchControl offers to create matching dashboard cards.
 

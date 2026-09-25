@@ -44,7 +44,7 @@ The dashboard grid adapts to screen size, so the same configuration can be used 
 | Hydronic | Diesel/electric hydronic furnace control. |
 | Power Diagram | Live power flow between shore, solar, alternator, battery, inverter, and loads. |
 | Sleep Timer | Turns selected devices off at a set time each night. |
-| Automation / Macro | Rules and one-tap action groups. |
+| Automation / Macro | Shows one automation's status (tap to arm) or runs one macro. Set them up under Settings → Automations. |
 | Clock / Generic | Clock and general-purpose sensor value cards. |
 | Starlink / Travel Router | Internet equipment status and controls. |
 | Slide | Room slide controls |

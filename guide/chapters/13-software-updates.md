@@ -11,6 +11,10 @@ LaunchControl updates are released as a tested set of compatible Hub, web dashbo
 3. **Select Update All.** Update order is handled automatically.
 4. **Wait for completion.** The Hub restarts, then touchscreen updates are delivered through the Hub. The page reports each result.
 
+::: note "Update notices"
+Once a day, while a browser with internet access is open on the dashboard or Settings, the Hub checks for a newer release and adds an **Update available** alert to the alert list. Delete it once seen.
+:::
+
 ## Safety nets
 
 - The Hub and each display keep the previous firmware alongside the new version and can fall back if the new firmware does not start correctly.

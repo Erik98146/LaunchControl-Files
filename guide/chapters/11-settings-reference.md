@@ -11,6 +11,7 @@ All system configuration is organized under Settings. Use this chapter as a refe
 | Status | System health: network state, RV-C bus health, memory, uptime, version. |
 | Network | Saved Wi-Fi networks, Hub hotspot, travel-router credentials, Dashboard PIN, hotspot password. |
 | Integrations | MQTT broker, Victron, Bluetooth, Starlink. |
+| Automations | Every automation rule and macro, the editor, and the Push / SMS alert services. |
 | Floor Plans | Browse/load pre-built coach configurations and reset the current floor plan. |
 | Displays | Connected displays, online status, and role-to-card assignments. |
 | System | Backup/restore, clock/time, software updates, restart, factory reset. |
