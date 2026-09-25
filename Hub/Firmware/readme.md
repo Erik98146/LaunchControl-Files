@@ -6,10 +6,10 @@
 - Bulk device add now has an Identify button on each row — tap it to switch a light or DC load on and see which one it is, tap again to switch it back.
 - The hub checks once a day for a newer firmware release and adds an alert when one is available.
 - Automations and alerts have been re-worked into a dedicated settings section:
-  - Automations are now managed entirely under Settings → Automations, with their own sensor picker. A dashboard card is optional and simply points at an automation for status. 
-  - Macros are now managed entirely under Settings → Automations. 
-  - Push Alerts and SMS Alerts settings moved under Settings → Automations.
-  - Alerts can show on-screen behind the top-right icon and under Settings → Status → Alerts.  Press to view details and clear. Critical system alerts are in red an cannot be cleared.
+    - Automations are now managed entirely under Settings → Automations, with their own sensor picker. A dashboard card is optional and simply points at an automation for status. 
+    - Macros are now managed entirely under Settings → Automations. 
+    - Push Alerts and SMS Alerts settings moved under Settings → Automations.
+    - Alerts can show on-screen behind the top-right icon and under Settings → Status → Alerts.  Press to view details and clear. Critical system alerts are in red an cannot be cleared.
 
 -----------------------------------------------
 
