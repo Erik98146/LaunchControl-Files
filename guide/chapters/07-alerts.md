@@ -10,7 +10,7 @@ Every alert lands in the **alert list**. A red triangle with a count appears at 
 
 - New alerts are shown **bold** until you have looked at them.
 - Alerts from your automations stay in the list until you delete them, one at a time with the trash can or all at once with **Delete all**.
-- Alerts about the Hub itself (below) cannot be deleted; they clear on their own when the problem is fixed.
+- Hub health alerts cannot be deleted; they clear on their own when the problem is fixed.
 - The triangle stays lit until the list is empty.
 
 ## Hub health alerts

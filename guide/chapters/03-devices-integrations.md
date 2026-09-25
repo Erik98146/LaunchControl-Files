@@ -18,7 +18,7 @@ The Devices page lists everything currently configured on the Hub. Devices are o
 
 LaunchControl listens to the RV-C network and displays the device types it finds.
 
-Some equipment, including thermostats, tank sensors, batteries, and inverters, regularly reports its status and normally appears without any additional action.
+Some equipment, including thermostats, tank sensors, batteries, and inverters, regularly report status and normally appears without any additional action.
 
 Other equipment, including lights, pumps, awnings, and switched circuits, may not appear until it is operated.
 
@@ -56,7 +56,7 @@ After identifying switches and lights, run another scan to add equipment that is
 Select a device, review or change its name, and choose Save and Add More until everything needed has been added.
 
 ### Add many devices at once
-On a coach with many lights, adding them one by one is slow. The **All Detected Devices** list has a tick box on every row for adding several devices in one pass.
+On a large coach coach with many lights, shades, etc., adding them one by one is slow. The **All Detected Devices** list has a tick box on every row for adding several devices in one pass.
 
 1. **Tick the devices to add.** Use **Select all** or **Select none** to tick or clear every row on screen.
 2. **Select Add all selected.** A review table lists each ticked device with its type, DGN, and instance.
@@ -68,7 +68,7 @@ Operating a switch in the coach tells you which device is which. The **ID** butt
 
 - Select **ID** once to switch the output on. The button stays highlighted while it is on.
 - Select **ID** again to switch it back off.
-- The line at the top of the table counts how many outputs Identify has left switched on. Switch them all off before selecting Add all; nothing switches them off for you.
+- Give the device a name.
 
 ID is offered only for lights and switched circuits. Awnings, slides, shades, and other moving equipment show a dash instead, because they should never be operated without someone watching them.
 
