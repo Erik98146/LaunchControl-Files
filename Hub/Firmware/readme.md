@@ -1,3 +1,17 @@
+### v0.6.92
+9-27-2026
+
+##### Features:
+- GL.iNet travel router speed test and network quality: View network quality, run a speed test from the router card on the dashboard or Touch 8, schedule automatic tests, and see recent results (requires GL.iNet firmware 4.11 beta or newer).
+- Added support for Mopeka Pro series propane tank, water and fuel sensors as Bluetooth devices and shown on a Tank card with level alarms.
+- Climate cards have a new "AC only" setting that hides heat and fuel controls, for thermostat zones which only run the air conditioner.
+
+#### Fixed:
+- Thermostat cards for the same climate zone now share one schedule, so the zone shows the same schedule and clock status on every dashboard.
+- On the Touch 8, press and hold a lighting scene to save the current light levels to it, just like on the dashboard. Scenes saved anywhere now update immediately on every open dashboard.
+
+-------------------------------------------------
+
 ### v0.6.78
 9-24-2026
 
