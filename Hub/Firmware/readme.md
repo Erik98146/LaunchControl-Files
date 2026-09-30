@@ -1,3 +1,11 @@
+### v0.7.1
+9-29-2026
+
+##### Features:
+- Revise state tracking to free significant RAM for furture development.
+
+--------------------------------------
+
 ### v0.6.92
 9-27-2026
 
