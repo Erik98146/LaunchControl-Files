@@ -1,8 +1,16 @@
-### v0.7.1
+### v0.7.26
 9-29-2026
 
 ##### Features:
 - Revise state tracking to free significant RAM for furture development.
+- The hub now supports TLS for secure connections to the internet. This will allow for future addition of new features.
+- New Weather card: Three sizes with a 5‑day forecast and an hourly view on tap. Location comes from the coach GPS automatically, or set a place once in Settings.
+- New Linked Switch card: one tap controls several outputs together, such as a laundry mode that powers the washer/dryer, turns off air conditioners and opens the dryer vent. The card turns red if the outputs ever get out of step.
+- Door locks wired as two relays now set up as a single Door Lock card when you add them and create cards.  Setup with improved discovery and automatic card creation.
+- Generic value cards now show your card name as the label. On a two-value card, name it like "Fresh / Gray" to label each value.
+- Generic value cards can now warn and alarm when a value goes above or below levels you set, on the dashboard and the Touch display.
+- The old "Generic" card is now named "Generic Switch" to make clear it's an on/off control.
+- The Travel Router card can now alert you to poor conditions: turn on the network quality alarm, set a threshold (85 by default), and the card blinks red on the dashboard and Touch display when quality stays below it.  Requires a GL.iNet Beryl AX (MT3000) Travel router with 4.11 (beta) firmware and network quality enabled.
 
 --------------------------------------
 
