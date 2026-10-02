@@ -101,7 +101,7 @@ If your coach has a Victron GX device such as a Cerbo GX, LaunchControl can read
 
 ::: technical
 The Hub is an MQTT client. Victron field values arrive through the GX device’s MQTT topic tree; writable fields such as inverter mode, input current limit, and setpoints are written back through MQTT. With a Cerbo, its broker is the natural place to add non RV-C equipment like Bluetooth Ruuvi temperature sensors, Shelly devices, or ESPHome devices; without one, the Hub can run its own broker (below). See the Wi-Fi setup guide found on the [launchcontrol.tech FAQ](https://launchcontrol.tech/pages/support-faq) for additional networking details.
-
+:::
 ## The Hub's own MQTT broker
 
 Under **Settings → Integrations → MQTT Broker** the **Broker** setting has two choices:
@@ -116,7 +116,6 @@ Automatic discovery of Shelly and ESPHome devices on the Devices page, with card
 :::
 
 The hub always needs to know where to find the Cerbo GX. The Cerbo GX can be accessed directly over it's own hosted access point with a static IP, or may be accessed through your RV router. If you are using an RV router, the Cerbo GX will need static IP address. See the Wi-Fi setup guide at launchcontrol.tech for additional detail.
-:::
 
 ## Bluetooth sensors
 
