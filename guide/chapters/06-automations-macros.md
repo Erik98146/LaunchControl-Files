@@ -29,10 +29,10 @@ When the Hub starts, or when an automation is edited or re-enabled, the rule ado
 
 A macro runs up to eight actions in order. For example, an Away macro might switch off the water pump and lower the thermostat; a Return macro can reverse those actions. Run it from the **Run** button in the list or from its dashboard card.
 
-Two extra choices are available in a macro:
+An extra choice available in a macro:
 
 - **Wait (delay) —** pauses for 1 to 3600 seconds before the next action, for example to let the inverter come up before the water pump starts. The wait runs on the Hub, so the macro finishes even if you close the page. Each wait uses one of the eight action slots. Running the macro again while it is waiting starts it over from the first action; editing or deleting the macro cancels the wait.
-- **Fan Only —** a Climate set mode that runs the blower without heating or cooling. It needs a thermostat that supports Fan Only; one that does not will ignore it. On a OneControl climate zone it turns heat and cool off and runs the fan on High.
+
 
 ## Dashboard cards
 
