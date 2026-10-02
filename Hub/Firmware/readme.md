@@ -1,3 +1,18 @@
+### v0.7.40
+10-1-2026
+
+##### Features:
+- 3rd party interface API: Voice Control. Shortcuts, & Siri -  say "Hey Siri, Coach" then "kitchen lights on", "bedroom to 72", or build one-tap shortcuts from Settings → Integrations. Works on Apple Watch and over a VPN; no extra hardware.  Any device that can open a web address can interface.
+- Added a MQTT broker to the hub.  This allows integration to a multitude of devices without requiring an external broker.
+- Battery + Power cards now come in a 4×2 compact size and a 2×2 small.
+- A Shades card can now move several shades at once. Edit the card and tick the other shades it should move; one press moves them all, from the dashboard or a Touch display.
+- Syncronize changes across devices: Editing a dashboard will now auto-update all other connected displays.
+- Alerts you have already read now show in gray. A History button keeps every alert since start-up even after Delete all.
+- Macro improvements: Macros can now set a thermostat to Fan Only and include timed waits between steps.
+
+
+------------------------------------------
+
 ### v0.7.26
 9-29-2026
 

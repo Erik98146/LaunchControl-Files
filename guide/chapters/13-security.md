@@ -16,6 +16,10 @@ The Hub hotspot can use a WPA2 password of 8–63 characters. Saving a new passw
 Touch 8 and Mini displays connect to the Hub hotspot. If you change its password, re-pair displays with the new credentials.
 :::
 
+## API key
+
+Shortcuts, Siri and other integrations (see the Shortcuts, Siri & Voice Control chapter) use an **API key** instead of the Dashboard PIN. It is shown under **Settings → Integrations → Shortcuts & Siri** and works for the control address only: a key that leaks can operate named controls, but cannot change settings, read a backup or join a network. Press **New key** to replace it; every shortcut then needs its link updated. The key is not included in configuration backups.
+
 ## Locked out?
 
 Power-cycle recovery provides a way back in without a cable or support call:

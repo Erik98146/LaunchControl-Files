@@ -100,7 +100,20 @@ If your coach has a Victron GX device such as a Cerbo GX, LaunchControl can read
 ![Devices added after a Victron scan](images/ch03-devices-added-after-a-victron-scan.png)
 
 ::: technical
-The Hub is an MQTT client. Victron field values arrive through the GX device’s MQTT topic tree; writable fields such as inverter mode, input current limit, and setpoints are written back through MQTT. The Cerbo is the best place to add non RV-C equipment like Bluetooth Ruuvi temperature sensors, Shelly devices, or ESP Home devices. See the Wi-Fi setup guide found on the [launchcontrol.tech FAQ](https://launchcontrol.tech/pages/support-faq) for additional networking details.
+The Hub is an MQTT client. Victron field values arrive through the GX device’s MQTT topic tree; writable fields such as inverter mode, input current limit, and setpoints are written back through MQTT. With a Cerbo, its broker is the natural place to add non RV-C equipment like Bluetooth Ruuvi temperature sensors, Shelly devices, or ESPHome devices; without one, the Hub can run its own broker (below). See the Wi-Fi setup guide found on the [launchcontrol.tech FAQ](https://launchcontrol.tech/pages/support-faq) for additional networking details.
+
+## The Hub's own MQTT broker
+
+Under **Settings → Integrations → MQTT Broker** the **Broker** setting has two choices:
+
+- **External —** the Hub connects to a broker somewhere else: a Cerbo GX, a Home Assistant broker, or any other. This is the Victron setup above.
+- **Internal —** the Hub runs the broker itself. Use this on a coach that has no Cerbo. The card shows the address your devices should use, the Hub's IP address on port 1883, and how many devices are connected. A username and password are optional; leave them blank and every device on the coach network can connect.
+
+Shelly, ESPHome and other MQTT devices are pointed at that address in their own settings. Home Assistant, Node-RED or MQTT Explorer can connect to it too and will see the Hub's published fields. The Hub uses one broker at a time: with Internal selected, the Victron GX integration is unavailable, because it reads the Cerbo's broker.
+
+::: note "Coming later"
+Automatic discovery of Shelly and ESPHome devices on the Devices page, with cards created for them, is planned. Until then, add them as Custom MQTT devices (below).
+:::
 
 The hub always needs to know where to find the Cerbo GX. The Cerbo GX can be accessed directly over it's own hosted access point with a static IP, or may be accessed through your RV router. If you are using an RV router, the Cerbo GX will need static IP address. See the Wi-Fi setup guide at launchcontrol.tech for additional detail.
 :::

@@ -8,10 +8,11 @@ Have the Hub tell you when something happens in the coach — a tank filling, a 
 
 Every alert lands in the **alert list**. A red triangle with a count appears at the top right of the dashboard whenever the list holds anything; click it to open the list. The same list is always available under **Settings → Status → Alerts**.
 
-- New alerts are shown **bold** until you have looked at them.
+- New alerts are shown **bold** until you have looked at them; alerts you have already seen turn gray.
 - Alerts from your automations stay in the list until you delete them, one at a time with the trash can or all at once with **Delete all**.
 - Hub health alerts cannot be deleted; they clear on their own when the problem is fixed.
 - The triangle stays lit until the list is empty.
+- **History**, beside Delete all, lists every alert since the Hub last started, including the ones you deleted and the health alerts that have cleared, with when and how each left the list. Press **Back** to return to the list. The history starts over when the Hub restarts.
 
 ## Hub health alerts
 
@@ -19,7 +20,7 @@ The Hub watches itself and raises an alert when something has been wrong for a w
 
 ## Update notices
 
-Once a day, when a browser is open on the dashboard or Settings and has internet access, the Hub checks for a newer firmware release. If one is available, an **Update available** alert appears; delete it once you have seen it. Install from Settings → System → Online Update.
+Once a day, when a browser is open on the dashboard or Settings and has internet access, the Hub checks for a newer firmware release. If one is available, an **Update available** alert appears; delete it once you have seen it, and it does not come back for the same release. Install from Settings → System → Online Update.
 
 ## How automation alerts fit together
 

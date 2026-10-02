@@ -36,6 +36,12 @@ Fluid tanks with heaters that have been bound to a card may be toggled by pressi
 
 Irregularly shaped tanks may produce sensor readings that do not accurately represent the amount of liquid they contain. The optional Geometry Lookup calibration corrects this by mapping sensor readings to the tank’s actual contents. To create a calibration table, open the tank device for editing and enable geometry. Fill the tank in measured increments usig a flow meter. LaunchControl uses these calibration points to calculate the tank’s actual percentage full and estimated amount remaining. Volume is displayed in gallons or liters according to the Hub’s system-wide units setting.
 
+## Awnings & Shades
+
+Awning and Shades cards have two direction buttons. Depending on the device, a button is either hold-to-move (the motor runs while you hold it) or press-to-command (window-shade controllers start on a press and stop on the next press). The card settings say which.
+
+**Move several shades at once —** when you add or edit a Shades card yourself, the card editor lists every other shade on the Hub under **Also move these shades**. Tick the ones that should follow. One press then moves the card's own shade and every ticked shade, from the dashboard or a Touch display. Cards created automatically are one shade each; edit a card to group them.
+
 ## Graphs
 
 Solar, Shore Power, Alternator, Generator, Battery and Net Power cards have graphs that can be configured for time and scal markers from the panel edit mode.

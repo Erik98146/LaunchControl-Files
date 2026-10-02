@@ -11,6 +11,7 @@ The dashboard is a set of live cards organized into panels. Cards update in real
 - **Panel tabs —** switch between groups such as Main, Power, and Climate. Each panel has its own name, icon, and layout.
 - **Graph History —** each panel sets the history window used by graphs on that panel.
 - **Panel editing —** panels can be added, renamed, reordered, duplicated, and deleted from edit mode.
+- **Every screen follows —** a change to cards or panels made on one phone or laptop shows up on every other open dashboard, including TVs, within a couple of seconds. A dashboard that is in the middle of editing waits until the editor closes.
 
 ## Create and arrange the dashboard
 Version 0.6 can automatically create dashboard cards when devices are added. This is the fastest way to build a new dashboard because the card type, device source, and normal bindings are configured together.
@@ -34,7 +35,7 @@ The dashboard grid adapts to screen size, so the same configuration can be used 
 | Lighting | Inside/Outside master switches plus four scene buttons. |
 | Light Dimmer | One light with on/off and brightness control. |
 | Tank | Fresh, gray, or black tank level. |
-| Battery + Power | Battery state of charge, power flow, and history graph. |
+| Battery + Power | Battery state of charge, power flow, and history graph. Three sizes: 8×4 Standard, 4×2 Compact (no graphs or detail row; time remaining shown as e.g. "4d 18h"), and 2×2 SoC + Power (just the two numbers). |
 | Solar | Solar charging power with history graph. |
 | Shore Power | Shore connection status and power. |
 | Inverter | Inverter state with on/off control. |

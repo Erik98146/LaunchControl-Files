@@ -15,7 +15,7 @@ An automation rule watches one sensor and acts when the reading crosses a thresh
 - **Sensor —** press **Choose sensor** and expand a device to pick one of its readings: battery percentage, a tank level, a temperature, shore voltage. Any value a dashboard card can show can be watched.
 - **Trigger —** above or below a value, optionally held for a selected period so a short excursion does not fire the rule.
 - **Release —** a second value where the rule resets. The gap between trigger and release prevents rapid on/off cycling.
-- **Actions —** up to four actions on trigger and four on release: device switching, lighting masters, thermostat changes, and **Send alert** (see Alerts).
+- **Actions —** up to four actions on trigger and four on release: device switching, lighting masters, thermostat changes (Off, A/C, Heat or Fan Only), and **Send alert** (see Alerts).
 
 Common templates can pre-fill the condition.
 
@@ -28,6 +28,11 @@ When the Hub starts, or when an automation is edited or re-enabled, the rule ado
 ## Macros
 
 A macro runs up to eight actions in order. For example, an Away macro might switch off the water pump and lower the thermostat; a Return macro can reverse those actions. Run it from the **Run** button in the list or from its dashboard card.
+
+Two extra choices are available in a macro:
+
+- **Wait (delay) —** pauses for 1 to 3600 seconds before the next action, for example to let the inverter come up before the water pump starts. The wait runs on the Hub, so the macro finishes even if you close the page. Each wait uses one of the eight action slots. Running the macro again while it is waiting starts it over from the first action; editing or deleting the macro cancels the wait.
+- **Fan Only —** a Climate set mode that runs the blower without heating or cooling. It needs a thermostat that supports Fan Only; one that does not will ignore it. On a OneControl climate zone it turns heat and cool off and runs the fan on High.
 
 ## Dashboard cards
 
