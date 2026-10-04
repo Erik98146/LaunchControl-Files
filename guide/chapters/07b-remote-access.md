@@ -36,7 +36,7 @@ Siri, Shortcuts and other controllers work from anywhere through Remote too: typ
 
 Open **remote.launchcontrol.tech**, sign in and choose the hub. Its page shows the current access and when it ends.
 
-- **Subscribe.** Pick monthly or annual. Payment is by card; the receipt and card details live under **Card & receipts** on the same page.
+- **Subscribe.** Pick monthly or annual. The plan starts when the access the hub already has runs out, so subscribing during the free trial does not shorten it: your card is saved now and first charged on that day. Payment is by card; the receipt and card details live under **Card & receipts** on the same page.
 - **Auto‑renew.** Shown plainly beside the end date: *Auto‑renew on — renews on … ; your card is charged … then*, or *Auto‑renew off — access ends on …*. Turn it off and nothing more is charged; turn it back on before the end date and nothing is lost.
 - **Switch plans.** A switch takes effect when the current paid period runs out; until then nothing changes and nothing is charged. The page says so while a switch is scheduled, and you can keep the current plan instead.
 - **Reminders.** LaunchControl e‑mails you before a renewal and before access ends, and the same notices appear in the dashboard's alert inbox (the triangle in the header).
