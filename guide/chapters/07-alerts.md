@@ -28,9 +28,9 @@ An alert is an **action on an automation**, in the same list as "turn the pump o
 
 1. Open Settings → Automations and create or edit an automation.
 2. Add **Send alert** as one of its actions and write the message.
-3. Tick where it should go: **On-screen** (the alert list), **Push**, **SMS**.
+3. Tick where it should go: **On-screen** (the alert list), **Push**, **SMS**, **E-mail (Remote)**.
 
-On-screen needs nothing else. Push and SMS need the services below, set up under Settings → Automations. Push is free; SMS is cheap — you pay the service, not us.
+On-screen needs nothing else, and neither does E-mail (Remote): with LaunchControl Remote linked (see [Remote Access](#remote-access)), alerts are e-mailed to the account the hub is linked to, with nothing to set up. Push and SMS need the services below, set up under Settings → Automations. Push is free; SMS is cheap — you pay the service, not us.
 
 ## Push notifications (free)
 
@@ -58,7 +58,7 @@ The Settings card shows how many credits are left, checked after each message. T
 
 ## Writing the message
 
-- **Channels.** On-screen is always available; Push and SMS appear once set up.
+- **Channels.** On-screen is always available; E-mail (Remote) appears while the hub is linked to LaunchControl Remote; Push and SMS appear once set up.
 - **Message.** A sensible message is filled in for you. Edit it freely.
 - **Insert value.** Drops a live reading into the message at the cursor.
 

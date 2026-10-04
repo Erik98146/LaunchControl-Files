@@ -86,7 +86,7 @@ A single device, such as a lighting dimmer, may have multiple “instances”. I
 :::
 
 ::: technical "Expert Mode"
-To keep the found devices decluttered, some devices are hidden by default. If you can't find your RV-C device, use the Expert button to show all RV-C devices found on the bus. See chapter 14 for additional detail.
+To keep the found devices decluttered, some devices are hidden by default. If you can't find your RV-C device, use the Expert button to show all RV-C devices found on the bus. See the [Technical Reference](#technical-reference) for additional detail.
 :::
 
 ## Victron equipment

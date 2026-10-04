@@ -25,7 +25,7 @@ Awnings, shades and slides are deliberately excluded. They move only while a but
 ## Set it up
 
 1. **Open the settings.** On the dashboard, go to **Settings → Integrations → Shortcuts & Siri**. The card shows your API key, the Hub address that the links will use, and a list of every name the Hub knows with the actions each accepts.
-2. **Check the address.** The links use the address you are looking at the dashboard on. If your phone reaches the Hub another way — a VPN such as Tailscale, for control from away — type that address instead. The setting is remembered on this browser only.
+2. **Check the address.** The links use the address you are looking at the dashboard on. For control from away, type your hub's LaunchControl Remote address instead (see [Remote Access](#remote-access)) — or a VPN address such as Tailscale, if you use one. The setting is remembered on this browser only.
 3. **Try a phrase.** Type *kitchen lights on* (using one of your own names) in the **Try a phrase** box and press Send. The Hub's answer appears below it. This is exactly what Siri will say.
 
 ::: note "The API key"
@@ -71,12 +71,12 @@ A phrase of its own is faster when you say it often: "Hey Siri, kitchen lights o
 Shortcuts can also be put on the Home Screen, in a widget, on the Action Button, in the Apple Watch Shortcuts app, or run from a Shortcuts automation — for example *when I arrive at the campground, run Return*.
 
 ::: note "Apple Watch"
-Shortcuts synced to the watch appear in its Shortcuts app and respond to "Hey Siri" on the watch. The watch needs a path to the Hub: your phone nearby on the coach's Wi‑Fi, or the VPN address.
+Shortcuts synced to the watch appear in its Shortcuts app and respond to "Hey Siri" on the watch. The watch needs a path to the Hub: your phone nearby on the coach's Wi‑Fi, or the LaunchControl Remote address.
 :::
 
 ## Away from the coach
 
-A link works from anywhere the phone can reach the Hub. On the coach's Wi‑Fi that is the local address; from the road it needs a VPN such as Tailscale on the coach router, with the Hub's VPN address typed into **Hub address in the links** before copying. The Hub does not need to be exposed to the internet — never forward its port.
+A link works from anywhere the phone can reach the Hub. On the coach's Wi‑Fi that is the local address. From the road, use LaunchControl Remote: type the hub's remote address (shown on **Settings → Integrations → Remote Access**) into **Hub address in the links** before copying, and the links — and Siri — work wherever the phone has internet; the API key is accepted there too. A VPN such as Tailscale on the coach router works the same way with its address. The Hub does not need to be exposed to the internet — never forward its port.
 
 ## Other phones and apps
 

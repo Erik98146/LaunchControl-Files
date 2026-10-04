@@ -35,4 +35,4 @@ RV-C uses CAN at the physical layer. The Hub listens to the bus, maintains a liv
 
 Chapter 2 is the normal installation and setup path. Follow it in order. The rest of the guide explains customizations, devices, dashboard building, controls, displays, settings, security, updates, and troubleshooting.
 
-Deeper implementation information appears in shaded “Technical detail (optional)” boxes and in Chapter 14. You can skip those sections during normal setup.
+Deeper implementation information appears in shaded “Technical detail (optional)” boxes and in the [Technical Reference](#technical-reference). You can skip those sections during normal setup.

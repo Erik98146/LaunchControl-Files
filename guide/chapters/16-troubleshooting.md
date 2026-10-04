@@ -9,9 +9,12 @@
 | Touch 8 shows its QR code again | The display lost the Hub or the Hub hotspot credentials changed. If the original network returns, wait for automatic reconnection. Otherwise pair the display again. |
 | Thermostat schedule won’t enable | The Hub clock is not set. Go to Settings → System → Clock & Time and select or set a valid source. |
 | Bluetooth toggle says restart required | Normal. Restart the Hub after enabling or disabling Bluetooth. |
-| Forgot PIN or hotspot password | Use power-cycle recovery: 3 quick cycles temporarily opens the hotspot; 5 quick cycles clears both secrets. See Chapter 10. |
+| Forgot PIN or hotspot password | Use power-cycle recovery: 3 quick cycles temporarily opens the hotspot; 5 quick cycles clears both secrets. See [Security](#security). |
 | Update check finds nothing / errors | The phone or computer running the browser needs internet access for the update check. |
 | Starlink card is blank | The Hub must be on a network that can reach the dish. Check Starlink under Settings → Integrations and confirm the dish is powered. |
 | Everything froze after a power blip | The Hub and router may be rebooting together. Give the router time to return; the Hub keeps retrying its saved network. |
+| Remote Access stays on “Connecting” | The Hub needs internet and a valid clock. Check Settings → Status for the network, and Settings → System → Clock & Time. Whether the service itself is up is shown at remote.launchcontrol.tech/status. |
+| Remote Access says “Identity conflict” | The Hub was reset or re-flashed while linked. Sign in at remote.launchcontrol.tech, open the hub under My hubs and press Unlink, then enable Remote again and link it with the new code. |
+| Remote Access says “Ended” or “Payment needed” | The trial or plan ran out, or a renewal charge failed. Local control is unaffected. Open the hub's page in the portal to subscribe, update the card, or redeem a code. |
 
 Still stuck? Open Settings → Status before contacting support. That page contains the health information most support conversations will need.
