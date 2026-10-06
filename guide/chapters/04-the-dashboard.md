@@ -8,9 +8,12 @@ The dashboard is a set of live cards organized into panels. Cards update in real
 
 ## Panels
 
-- **Panel tabs —** switch between groups such as Main, Power, and Climate. Each panel has its own name, icon, and layout.
+- **Panel tabs —** switch between groups such as Main, Power, and Climate. Each panel has its own name, icon (or two), and layout. As many tabs as fit are shown across the top; the rest are always one tap away under the **All panels** icon (the grid icon at the end of the tabs).
+- **Sub-panels —** each panel can hold up to three sub-panels. Tap a tab's name to open it, or tap the small arrow beside it to choose one of its sub-panels. While a sub-panel is open, its tab reads "Panel › Sub-panel".
+- **All panels —** shows every panel and sub-panel in your order, with the one showing marked. Tap any of them to go there. With more than eight panels a search box appears. **Manage panels** at the bottom opens the panel manager.
 - **Graph History —** each panel sets the history window used by graphs on that panel.
-- **Panel editing —** panels can be added, renamed, reordered, duplicated, and deleted from edit mode.
+- **Managing panels —** open **Manage panels** (from All panels, or from edit mode). Each panel has a **⋯** menu: **Edit** (name, icons and parent, with a preview), **Add sub-panel**, **Move…** (put it under another panel or back on top), **Duplicate**, **Move up / down** and **Delete**. Drag a panel by its handle to reorder it; the new order is saved when you press **Done**. Other changes save as soon as you make them, with **Undo** for a few seconds. Deleting a panel tells you first what happens to its cards and sub-panels.
+- **Coming back —** reloading the page returns to the panel you were on; opening the dashboard fresh starts on the first panel.
 - **Every screen follows —** a change to cards or panels made on one phone or laptop shows up on every other open dashboard, including TVs, within a couple of seconds. A dashboard that is in the middle of editing waits until the editor closes.
 
 ## Create and arrange the dashboard
@@ -48,9 +51,23 @@ The dashboard grid adapts to screen size, so the same configuration can be used 
 | Automation / Macro | Shows one automation's status (tap to arm) or runs one macro. Set them up under Settings → Automations. |
 | Clock / Generic | Clock and general-purpose sensor value cards. |
 | Starlink / Travel Router | Internet equipment status and controls. |
+| Weather | Current conditions and a five-day forecast; tap for the next hours. Four sizes, from a full 8×4 card to a one-row strip. Set up under Settings → Integrations → Weather. |
 | Slide | Room slide controls |
 
 Victron-specific cards appear after the Victron integration is configured. Victron cards can also be auto-created and will include all bindings.
+
+The card editor shows a preview of the card at its real size, with sample values, for every layout you pick.
+
+## Header icons
+
+The icons at the top right of the dashboard, from left to right:
+
+- **Warning triangle —** appears when something needs attention; a number on it is the count of unread alerts. Tap it to see them.
+- **Connection dot —** green while the dashboard is receiving live data, amber while it reconnects.
+- **Cloud —** LaunchControl Remote. On a dashboard opened through Remote it shows that page's own link: green while connected, amber while reconnecting. On the coach's own network it appears while someone is viewing the Hub through Remote.
+- **Menu —** Settings, Devices and the other pages.
+
+When a panel header shows the weather and space is tight, the place name is left out so the temperature, wind and rain always fit.
 
 ## Card Bindings
 A binding connects an element on a dashboard card to information or controls provided by a device.

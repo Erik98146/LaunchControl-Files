@@ -7,14 +7,16 @@
 | Settings → Status shows no RV-C activity | Check Hub power and the physical RV-C connection. Confirm the correct coach connection/adapter using the LaunchControl FAQ before adding devices or dashboards. |
 | A card shows “—” or no value | The bound device is not reporting. Check device power; for Victron fields check Settings → Integrations; then review the card binding in edit mode. |
 | Touch 8 shows its QR code again | The display lost the Hub or the Hub hotspot credentials changed. If the original network returns, wait for automatic reconnection. Otherwise pair the display again. |
-| Thermostat schedule won’t enable | The Hub clock is not set. Go to Settings → System → Clock & Time and select or set a valid source. |
-| Bluetooth toggle says restart required | Normal. Restart the Hub after enabling or disabling Bluetooth. |
+| Thermostat schedule won’t enable | The Hub clock is not set. Go to Settings → System → Date & time, open **Change time source** and pick a source that shows as available, or set the time manually. |
+| Bluetooth says "Restart needed" | Normal after changing Bluetooth without restarting. Open Settings → Integrations → Bluetooth and press **Restart now**; **Save and restart** does both in one step. |
+| Victron GX says "MQTT connection required" | Victron reads the GX device's own broker. Press **Configure MQTT**, choose **Connect to another broker**, and enter the GX device's address. |
+| Cards stopped updating after the coach was powered off and on | Some coaches give their controllers new network addresses at power‑up. Lights, switches, loads, shades and door locks follow their device automatically; other readings may need their device re‑added from a new scan. |
 | Forgot PIN or hotspot password | Use power-cycle recovery: 3 quick cycles temporarily opens the hotspot; 5 quick cycles clears both secrets. See [Security](#security). |
 | Update check finds nothing / errors | The phone or computer running the browser needs internet access for the update check. |
 | Starlink card is blank | The Hub must be on a network that can reach the dish. Check Starlink under Settings → Integrations and confirm the dish is powered. |
 | Everything froze after a power blip | The Hub and router may be rebooting together. Give the router time to return; the Hub keeps retrying its saved network. |
-| Remote Access stays on “Connecting” | The Hub needs internet and a valid clock. Check Settings → Status for the network, and Settings → System → Clock & Time. Whether the service itself is up is shown at remote.launchcontrol.tech/status. |
-| Remote Access says “Identity conflict” | The Hub was reset or re-flashed while linked. Sign in at remote.launchcontrol.tech, open the hub under My hubs and press Unlink, then enable Remote again and link it with the new code. |
-| Remote Access says “Ended” or “Payment needed” | The trial or plan ran out, or a renewal charge failed. Local control is unaffected. Open the hub's page in the portal to subscribe, update the card, or redeem a code. |
+| LaunchControl Remote stays on “Connecting” | The Hub needs internet and a valid clock. Check Settings → Status for the network, and Settings → System → Date & time. Whether the service itself is up is shown at remote.launchcontrol.tech/status. |
+| LaunchControl Remote says “Identity conflict” | The Hub was reset or re-flashed while linked. Sign in at remote.launchcontrol.tech, open the hub under My hubs and press Unlink, then enable Remote again and link it with the new code. |
+| LaunchControl Remote says “Access expired” or “Payment needed” | The trial or plan ran out, or a renewal charge failed. Local control is unaffected. Open the hub's page in the portal to subscribe, update the card, or redeem a code. |
 
 Still stuck? Open Settings → Status before contacting support. That page contains the health information most support conversations will need.

@@ -26,6 +26,7 @@ The Hub has three jobs:
 - **RV-C connection —** the Hub connects physically to the coach control bus and reads or sends RV-C messages.
 - **Device integration —** the Hub connects to other devices such as Victron equipment, Shelly devices and more through MQTT.
 - **LaunchControl network —** the Hub creates its own Wi-Fi network for Touch 8, Mini, and direct phone/tablet access. The Hub can also join your existing Wi-Fi router so phones and computers on that network can open the dashboard without changing Wi-Fi networks.
+- **LaunchControl Remote —** with the Hub on a network that has internet, the same dashboard is available from anywhere through remote.launchcontrol.tech, with no app and no router configuration. Every new Hub includes 90 days; see [Remote Access](#remote-access).
 
 ::: technical
 RV-C uses CAN at the physical layer. The Hub listens to the bus, maintains a live model of the coach state, and pushes changes to dashboards and displays over WebSockets. Touch 8 and Mini displays do not connect to RV-C directly; they communicate through the Hub.

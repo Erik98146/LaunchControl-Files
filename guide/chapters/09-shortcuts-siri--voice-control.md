@@ -24,22 +24,22 @@ Awnings, shades and slides are deliberately excluded. They move only while a but
 
 ## Set it up
 
-1. **Open the settings.** On the dashboard, go to **Settings → Integrations → Shortcuts & Siri**. The card shows your API key, the Hub address that the links will use, and a list of every name the Hub knows with the actions each accepts.
-2. **Check the address.** The links use the address you are looking at the dashboard on. For control from away, type your hub's LaunchControl Remote address instead (see [Remote Access](#remote-access)) — or a VPN address such as Tailscale, if you use one. The setting is remembered on this browser only.
-3. **Try a phrase.** Type *kitchen lights on* (using one of your own names) in the **Try a phrase** box and press Send. The Hub's answer appears below it. This is exactly what Siri will say.
+1. **Open the settings.** On the dashboard, go to **Settings → Integrations → Shortcuts & API** and press **Set up shortcuts**. The card has two tabs: **Apple Shortcuts & Siri**, and **API & custom integrations** for other apps.
+2. **Choose the connection method.** **RV network** makes links that work while the phone is on a network that can reach the Hub; **LaunchControl Remote** makes links that work from anywhere the phone has internet (it needs Remote linked and active, see [Remote Access](#remote-access)). A VPN address such as Tailscale can be used as a **Custom address** once **Expert mode** is on (at the bottom of the LaunchControl Remote card). The choice is remembered on this browser only.
+3. **Try a command.** Type *turn on the kitchen lights* (using one of your own names) in **Try a command** and press **Test command**. The Hub's answer appears below it — exactly what Siri will say. Testing really sends the command to your RV; copying a link never does.
 
 ::: note "The API key"
-The key lets a Shortcut run commands without entering the Dashboard PIN, and it only works for this feature — it cannot change settings, read a backup or join a network. If a phone with your shortcuts is lost, press **New key**; every shortcut then needs its link updated. The key is not included in configuration backups.
+Links contain an API access key that lets a Shortcut run commands without entering the Dashboard PIN, and it only works for this feature — it cannot change settings, read a backup or join a network. It is kept masked under **API access key**: **Show**, **Copy key**, and **Replace key**. If a phone with your shortcuts is lost, press **Replace key**; every shortcut then needs its link updated. The key is not included in configuration backups.
 :::
 
 ## One shortcut for everything
 
 Build this one first. It takes whatever you say and lets the Hub work it out, so you never build a shortcut per device unless you want to.
 
-1. **Copy the voice link.** Under **One shortcut for everything**, press **Copy**.
-2. **Create a Shortcut.** Open the Shortcuts app, tap **+**, and add the action **Ask for Input**. Set the prompt to something like *What would you like?*
-3. **Add the web request.** Add the action **Get Contents of URL**. Paste the link into its URL field, then tap at the very end of the link and insert the **Provided Input** variable (it appears above the keyboard, or under *Select Variable*).
-4. **Show the answer.** Add the action **Show Result**. Its content should be the *Contents of URL* from the previous step. To hear the answer instead, use **Speak Text**.
+1. **Copy the voice link.** On the **Apple Shortcuts & Siri** tab, choose **Control by voice** and press **Copy shortcut link**. **View setup guide** shows these steps on the page.
+2. **Create a Shortcut.** Open the Shortcuts app, tap **+**, and add the action **Ask for Input**. Choose **Text** and set the prompt to something like *What should LaunchControl do?*
+3. **Add the web request.** Add the action **Get Contents of URL** and paste the link. Expand its options and leave **Method** set to **GET**. Under **Headers**, add the key `X-Say`; for its value choose **Select Variable** and pick **Ask for Input** (usually shown as *Provided Input*) near the top. Do not pick *Shortcut Input*.
+4. **Hear the answer.** Add the action **Speak Text** with **Contents of URL** from the previous step. To see the answer instead, use **Show Result**.
 5. **Name it.** Tap the name at the top and call it **Coach** (or anything you like). That name is the Siri phrase.
 
 Now say "Hey Siri, Coach". Siri asks what you would like; answer in plain words:
@@ -63,8 +63,8 @@ Filler words are ignored, so *please turn on the kitchen lights* and *kitchen li
 
 A phrase of its own is faster when you say it often: "Hey Siri, kitchen lights on" with no follow-up question. Each needs its own small Shortcut.
 
-1. **Pick the action.** In the **One-tap links** list, find the device and tap the action you want. Its link appears above the list. A number in the link (50 %, 72°, 30 A) can be edited before copying.
-2. **Copy it.** Press **Copy**.
+1. **Pick the action.** On the **Apple Shortcuts & Siri** tab, choose **Create a specific shortcut**. Find the **Device**, choose the **Action**, and enter a value where the action takes one (50 %, 72°, 30 A). The command is summarized below.
+2. **Copy it.** Press **Copy shortcut link**. This makes the link only; it does not operate the device. **Test command** tries it for real.
 3. **Create the Shortcut.** In Shortcuts, tap **+**, add **Get Contents of URL**, and paste the link. Add **Show Result** if you want to see the Hub's answer.
 4. **Name it with the phrase.** The Shortcut's name is what you say: *Kitchen Lights On*.
 
@@ -76,11 +76,11 @@ Shortcuts synced to the watch appear in its Shortcuts app and respond to "Hey Si
 
 ## Away from the coach
 
-A link works from anywhere the phone can reach the Hub. On the coach's Wi‑Fi that is the local address. From the road, use LaunchControl Remote: type the hub's remote address (shown on **Settings → Integrations → Remote Access**) into **Hub address in the links** before copying, and the links — and Siri — work wherever the phone has internet; the API key is accepted there too. A VPN such as Tailscale on the coach router works the same way with its address. The Hub does not need to be exposed to the internet — never forward its port.
+A link works from anywhere the phone can reach the Hub. On the coach's Wi‑Fi that is the local address. From the road, use LaunchControl Remote: under **Connection method** pick **LaunchControl Remote** before copying, and the links — and Siri — work wherever the phone has internet; the API key is accepted there too. A VPN such as Tailscale on the coach router works the same way with its address. The Hub does not need to be exposed to the internet — never forward its port.
 
 ## Other phones and apps
 
-Any tool that can open a web address can use the same links: Android's Shortcut Maker or Tasker, a browser bookmark, a Stream Deck, or a Home Assistant *rest_command*. The link is a plain GET request; the answer is one line of text, or JSON if you leave `fmt=text` off.
+Any tool that can open a web address can use the same links: Android's Shortcut Maker or Tasker, a browser bookmark, a Stream Deck, or a Home Assistant *rest_command*. The **API & custom integrations** tab builds request URLs for them — by device and action, or as a plain‑language command — with a text or JSON response, and **API documentation** lists every parameter. The link is a plain GET request; the answer is one line of text, or JSON if you leave `fmt=text` off.
 
 ::: warning "Names change the links"
 A link names the card. If you rename a card, a zone or a scene, update the shortcuts that use the old name — the Hub answers *I don't know a device called …* until you do.

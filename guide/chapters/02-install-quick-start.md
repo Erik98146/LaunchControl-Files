@@ -25,7 +25,7 @@ Only the Hub connects to the RV-C bus. Touch 8 and Mini displays communicate wit
 
 1. **Join the Hub network.** On your phone or tablet, open Wi-Fi settings and join LaunchControl-Hub-XXXX. The XXXX identifies your Hub. A new Hub has no hotspot password.
 2. **Open the setup page.** It should appear automatically, similar to a hotel Wi-Fi login. If it does not, open a browser and try [192.168.4.1](http://192.168.4.1) or [launchcontrol.local](http://launchcontrol.local)
-3. **Follow the on-screen setup steps.** If you want to access through your RV or home Wi-Fi, add that network under Settings > Network.
+3. **Follow the on-screen setup steps.** If you want to access through your RV or home Wi-Fi, add that network under Settings > Network. The last screen offers **Control your coach from anywhere**: set a Dashboard PIN, turn Remote on, and link the Hub to your account from your phone (see [Remote Access](#remote-access)). You can do this later from Settings → Integrations instead.
 4. **Bookmark the dashboard.** When you are on the same RV/home network as the Hub, use [http://launchcontrol.local](http://launchcontrol.local).
 
 ::: note "Wi-Fi compatibility"
@@ -110,6 +110,7 @@ The normal setup process is:
 5. **Confirm each device type.** Review the suggested card type for each device. LaunchControl usually selects the correct type automatically, but some switch devices may need to be identified as a water pump, Starlink power, or another specific function. The selected type determines the card’s appearance and controls.
 6. **Add additional devices.** Return to Add Devices and scan again. Add equipment that does not need to be operated for identification, such as batteries, inverters, tank sensors, and thermostats.
 7. **Arrange the dashboard.** Enter panel edit mode and move the cards into the desired positions. You can also adjust panel settings, add header information, or create additional panels.
+8. **Optional: turn on Remote.** Settings → Integrations → LaunchControl Remote → **Set up**, then link the Hub to your account with **Continue in browser** or by scanning the QR code. Every new Hub includes 90 days of LaunchControl Remote; see [Remote Access](#remote-access).
 
 ![LaunchControl interface screenshot](images/ch02-launchcontrol-interface-screenshot.png "")
 

@@ -94,8 +94,9 @@ To keep the found devices decluttered, some devices are hidden by default. If yo
 If your coach has a Victron GX device such as a Cerbo GX, LaunchControl can read and control supported Victron equipment including MultiPlus inverter/chargers, battery monitors, solar chargers, GPS, and temperature sensors. This is always the best way to connect to Victron equipment and any third-party devices that use MQTT.
 
 1. **Enable MQTT services on the Cerbo GX device: Settings → Integrations → MQTT Access On**
-2. **Open Settings → Integrations.** Enable the MQTT broker and enter the Cerbo IP address and port (1883) then save. A user name and password is not required for this integration. Scroll down and enable the Victron GX integration. Auto-discover the Portal ID and save. Confirm the MQTT Broker and Victron GX integrations both show connected.
-3. **Open Devices and run a Victron scan.** Add the discovered equipment. LaunchControl will create matching dashboard cards.
+2. **Connect MQTT to the Cerbo.** Open **Settings → Integrations → MQTT** and press **Set up**. Turn on MQTT, choose **Connect to another broker**, enter the Cerbo's IP address as the **Server address** (port 1883), and press **Save changes**. A username and password are not required for this integration. The card shows **Connected** once the Hub reaches the Cerbo.
+3. **Turn on Victron GX.** Open the **Victron GX** card on the same page. Its checklist shows whether MQTT is ready; if not, **Configure MQTT** takes you straight to the MQTT card. Turn on Victron GX, press **Find Victron GX** to fill in the Portal ID (or **Enter manually** — it is on the GX under Settings → VRM online portal → VRM Portal ID), and press **Save changes**.
+4. **Add the equipment.** Press **Add Victron devices** on the Victron GX card, or open Devices and run a Victron scan. Add the discovered equipment. LaunchControl will create matching dashboard cards.
 
 ![Devices added after a Victron scan](images/ch03-devices-added-after-a-victron-scan.png)
 
@@ -107,12 +108,14 @@ The hub always needs to know where to find the Cerbo GX. The Cerbo GX can be acc
 
 ## The Hub's own MQTT broker
 
-Under **Settings → Integrations → MQTT Broker** the **Broker** setting has two choices:
+Under **Settings → Integrations → MQTT** the **Broker** choice has two options:
 
-- **External —** the Hub connects to a broker somewhere else: a Cerbo GX, a Home Assistant broker, or any other. This is the Victron setup above.
-- **Internal —** the Hub runs the broker itself. Use this on a coach that has no Cerbo. The card shows the address your devices should use, the Hub's IP address on port 1883, and how many devices are connected. A username and password are optional; leave them blank and every device on the coach network can connect.
+- **Connect to another broker —** the Hub connects to a broker somewhere else: a Cerbo GX, a Home Assistant broker, or any other. This is the Victron setup above.
+- **Use Hub's built-in broker —** the Hub runs the broker itself. Use this on a coach that has no Cerbo. The card shows the **Broker address** your devices should use (the Hub's IP address on port 1883) and how many **clients** are connected. The username and password are optional: leave the username blank and any device on the coach network can connect; enter one and devices must sign in with it and the password.
 
-Shelly, ESPHome and other MQTT devices are pointed at that address in their own settings. Home Assistant, Node-RED or MQTT Explorer can connect to it too and will see the Hub's published fields. The Hub uses one broker at a time: with Internal selected, the Victron GX integration is unavailable, because it reads the Cerbo's broker.
+Shelly, ESPHome and other MQTT devices are pointed at that address in their own settings. Home Assistant, Node-RED or MQTT Explorer can connect to it too and will see the Hub's published fields. The Hub uses one broker at a time: with the built-in broker selected, the Victron GX integration is unavailable, because it reads the Cerbo's broker — the Victron GX card then says **MQTT connection required**.
+
+**Publish data to MQTT** has three independent options — **RV-C data**, **Victron data** and **Bluetooth sensor data** — and turning one on never starts the others. RV-C data covers the fields marked "MQTT" on the Devices page. The topic prefix is under **Advanced settings**. Changes take effect when you press **Save changes**; the card shows **Unsaved changes** until you do.
 
 ::: note "Coming later"
 Automatic discovery of Shelly and ESPHome devices on the Devices page, with cards created for them, is planned. Until then, add them as Custom MQTT devices (below).
@@ -125,10 +128,10 @@ The Hub can listen directly to supported Bluetooth broadcasts without normal Blu
 - **Victron Instant Readout —** SmartShunts, SmartSolar chargers, and similar supported devices can broadcast readings directly, but a Cerbo GX is preferred if available.
 - **Ruuvi tags —** battery-powered temperature and humidity sensors suitable for locations such as a refrigerator or outdoor reading.  
 
-Turn Bluetooth on in Settings → Integrations, restart the Hub when prompted, then add discovered sensors from the Devices page.
+Open **Settings → Integrations → Bluetooth**, choose **On** and press **Save and restart**. The Hub restarts — the dashboard and displays pause for about 30 seconds and reconnect by themselves — and the card confirms Bluetooth is on. Then press **Add Bluetooth devices** (or use the Devices page) to add the sensors you want; the Hub only reads devices you add.
 
 ::: note "Why a restart?"
-Bluetooth is off by default. Turning it on or off changes how Hub memory is allocated, so the change takes effect after a restart.
+Bluetooth is off by default. Turning it on or off changes how Hub memory is allocated, so the change takes effect after a restart. Saving does the restart for you.
 :::
 
 ## Starlink
@@ -137,7 +140,18 @@ The Starlink card can show ping success when integration is activated, which is 
 
 ## GL.iNet travel router
 
-With a supported GL.iNet router such as the Beryl or Slate family, the Travel Router card can show the active uplink, signal strength, and internet reachability. Tap the card to scan for and join campground or home Wi-Fi without opening the router administration page. Enable the integrations and enter the router admin password once under Settings → Integrations.
+With a supported GL.iNet router such as the Beryl or Slate family, the Travel Router card can show the active uplink, signal strength, and internet reachability. Tap the card to scan for and join campground or home Wi-Fi without opening the router administration page.
+
+To set it up, open **Settings → Integrations → GL.iNet travel router**, turn the integration on and press **Find router**. Enter the **Router admin password** — the one you use to sign in to the router's admin page — and press **Save changes**. The card checks the password and shows **Connected** with the router model, then offers **Add router card**. If the router is not the one the Hub connects through, press **Enter manually** and type its address under **Advanced settings**.
+
+## Weather
+
+The Weather card shows current conditions and a five-day forecast, with the next hours on a tap; the same weather can also sit in a panel's header. Open **Settings → Integrations → Weather**, turn weather on and pick a **Weather location**:
+
+- **Use GPS —** follows the coach, using a Victron GX device that has GPS. If GPS stops reporting, the Hub keeps the last position until it restarts, then a location you chose earlier.
+- **Choose a location —** type a city or ZIP code, press **Search**, and pick the right place from the results. The card shows what you selected and what is saved, so you can tell them apart.
+
+Press **Save changes**; the card then shows **Forecast ready** and offers **Add weather card**. **Refresh now** fetches a new forecast at once. The forecast refreshes every 30 minutes, and again once the coach has moved 20 miles. Forecast data by Open-Meteo.com; no account or key is needed.
 
 ## Custom MQTT devices
 

@@ -18,11 +18,15 @@ Touch 8 and Mini displays connect to the Hub hotspot. If you change its password
 
 ## API key
 
-Shortcuts, Siri and other integrations (see the Shortcuts, Siri & Voice Control chapter) use an **API key** instead of the Dashboard PIN. It is shown under **Settings → Integrations → Shortcuts & Siri** and works for the control address only: a key that leaks can operate named controls, but cannot change settings, read a backup or join a network. Press **New key** to replace it; every shortcut then needs its link updated. The key is not included in configuration backups.
+Shortcuts, Siri and other integrations (see the Shortcuts, Siri & Voice Control chapter) use an **API key** instead of the Dashboard PIN. It is kept masked under **Settings → Integrations → Shortcuts & API → API access key** and works for the control address only: a key that leaks can operate named controls, but cannot change settings, read a backup or join a network. Press **Replace key** to replace it; every shortcut then needs its link updated. The key is not included in configuration backups.
 
 ## Remote access
 
 LaunchControl Remote (see [Remote Access](#remote-access)) makes the dashboard reachable from the internet through LaunchControl's service, never by opening a port on the coach. It cannot be enabled without a Dashboard PIN, and every remote browser is asked for that PIN as it would be on an untrusted network — your account proves who you are to LaunchControl, the PIN proves it to the Hub. The Hub treats a connection arriving through Remote as untrusted no matter which network it is on. Share a hub only with people you would hand the PIN to; the owner can remove a shared user at any time, and **Unlink** cuts the hub off from the account entirely.
+
+## Remote support
+
+LaunchControl staff cannot open your hub through Remote on their own. You open a 24-hour support window on the hub's page and give them its PIN; they must enter it to get in, and the hub shows a yellow border while the window is open and a red one while someone is connected (see [Remote Access](#remote-access)). Turn it off at any time; it closes by itself after 24 hours.
 
 ## Locked out?
 

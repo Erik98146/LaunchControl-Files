@@ -1,3 +1,24 @@
+### v0.8.1
+10-5-2026
+
+##### Features:
+- LaunchControl Remote: Remote access over the cloud. Open your coach's dashboard from anywhere, in any browser, with no app, no router settings and no port forwarding. Turn it on under Settings → Integrations → Remote Access and the same dashboard is available remotely. Every new hub includes 90 days free; after that $6.99 a month or $69 a year, managed from the portal. Includes sharing with other people. LaunchControl support can be let in for 24 hours with a PIN you hold, and for safety awnings and slides cannot be moved remotely.
+- New dashboard layout and management: Dashboards can now have sub-panels. Easier dashboard navigation: addition of an All panels drawer, separate sub-panel chevrons, and a simpler panel manager with editing, moving, reordering and undo. Up to 5 sub-panels per main panel.
+- Improved weather cards: 
+    - Added an 8x1 weather card with optional no background.
+    - Improved weather forecasting by switching to the European ECMWF model.
+    - Improved weather card layouts and fonts.
+    - Smaller variants have a 5-day forecast pop-out option.
+    - A weather panel is now available in the header.
+- Shortcuts & API improvements: With guided voice and one-tap shortcut setup, a searchable device picker, safe command testing, and controls for the API access key.
+- Settings menus have been revised with a less busy interface.
+
+#### Fixes:
+- Added missing weather card previews
+- Cards now keep working when a coach gives its RV-C controllers new bus addresses after a power cycle: lights, switches, loads, shades and door locks show their real state again, and "did not take effect" no longer appears for commands that worked.
+
+------------------------------------------
+
 ### v0.7.40
 10-1-2026
 
@@ -9,7 +30,6 @@
 - Syncronize changes across devices: Editing a dashboard will now auto-update all other connected displays.
 - Alerts you have already read now show in gray. A History button keeps every alert since start-up even after Delete all.
 - Macro improvements: Macros can now set a thermostat to Fan Only and include timed waits between steps.
-
 
 ------------------------------------------
 

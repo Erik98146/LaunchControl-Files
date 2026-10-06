@@ -6,7 +6,7 @@ Automations let the coach react to changing conditions. Macros group several act
 
 ## The Automations page
 
-Settings → Automations lists every automation rule and macro with its status, the alert channels it uses, whether it has a dashboard card, and an enable switch (or a **Run** button for a macro). Click a row to edit it, or use **New Automation** / **New Macro**. The Push Alerts and SMS Alerts settings sit below the list.
+Settings → Automations lists every automation rule and macro with its status, the alert channels it uses, whether it has a dashboard card, and an enable switch (or a **Run** button for a macro). Click a row to edit it, or use **New Automation** / **New Macro**. The notification services — Phone notifications, Text messages, Email and Notification limits — sit below the list under **Notifications**.
 
 ## Automation rules
 

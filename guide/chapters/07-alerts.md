@@ -20,7 +20,7 @@ The Hub watches itself and raises an alert when something has been wrong for a w
 
 ## Update notices
 
-Once a day, when a browser is open on the dashboard or Settings and has internet access, the Hub checks for a newer firmware release. If one is available, an **Update available** alert appears; delete it once you have seen it, and it does not come back for the same release. Install from Settings → System → Online Update.
+Once a day, when a browser is open on the dashboard or Settings and has internet access, the Hub checks for a newer firmware release. If one is available, an **Update available** alert appears; delete it once you have seen it, and it does not come back for the same release. Install from Settings → System → Software updates.
 
 ## How automation alerts fit together
 
@@ -36,10 +36,10 @@ On-screen needs nothing else, and neither does E-mail (Remote): with LaunchContr
 
 This uses **ntfy**, a free notification service with an app for iPhone and Android.
 
-1. **Turn it on.** Settings → Automations → **Push Alerts** → Enabled → **Save**. The Hub generates a private topic name for you.
+1. **Turn it on.** Settings → Automations → **Phone notifications** → **Set up** → **Turn on phone notifications** → **Save changes**. The Hub generates a private topic name for you.
 2. **Install the ntfy app** from the App Store or Google Play.
 3. **Subscribe to your topic.** Scan the QR code on the Settings page with your phone, or open the app, tap **+**, and type the topic exactly as shown.
-4. **Send test.** The notification should arrive in a second or two.
+4. **Send test notification.** It should arrive in a second or two.
 
 Repeat steps 2–4 on every phone that should get alerts.
 
@@ -49,8 +49,8 @@ This uses **Textbelt**, where you buy a block of messages up front.
 
 1. **Buy credits.** Open [textbelt.com/purchase](https://textbelt.com/purchase/) and choose **generate a new API key**. Choose a pack, and pay. Packs start around $3 for 50 messages. **SAVE THE KEY. It cannot be retrieved if lost.**
 2. **Set a sender name.** On the Textbelt Account page, fill in the sender name. **Textbelt will not send anything until you do**, and it is the step almost everyone misses.
-3. **Paste the key** into Settings → Automations → **SMS Alerts**, add your 10-digit phone number, turn **Enabled** on, and press **Save**.
-4. **Send test.** This sends a real message and uses one credit.
+3. **Paste the key** into Settings → Automations → **Text messages** → **API key**, add your 10-digit phone number, turn on **Turn on text messages**, and press **Save changes**.
+4. **Send test text.** This sends a real message and uses one credit.
 
 ::: note "Watch the credit count"
 The Settings card shows how many credits are left, checked after each message. The Hub will send you a notification when they run low — by push, never by text, since that would spend one of the last credits. Credits expire after a year with nothing sent.
