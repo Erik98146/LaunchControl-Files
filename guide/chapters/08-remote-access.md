@@ -42,7 +42,7 @@ Siri, Shortcuts and other controllers work from anywhere through Remote too: und
 
 Each hub on **My hubs** has a **Status** button next to **Open dashboard** and **Manage Hub**. It opens a one‑page summary of the coach that loads in a second and works **even when the Hub is offline**. It then shows the last report the Hub sent, and says how long ago that was.
 
-- **Batteries:** state of charge and voltage of each battery card on your dashboard, and the start battery if an Alternator card shows it.
+- **Power:** state of charge, voltage and net power of each battery card on your dashboard, the start battery if an Alternator card shows it, solar power, whether the inverter is on (with its power), charging only or off, and whether shore power is connected (with the power it supplies) or disconnected.
 - **Tanks:** level of each tank card, the water remaining when the tank has a fill table, and a **Warning** or **Alarm** tag when the tank's alarm is set off.
 - **Temperatures:** room temperature from each thermostat, temperature sensors, and the outside temperature from a Weather card.
 - **Alerts:** the Hub's recent alerts, with problems that are still active listed first. Tap the arrow on an alert to read it.
