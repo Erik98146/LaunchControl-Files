@@ -795,9 +795,7 @@ A binding links a card to the device information it displays or controls. Versio
 <section class="level2"><h2 id="how-it-works">8.1 How it works</h2>
 <p>You connect the Hub to the internet, and visit the portal at remote.launchcontrol.tech. Everything local keeps working whether or not Remote is on.</p>
 <p><strong>Every new Hub includes 90 days of Remote free.</strong> The trial starts the first time the Hub is linked to an account. After that it is <strong>$6.99 a month or $69 a year</strong>, cancel any time.</p>
-<p>::: Technical Detail
-The Hub opens one outgoing, encrypted connection to LaunchControl's service and keeps it open. When you sign in at <strong>remote.launchcontrol.tech</strong>, your browser talks to the Hub through that connection. Nothing on the coach is exposed to the internet, and the Hub works behind any router, hotspot or Starlink exactly as it does at home.
-:::</p>
+<details class="lc-callout lc-callout--technical"><summary>Technical detail (optional)</summary><p>The Hub opens one outgoing, encrypted connection to LaunchControl's service and keeps it open. When you sign in at <strong>remote.launchcontrol.tech</strong>, your browser talks to the Hub through that connection. Nothing on the coach is exposed to the internet, and the Hub works behind any router, hotspot or Starlink exactly as it does at home.</p></details>
 </section>
 <section class="level2"><h2 id="turn-it-on">8.2 Turn it on</h2>
 <p>Remote needs three things: the Hub on a network with internet access, the Hub's clock set, and a <strong>Dashboard PIN</strong> set.</p>
@@ -837,7 +835,7 @@ The Hub opens one outgoing, encrypted connection to LaunchControl's service and 
 <details class="lc-callout lc-callout--technical"><summary>Technical detail (optional)</summary><p>The Hub holds one outbound WebSocket over TLS (port 443) to the relay and carries the dashboard's web requests and its live update socket inside it, so no inbound port exists on the coach side. The relay checks that the signed‑in account owns or shares the hub and that access is running, then hands each request to the Hub, where the Dashboard PIN applies as on any untrusted network. The Shortcuts API key is accepted on the remote address for its control address only. The Hub identifies itself by its serial, its own secret, and a factory token derived from its license, so a serial cannot be claimed by a different device. The relay address can be overridden under <strong>Advanced settings</strong> on the LaunchControl Remote card, shown when <strong>Expert mode</strong> at the bottom of that card is on, for bench use; leave it alone otherwise.</p></details>
 </section>
 <section class="level2"><h2 id="free-remote-access">8.8 Free remote access</h2>
-<p>For those that are technically inclined, Tailscale, runniing on a travel router, or a similar VPN, can be used for remote access with no subscription fee.</p>
+<p>For those that are technically inclined, Tailscale, running on a travel router, or a similar VPN, can be used for remote access with no subscription fee.</p>
 </section>
 <a class="lc-back-to-top" href="#top">Back to top ↑</a></section>
 <section class="level1"><div class="lc-chapter-label">Chapter 09</div><h1 id="voice-control-shortcuts-siri-and-other-controllers-api">9. Voice Control, Shortcuts, Siri and Other Controllers (API)</h1>

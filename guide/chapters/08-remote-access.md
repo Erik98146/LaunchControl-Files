@@ -10,7 +10,7 @@ You connect the Hub to the internet, and visit the portal at remote.launchcontro
 
 **Every new Hub includes 90 days of Remote free.** The trial starts the first time the Hub is linked to an account. After that it is **$6.99 a month or $69 a year**, cancel any time.
 
-::: Technical Detail
+::: technical
 The Hub opens one outgoing, encrypted connection to LaunchControl's service and keeps it open. When you sign in at **remote.launchcontrol.tech**, your browser talks to the Hub through that connection. Nothing on the coach is exposed to the internet, and the Hub works behind any router, hotspot or Starlink exactly as it does at home.
 :::
 
@@ -74,4 +74,4 @@ The Hub holds one outbound WebSocket over TLS (port 443) to the relay and carrie
 
 ## Free remote access
 
-For those that are technically inclined, Tailscale, runniing on a travel router, or a similar VPN, can be used for remote access with no subscription fee.
+For those that are technically inclined, Tailscale, running on a travel router, or a similar VPN, can be used for remote access with no subscription fee.
