@@ -1,8 +1,9 @@
-### v0.8.1
+### v0.8.2
 10-5-2026
 
 ##### Features:
 - LaunchControl Remote: Remote access over the cloud. Open your coach's dashboard from anywhere, in any browser, with no app, no router settings and no port forwarding. Turn it on under Settings → Integrations → Remote Access and the same dashboard is available remotely. Every new hub includes 90 days free; after that $6.99 a month or $69 a year, managed from the portal. Includes sharing with other people. LaunchControl support can be let in for 24 hours with a PIN you hold, and for safety awnings and slides cannot be moved remotely.
+- Remote includes a status page with basic coach status and location history if Cerbo-GPS equipped.
 - New dashboard layout and management: Dashboards can now have sub-panels. Easier dashboard navigation: addition of an All panels drawer, separate sub-panel chevrons, and a simpler panel manager with editing, moving, reordering and undo. Up to 5 sub-panels per main panel.
 - Improved weather cards: 
     - Added an 8x1 weather card with optional no background.

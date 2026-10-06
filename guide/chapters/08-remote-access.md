@@ -38,6 +38,25 @@ If the Hub is not connected to Remote when you open the remote address, the page
 
 Siri, Shortcuts and other controllers work from anywhere through Remote too: under Shortcuts & API pick **LaunchControl Remote** as the **Connection method** before copying a link (see [Voice Control, Shortcuts, Siri and Other Controllers (API)](#voice-control-shortcuts-siri-and-other-controllers-api)).
 
+## Status page
+
+Each hub on **My hubs** has a **Status** button next to **Open dashboard** and **Manage Hub**. It opens a one‑page summary of the coach that loads in a second and works **even when the Hub is offline**. It then shows the last report the Hub sent, and says how long ago that was.
+
+- **Batteries:** state of charge and voltage of each battery card on your dashboard, and the start battery if an Alternator card shows it.
+- **Tanks:** level of each tank card, the water remaining when the tank has a fill table, and a **Warning** or **Alarm** tag when the tank's alarm is set off.
+- **Temperatures:** room temperature from each thermostat, temperature sensors, and the outside temperature from a Weather card.
+- **Alerts:** the Hub's recent alerts, with problems that are still active listed first. Tap the arrow on an alert to read it.
+- **Location:** with a GPS on the Hub (Victron GPS), its position with an **Open in Maps** link, its speed and its elevation.
+- **Map:** where the coach has been over the last 30 days. Drag and pinch to zoom. The green dot is the start of the 30 days, the red‑ringed dot is the coach now, and blue dots are places it stayed two hours or longer; tap one for the dates.
+
+The rows are your own dashboard cards, under the names you gave them, showing the same numbers the dashboard shows. While the page is open it refreshes every 30 seconds.
+
+Two switches on the Hub control what is sent, under **Settings → Integrations → LaunchControl Remote**: **Share Hub status** and **Include location history**. Both are on unless you turn them off. Turning either off deletes what LaunchControl Remote holds for it. The owner can also delete the location history from the Status page. People you share the hub with see the Status page too, map included.
+
+::: technical
+The Hub sends a short report every 15 minutes, and more often while someone has the Status page open. Location points are recorded on the Hub itself, so a drive with no internet still appears on the map once the Hub reconnects. LaunchControl Remote keeps 30 days of location history and deletes older points automatically. After remote access ends, the last report stays viewable for 14 days.
+:::
+
 ## Your plan
 
 Open **remote.launchcontrol.tech**, sign in and choose the hub. Its page shows the current access and when it ends.
