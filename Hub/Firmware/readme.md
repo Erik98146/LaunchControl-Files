@@ -7,8 +7,7 @@
 - Phones can have their own dashboard card order by re-arranging on the phone.
 - New Fan card: on/off for exhaust fans, and Open / Close for vent motors, with a fan icon on the dashboard and the Touch display.
 - Devices page: Bulk create cards for the devices you select.
-- Panel Edit now
-opens scrolled to your cards.
+- Panel Edit now opens scrolled to your cards.
 
 #### Fixed:
 - Door Lock cards with a single relay now hold the lock, matching the coach's panel.
