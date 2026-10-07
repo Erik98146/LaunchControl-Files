@@ -1,3 +1,26 @@
+### v0.8.15
+10-6-2026
+
+##### Features:
+- Remote Access now uses an on/off switch, matching the other integrations.
+- Shelly Gen2/Gen3/Gen4 relays connected to the Hub's MQTT broker are found automatically under Devices → Add devices, and get a dashboard switch card in one tap. The input can also drive automations.
+- Phones can have their own dashboard card order by re-arranging on the phone.
+- New Fan card: on/off for exhaust fans, and Open / Close for vent motors, with a fan icon on the dashboard and the Touch display.
+- Devices page: Bulk create cards for the devices you select.
+- Panel Edit now
+opens scrolled to your cards.
+
+#### Fixed:
+- Door Lock cards with a single relay now hold the lock, matching the coach's panel.
+- A lock whose position is unknown now asks whether to lock or unlock rather than toggle.
+- On phones, dashboard cards now keep their order instead of rearranging to fill gaps.
+- Restarts caused by updates or errors no longer count toward the power-cycle PIN reset.
+- After a firmware update, the Hub now reports exactly what happened: updated, still waiting to restart, or rolled back.
+- Improvements to debug file and crash dump file for debugging.
+- Added missing weather card previews
+
+-------------------------------
+
 ### v0.8.2
 10-5-2026
 
