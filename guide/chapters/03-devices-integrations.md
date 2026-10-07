@@ -117,9 +117,22 @@ Shelly, ESPHome and other MQTT devices are pointed at that address in their own 
 
 **Publish data to MQTT** has three independent options — **RV-C data**, **Victron data** and **Bluetooth sensor data** — and turning one on never starts the others. RV-C data covers the fields marked "MQTT" on the Devices page. The topic prefix is under **Advanced settings**. Changes take effect when you press **Save changes**; the card shows **Unsaved changes** until you do.
 
-::: note "Coming later"
-Automatic discovery of Shelly and ESPHome devices on the Devices page, with cards created for them, is planned. Until then, add them as Custom MQTT devices (below).
+## Shelly devices
+
+Shelly relays and inputs (Gen2, Gen3 and Gen4 models such as the Plus, Pro and Gen4 lines) connect to the Hub over MQTT and are found automatically: there are no topics to type. The short version:
+
+1. **Turn on the Hub's broker.** In **Settings → Integrations → MQTT**, turn on MQTT, choose **Use Hub's built-in broker** and press **Save changes**. Note the **Broker address** the card shows.
+2. **Point the Shelly at the Hub.** On the Shelly's own web page, open **Settings → MQTT**, turn MQTT on, enter the Hub's broker address as the server, and turn on **RPC status notifications** and **Generic status update**. Leave the client ID / prefix at its default.
+3. **Add it.** On the Devices page choose **Add devices → Scan for Shelly devices**. Each relay and input appears within a minute; press **Add** for the ones you want.
+4. **Create cards.** Close the list and accept **Create cards**. A relay becomes a switch card (with its wired switch input shown under the icon when it has one); an input-only device such as a Plus i4 becomes a card that shows On or Off.
+
+Shelly devices work everywhere other devices do: on the Touch 8, in automations (a Shelly input can trigger a rule, and **Switch a card** can turn a Shelly relay on or off), and in backups. An input set to **Button** mode in the Shelly app has no on/off state, so it does not get a card; instead it can run a macro on a single, double, triple or long press.
+
+::: note "Full setup"
+Step-by-step settings, button presses, automations and troubleshooting are in [Appendix A: Shelly Setup](#shelly-setup).
 :::
+
+ESPHome discovery is planned. Until then, add ESPHome and other MQTT devices as Custom MQTT devices (below).
 
 ## Bluetooth sensors
 

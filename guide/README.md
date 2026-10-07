@@ -41,6 +41,8 @@ One or two sentences shown large under the chapter title.
 
 To **add a chapter**, create a new file such as `07b-the-touch-8-display.md` or renumber the
 prefixes; the table of contents and chapter numbers follow the file order automatically.
+**Appendices** are files named `A-name.md`, `B-name.md` and so on. They come after every
+chapter, are labelled "Appendix A" and number their sections A.1, A.2.
 To **remove a chapter**, delete its file. Links to a chapter use its title, lower-cased with
 hyphens: `[see Security](#security)`.
 

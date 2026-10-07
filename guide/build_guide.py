@@ -291,7 +291,10 @@ def parse_chapter(text, where):
 def chapter_html(num, text, images, where):
     title, intro, sections = parse_chapter(text, where)
     cid = slugify(title)
-    h = [f'<section class="level1"><div class="lc-chapter-label">Chapter {num:02d}</div>'
+    # An appendix (a letter, from an A-*.md file) is labelled "Appendix A" and
+    # numbers its sections A.1, A.2; a chapter keeps "Chapter 02" and 2.1.
+    label = f'Appendix {num}' if isinstance(num, str) else f'Chapter {num:02d}'
+    h = [f'<section class="level1"><div class="lc-chapter-label">{label}</div>'
          f'<h1 id="{cid}">{num}. {inline_md(title)}</h1>']
     h.append(render_body(intro, images, where))
     for n2, (t2, body2, subs) in enumerate(sections, 1):
@@ -396,15 +399,25 @@ def main():
     g = cfg['guide']
     images = Images(cfg, webp=not args.no_webp)
 
-    files = sorted((HERE / 'chapters').glob('*.md'))
+    # Chapters are NN-*.md, numbered in order; appendices are A-*.md, B-*.md
+    # ..., placed after every chapter and lettered by their own prefix.
+    allfiles = sorted((HERE / 'chapters').glob('*.md'))
+    files = [f for f in allfiles if f.name[:1].isdigit()]
+    appendices = [f for f in allfiles if len(f.name) > 2 and f.name[0].isalpha()
+                  and f.name[0].isupper() and f.name[1] == '-']
     if not files:
         sys.exit('no chapter files in guide/chapters/')
+    for f in allfiles:
+        if f not in files and f not in appendices:
+            warn(f'{f.name}: not a chapter (NN-name.md) or an appendix (A-name.md); skipped')
     toc, bodies = [], []
-    for num, f in enumerate(files, 1):
+    numbered = list(enumerate(files, 1)) + [(f.name[0], f) for f in appendices]
+    for num, f in numbered:
         cid, title, body = chapter_html(num, f.read_text(encoding='utf-8'), images, f.name)
-        toc.append(f'<a class="lc-toc__link" href="#{cid}"><span>{num:02d}</span>{inline_md(title)}</a>')
+        tag = num if isinstance(num, str) else f'{num:02d}'
+        toc.append(f'<a class="lc-toc__link" href="#{cid}"><span>{tag}</span>{inline_md(title)}</a>')
         bodies.append(body)
-        print(f'  chapter {num:02d}  {title}')
+        print(f'  {"appendix" if isinstance(num, str) else "chapter "} {tag}  {title}')
 
     sh = cfg['start_here'] if cfg.has_section('start_here') else {}
     start_here = ''

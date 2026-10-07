@@ -186,7 +186,8 @@ tbody tr:last-child td { border-bottom: 0; }
 <a class="lc-toc__link" href="#software-updates"><span>15</span>Software Updates</a>
 <a class="lc-toc__link" href="#resetting-things"><span>16</span>Resetting Things</a>
 <a class="lc-toc__link" href="#troubleshooting"><span>17</span>Troubleshooting</a>
-<a class="lc-toc__link" href="#technical-reference"><span>18</span>Technical Reference</a></nav>
+<a class="lc-toc__link" href="#technical-reference"><span>18</span>Technical Reference</a>
+<a class="lc-toc__link" href="#shelly-setup"><span>A</span>Shelly Setup</a></nav>
     </aside>
     <main class="lc-manual__content" id="manual-content">
 <aside class="lc-start-here"><div class="lc-start-here__badge">Start here</div><div><h2>Installing a new Hub?</h2><p>Go directly to Chapter 2. If a pre-built floor plan exists for your coach, the complete setup is usually: connect the Hub, connect the network, verify RV-C data, load the floor plan, and review the dashboard.</p><a href="#install-quick-start">Open Install &amp; Quick Start →</a></div></aside>
@@ -388,9 +389,18 @@ A binding links a card to the device information it displays or controls. Versio
 </ul>
 <p>Shelly, ESPHome and other MQTT devices are pointed at that address in their own settings. Home Assistant, Node-RED or MQTT Explorer can connect to it too and will see the Hub's published fields. The Hub uses one broker at a time: with the built-in broker selected, the Victron GX integration is unavailable, because it reads the Cerbo's broker — the Victron GX card then says <strong>MQTT connection required</strong>.</p>
 <p><strong>Publish data to MQTT</strong> has three independent options — <strong>RV-C data</strong>, <strong>Victron data</strong> and <strong>Bluetooth sensor data</strong> — and turning one on never starts the others. RV-C data covers the fields marked "MQTT" on the Devices page. The topic prefix is under <strong>Advanced settings</strong>. Changes take effect when you press <strong>Save changes</strong>; the card shows <strong>Unsaved changes</strong> until you do.</p>
-<aside class="lc-callout lc-callout--note"><div class="lc-callout__title">Coming later</div><p>Automatic discovery of Shelly and ESPHome devices on the Devices page, with cards created for them, is planned. Until then, add them as Custom MQTT devices (below).</p></aside>
 </section>
-<section class="level2"><h2 id="bluetooth-sensors">3.4 Bluetooth sensors</h2>
+<section class="level2"><h2 id="shelly-devices">3.4 Shelly devices</h2>
+<p>Shelly relays and inputs (Gen2, Gen3 and Gen4 models such as the Plus, Pro and Gen4 lines) connect to the Hub over MQTT and are found automatically: there are no topics to type. The short version:</p>
+<p class="lc-step"><span class="lc-step__number">1</span><span class="lc-step__content"><strong class="lc-step__title">Turn on the Hub's broker.</strong> In <strong>Settings → Integrations → MQTT</strong>, turn on MQTT, choose <strong>Use Hub's built-in broker</strong> and press <strong>Save changes</strong>. Note the <strong>Broker address</strong> the card shows.</span></p>
+<p class="lc-step"><span class="lc-step__number">2</span><span class="lc-step__content"><strong class="lc-step__title">Point the Shelly at the Hub.</strong> On the Shelly's own web page, open <strong>Settings → MQTT</strong>, turn MQTT on, enter the Hub's broker address as the server, and turn on <strong>RPC status notifications</strong> and <strong>Generic status update</strong>. Leave the client ID / prefix at its default.</span></p>
+<p class="lc-step"><span class="lc-step__number">3</span><span class="lc-step__content"><strong class="lc-step__title">Add it.</strong> On the Devices page choose <strong>Add devices → Scan for Shelly devices</strong>. Each relay and input appears within a minute; press <strong>Add</strong> for the ones you want.</span></p>
+<p class="lc-step"><span class="lc-step__number">4</span><span class="lc-step__content"><strong class="lc-step__title">Create cards.</strong> Close the list and accept <strong>Create cards</strong>. A relay becomes a switch card (with its wired switch input shown under the icon when it has one); an input-only device such as a Plus i4 becomes a card that shows On or Off.</span></p>
+<p>Shelly devices work everywhere other devices do: on the Touch 8, in automations (a Shelly input can trigger a rule, and <strong>Switch a card</strong> can turn a Shelly relay on or off), and in backups. An input set to <strong>Button</strong> mode in the Shelly app has no on/off state, so it does not get a card; instead it can run a macro on a single, double, triple or long press.</p>
+<aside class="lc-callout lc-callout--note"><div class="lc-callout__title">Full setup</div><p>Step-by-step settings, button presses, automations and troubleshooting are in <a href="#shelly-setup">Appendix A: Shelly Setup</a>.</p></aside>
+<p>ESPHome discovery is planned. Until then, add ESPHome and other MQTT devices as Custom MQTT devices (below).</p>
+</section>
+<section class="level2"><h2 id="bluetooth-sensors">3.5 Bluetooth sensors</h2>
 <p>The Hub can listen directly to supported Bluetooth broadcasts without normal Bluetooth pairing:</p>
 <ul>
 <li><strong>Victron Instant Readout —</strong> SmartShunts, SmartSolar chargers, and similar supported devices can broadcast readings directly, but a Cerbo GX is preferred if available.</li>
@@ -399,14 +409,14 @@ A binding links a card to the device information it displays or controls. Versio
 <p>Open <strong>Settings → Integrations → Bluetooth</strong>, choose <strong>On</strong> and press <strong>Save and restart</strong>. The Hub restarts — the dashboard and displays pause for about 30 seconds and reconnect by themselves — and the card confirms Bluetooth is on. Then press <strong>Add Bluetooth devices</strong> (or use the Devices page) to add the sensors you want; the Hub only reads devices you add.</p>
 <aside class="lc-callout lc-callout--note"><div class="lc-callout__title">Why a restart?</div><p>Bluetooth is off by default. Turning it on or off changes how Hub memory is allocated, so the change takes effect after a restart. Saving does the restart for you.</p></aside>
 </section>
-<section class="level2"><h2 id="starlink">3.5 Starlink</h2>
+<section class="level2"><h2 id="starlink">3.6 Starlink</h2>
 <p>The Starlink card can show ping success when integration is activated, which is the best indicator of reliable internet. Enable Starlink in Settings → Integrations. If the card is also bound to a switched power circuit, its toggle can control dish power.</p>
 </section>
-<section class="level2"><h2 id="gl.inet-travel-router">3.6 GL.iNet travel router</h2>
+<section class="level2"><h2 id="gl.inet-travel-router">3.7 GL.iNet travel router</h2>
 <p>With a supported GL.iNet router such as the Beryl or Slate family, the Travel Router card can show the active uplink, signal strength, and internet reachability. Tap the card to scan for and join campground or home Wi-Fi without opening the router administration page.</p>
 <p>To set it up, open <strong>Settings → Integrations → GL.iNet travel router</strong>, turn the integration on and press <strong>Find router</strong>. Enter the <strong>Router admin password</strong> — the one you use to sign in to the router's admin page — and press <strong>Save changes</strong>. The card checks the password and shows <strong>Connected</strong> with the router model, then offers <strong>Add router card</strong>. If the router is not the one the Hub connects through, press <strong>Enter manually</strong> and type its address under <strong>Advanced settings</strong>.</p>
 </section>
-<section class="level2"><h2 id="weather">3.7 Weather</h2>
+<section class="level2"><h2 id="weather">3.8 Weather</h2>
 <p>The Weather card shows current conditions and a five-day forecast, with the next hours on a tap; the same weather can also sit in a panel's header. Open <strong>Settings → Integrations → Weather</strong>, turn weather on and pick a <strong>Weather location</strong>:</p>
 <ul>
 <li><strong>Use GPS —</strong> follows the coach, using a Victron GX device that has GPS. If GPS stops reporting, the Hub keeps the last position until it restarts, then a location you chose earlier.</li>
@@ -414,10 +424,10 @@ A binding links a card to the device information it displays or controls. Versio
 </ul>
 <p>Press <strong>Save changes</strong>; the card then shows <strong>Forecast ready</strong> and offers <strong>Add weather card</strong>. <strong>Refresh now</strong> fetches a new forecast at once. The forecast refreshes every 30 minutes, and again once the coach has moved 20 miles. Forecast data by Open-Meteo.com; no account or key is needed.</p>
 </section>
-<section class="level2"><h2 id="custom-mqtt-devices">3.8 Custom MQTT devices</h2>
+<section class="level2"><h2 id="custom-mqtt-devices">3.9 Custom MQTT devices</h2>
 <p>Advanced users can add devices that publish to an MQTT broker. Map MQTT topics to LaunchControl fields for card bindings; writable topics can accept commands. This provides a general integration path for equipment that LaunchControl does not support natively.</p>
 </section>
-<section class="level2"><h2 id="tank-geometry-calibration-optional">3.9 Tank Geometry Calibration (Optional)</h2>
+<section class="level2"><h2 id="tank-geometry-calibration-optional">3.10 Tank Geometry Calibration (Optional)</h2>
 <p>Tank sensors report the liquid level at the sensor, which may not accurately represent the amount of liquid in an irregularly shaped tank. LaunchControl’s optional Geometry Lookup feature corrects this by comparing the sensor reading with the tank’s actual contents. After calibration the tank will report the actual percentage and amount remaining.</p>
 <p>One-time tank calibration process:</p>
 <ul>
@@ -1568,6 +1578,163 @@ A binding links a card to the device information it displays or controls. Versio
 <figure class="lc-figure"><img alt="LaunchControl interface screenshot" decoding="async" loading="lazy" src="data:image/png;base64,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"></figure>
 <p>The Device &gt; Edit &gt; Expert mode will expose additional device fields and allow for changing the field name and unit rounding as well as changing the calculated offset and multiplier (which are set by default to the RV-C specification).</p>
 <p>You normally do not need to know the underlying DGN or instance numbers. LaunchControl discovers and manages them automatically, but understanding the relationship can be helpful when identifying devices or troubleshooting an RV-C installation.</p>
+</section>
+<a class="lc-back-to-top" href="#top">Back to top ↑</a></section>
+<section class="level1"><div class="lc-chapter-label">Appendix A</div><h1 id="shelly-setup">A. Shelly Setup</h1>
+<div class="lc-lead"><p>Connect Shelly relays and inputs to the Hub, add them on the Devices page, and use them on the dashboard, the Touch 8 and in automations.</p></div>
+<section class="level2"><h2 id="what-you-need">A.1 What you need</h2>
+<ul>
+<li>A Shelly <strong>Gen2, Gen3 or Gen4</strong> device: the Plus and Pro lines, Gen3 and Gen4 relays, and input devices such as the Plus i4. First-generation Shelly devices (the original Shelly 1 and Shelly 2.5) are not discovered automatically yet.</li>
+<li>The Shelly joined to the same network as the Hub: the RV router's Wi-Fi, or the network the Hub is connected to.</li>
+<li>The Hub's <strong>Broker address</strong>, shown on the MQTT card once the built-in broker is on (the Hub's IP address on port 1883, for example <code>192.168.8.8:1883</code>).</li>
+</ul>
+<aside class="lc-callout lc-callout--note"><div class="lc-callout__title">Use the Hub's IP address</div><p>Shelly devices do not look up names such as <code>launchcontrol.local</code>. Enter the Hub's IP address. If the Hub's address changes, the Shelly loses its connection, so give the Hub a fixed (reserved) address in the RV router if you can.</p></aside>
+</section>
+<section class="level2"><h2 id="turn-on-the-hubs-broker">A.2 Turn on the Hub's broker</h2>
+<p class="lc-step"><span class="lc-step__number">1</span><span class="lc-step__content"><strong class="lc-step__title">Open the MQTT card.</strong> Go to <strong>Settings → Integrations → MQTT</strong> and press <strong>Set up</strong> (or <strong>Manage</strong>).</span></p>
+<p class="lc-step"><span class="lc-step__number">2</span><span class="lc-step__content"><strong class="lc-step__title">Choose the built-in broker.</strong> Turn on MQTT and choose <strong>Use Hub's built-in broker</strong>.</span></p>
+<p class="lc-step"><span class="lc-step__number">3</span><span class="lc-step__content"><strong class="lc-step__title">Leave sign-in blank.</strong> Leave the username and password empty unless you want devices to sign in. If you set them, every Shelly needs the same username and password.</span></p>
+<p class="lc-step"><span class="lc-step__number">4</span><span class="lc-step__content"><strong class="lc-step__title">Save.</strong> Press <strong>Save changes</strong>. The card shows the <strong>Broker address</strong> and how many <strong>clients</strong> are connected.</span></p>
+<aside class="lc-callout lc-callout--warning"><div class="lc-callout__title">One broker at a time</div><p>With the built-in broker selected, the Victron GX integration is unavailable, because it reads the Cerbo's own broker. If your coach has a Cerbo GX, you can keep <strong>Connect to another broker</strong> (the Cerbo) and point your Shelly devices at the Cerbo instead; discovery works through either broker.</p></aside>
+</section>
+<section class="level2"><h2 id="configure-the-shelly">A.3 Configure the Shelly</h2>
+<p>Open the Shelly's own web page by typing its IP address into a browser (the Shelly app shows the address in the device's settings). Then open <strong>Settings → MQTT</strong> and set:</p>
+<div class="lc-table-wrap"><table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Enable MQTT</td>
+<td>On</td>
+</tr>
+<tr>
+<td>Server</td>
+<td>The Hub's broker address, for example <code>192.168.8.8:1883</code></td>
+</tr>
+<tr>
+<td>Client ID / MQTT prefix</td>
+<td>Leave the default (it starts with <code>shelly</code>, for example <code>shelly1g4-acebe6f55504</code>)</td>
+</tr>
+<tr>
+<td>Username / Password</td>
+<td>Blank, unless you set them on the Hub</td>
+</tr>
+<tr>
+<td>TLS / SSL</td>
+<td>Off (no TLS)</td>
+</tr>
+<tr>
+<td>RPC status notifications over MQTT</td>
+<td>On</td>
+</tr>
+<tr>
+<td>Generic status update over MQTT</td>
+<td>On</td>
+</tr>
+<tr>
+<td>Enable "MQTT Control"</td>
+<td>On, where the device offers it</td>
+</tr>
+</tbody>
+</table></div>
+<p>Press <strong>Save</strong>. Some models restart to apply the change. The MQTT card on the Hub then counts one more client.</p>
+<aside class="lc-callout lc-callout--warning"><div class="lc-callout__title">Keep the default prefix</div><p>LaunchControl recognises a Shelly by its default prefix, the device ID beginning with <code>shelly</code>. If you have changed the prefix, set it back to the default.</p></aside>
+</section>
+<section class="level2"><h2 id="add-shelly-devices">A.4 Add Shelly devices</h2>
+<p class="lc-step"><span class="lc-step__number">1</span><span class="lc-step__content"><strong class="lc-step__title">Open the scan.</strong> On the Devices page choose <strong>Add devices → Scan for Shelly devices</strong>. The list shows the Hub's address to use, and fills in by itself.</span></p>
+<p class="lc-step"><span class="lc-step__number">2</span><span class="lc-step__content"><strong class="lc-step__title">Wait for the device.</strong> A Shelly appears within about a minute of connecting, with its model name, its relay state (On or Off) and its internal temperature.</span></p>
+<p class="lc-step"><span class="lc-step__number">3</span><span class="lc-step__content"><strong class="lc-step__title">Add each channel.</strong> Press <strong>Add</strong> next to each relay or input you want. A device with several relays, such as a Pro 4PM, lists each relay separately; each becomes its own LaunchControl device.</span></p>
+<p class="lc-step"><span class="lc-step__number">4</span><span class="lc-step__content"><strong class="lc-step__title">Create cards.</strong> Close the list. When it offers <strong>Create cards</strong>, accept it.</span></p>
+<p>What each kind becomes:</p>
+<div class="lc-table-wrap"><table>
+<thead>
+<tr>
+<th>Shelly channel</th>
+<th>LaunchControl device fields</th>
+<th>Card created</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Relay (for example Shelly 1 Gen4)</td>
+<td><strong>Relay</strong> (on/off, switchable), <strong>Temperature</strong> (the Shelly's own board temperature), and <strong>Switch input</strong> when the relay has a wired input</td>
+<td><strong>Generic Switch</strong>: tap to switch the relay; the switch input shows under the icon as "Input on" or "Input off"</td>
+</tr>
+<tr>
+<td>Input on an input-only device (Plus i4)</td>
+<td><strong>Input</strong> (on/off, read-only)</td>
+<td><strong>Generic – Single</strong>, showing On or Off</td>
+</tr>
+</tbody>
+</table></div>
+<p>Rename devices and cards as you like; the name has no effect on how they work. To show a relay as a fan, add a <strong>Fan</strong> card and bind its Switch to the Shelly's <strong>Relay</strong> field. Already-added channels show <strong>Added</strong> in the scan.</p>
+<p>You can also select Shelly devices on the Devices page and press <strong>Create cards for selected</strong> later.</p>
+</section>
+<section class="level2"><h2 id="inputs-switch-and-button-mode">A.5 Inputs: Switch and Button mode</h2>
+<p>Each Shelly input has a type, set in the input's settings in the Shelly app or on the Shelly's web page:</p>
+<ul>
+<li><strong>Switch</strong> (a toggle or rocker switch that stays on or off): the input reports On or Off. LaunchControl shows it on a card and can use it as an automation trigger.</li>
+<li><strong>Button</strong> (a momentary push button): the input reports presses only, not a state. It appears in the scan as <strong>Button mode</strong> and does not get a card. Use it to run a macro instead (below).</li>
+</ul>
+</section>
+<section class="level2"><h2 id="run-a-macro-from-a-shelly-button">A.6 Run a macro from a Shelly button</h2>
+<p class="lc-step"><span class="lc-step__number">1</span><span class="lc-step__content"><strong class="lc-step__title">Set the input to Button.</strong> In the Shelly app, set the input type to <strong>Button</strong>, and make sure the Shelly is connected to the Hub's broker.</span></p>
+<p class="lc-step"><span class="lc-step__number">2</span><span class="lc-step__content"><strong class="lc-step__title">Press it once.</strong> A button appears in LaunchControl after its first press.</span></p>
+<p class="lc-step"><span class="lc-step__number">3</span><span class="lc-step__content"><strong class="lc-step__title">Attach it to a macro.</strong> Open <strong>Settings → Automations</strong>, open a macro (or create one), and under <strong>Also run when a Shelly button is pressed</strong> choose the input and <strong>Single press</strong>, <strong>Double press</strong>, <strong>Triple press</strong> or <strong>Long press</strong>.</span></p>
+<p class="lc-step"><span class="lc-step__number">4</span><span class="lc-step__content"><strong class="lc-step__title">Save.</strong> Press <strong>Save</strong>. The macro now runs within about a second of that press.</span></p>
+<p>Each macro can have one button trigger. Different presses of the same button can run different macros, for example a single press for "Lights on" and a long press for "All off".</p>
+</section>
+<section class="level2"><h2 id="use-shelly-devices-in-automations">A.7 Use Shelly devices in automations</h2>
+<ul>
+<li><strong>As a trigger:</strong> in an automation's <strong>Sensor</strong>, choose the Shelly device (marked <strong>MQTT</strong>) and its field: Relay, Switch input, Input or Temperature. On and off read as 1 and 0, so a rule with <strong>Above 0.5</strong> fires when the input turns on.</li>
+<li><strong>As an action:</strong> use <strong>Switch a card</strong> with the Shelly's switch card and <strong>On</strong> or <strong>Off</strong>. The same works from Siri shortcuts and the Touch 8.</li>
+</ul>
+</section>
+<section class="level2"><h2 id="after-a-restart">A.8 After a restart</h2>
+<p>Shelly devices do not repeat their state on their own, so the Hub asks each one for it whenever it reconnects. After the Hub restarts, Shelly cards show their state again within about 35 seconds: that is how long a Shelly waits before reconnecting.</p>
+<p>Shelly devices, their switch settings and their macro button triggers are included in <strong>Download backup</strong> and come back with a restore.</p>
+</section>
+<section class="level2"><h2 id="troubleshooting-1">A.9 Troubleshooting</h2>
+<div class="lc-table-wrap"><table>
+<thead>
+<tr>
+<th>What you see</th>
+<th>What to check</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The Shelly never appears in the scan</td>
+<td>On the Shelly's MQTT page it should say connected. Check the server is the Hub's IP address and port 1883, that the prefix is the default (<code>shelly…</code>), and that both notification options are on. The MQTT card on the Hub should count it as a client.</td>
+</tr>
+<tr>
+<td>It appears, but the relay state never changes</td>
+<td><strong>Generic status update over MQTT</strong> is off on the Shelly. Turn it on and save.</td>
+</tr>
+<tr>
+<td>The card does not switch the relay</td>
+<td>Turn on <strong>Enable "MQTT Control"</strong> on the Shelly, where the model offers it.</td>
+</tr>
+<tr>
+<td>A relay turns itself on whenever the Hub or the Shelly restarts</td>
+<td>A command was sent to the Shelly as a <em>retained</em> MQTT message, usually from a test tool such as MQTT Explorer. Delete the retained <code>command/switch:0</code> topic in that tool. LaunchControl never sends retained commands.</td>
+</tr>
+<tr>
+<td>A button is missing from the macro editor</td>
+<td>Set the input to <strong>Button</strong> in the Shelly app and press it once.</td>
+</tr>
+<tr>
+<td>Cards show nothing for about half a minute after a Hub restart</td>
+<td>Normal: the Shelly reconnects after about 35 seconds and the Hub then asks it for its state.</td>
+</tr>
+</tbody>
+</table></div>
+<details class="lc-callout lc-callout--technical"><summary>MQTT topics LaunchControl uses</summary><p>LaunchControl subscribes to <code>&lt;id&gt;/online</code>, <code>&lt;id&gt;/status/switch:N</code>, <code>&lt;id&gt;/status/input:N</code> and <code>&lt;id&gt;/events/rpc</code>, where <code>&lt;id&gt;</code> is the device ID (the default prefix). It reads the relay from <code>output</code> and the board temperature from <code>temperature.tC</code> (or <code>tF</code>) in each <code>status/switch:N</code> object, an input's state from <code>state</code>, and button presses from <code>NotifyEvent</code> (<code>single_push</code>, <code>double_push</code>, <code>triple_push</code>, <code>long_push</code>). It switches a relay by publishing <code>on</code> or <code>off</code> to <code>&lt;id&gt;/command/switch:N</code>, never retained, and asks for a fresh status by publishing <code>status_update</code>.</p>
+<p>In the Custom MQTT device editor these settings appear as a suffix after <code>#</code> on a topic: <code>…/status/switch:0#output</code> reads the <code>output</code> key, and a command topic ending <code>#lower</code> sends lowercase <code>on</code> and <code>off</code>. You can use the same suffixes for other JSON devices.</p></details>
 </section>
 <a class="lc-back-to-top" href="#top">Back to top ↑</a></section>
 </main>
