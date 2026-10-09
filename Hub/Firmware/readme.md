@@ -1,3 +1,23 @@
+### v0.8.xx
+10-9-2026
+
+##### Features:
+- Remote UI has improved login, layouts, and a new brief RV status page
+- New Color Light card for Shelly Plus RGBW PM light controllers: pick a color on a wheel, set RGB and white brightness separately or together with a master dimmer, and save it all in Lighting scenes.
+- Shade card pop-outs close after touching a button.
+- New experimental AI integration: Control your RV using conversational voice control. Query status and control devices. Spot trends. It can answer questions from the Users Guide. Requires LaunchControl Remote.
+
+#### Fixes:
+- Door locks driven by two relays now show the right state when operated from other controllers, such as a Spyder panel
+- Lights and DC loads that never report their own status (e.g. some ValidMfg coaches) can now be added as “control only” devices; their state follows the commands LaunchControl sees. Relay door locks on such coaches use the coach’s own pulse.
+- Installing an update no longer appears frozen at 100% while the Hub restarts; the page shows the restart and a timer. 
+- A web interface update that stalls or uses the wrong file no longer leaves the Hub without its pages; the current interface stays in place.
+- Shore power no longer shows "Disconnected" before any reading arrives.
+- Lighting card's scene icons no longer overlap in its settings.
+- Added compatibility with older client devices
+
+---------------------------------------
+
 ### v0.8.15
 10-6-2026
 
