@@ -1,4 +1,17 @@
-### v0.8.xx
+### v0.8.44
+10-9-2026
+
+##### Features:
+- Garnet SeeLevel tank monitors can be read directly over Bluetooth. Tank geometry calibration works on SeeLevel tanks too.
+- Improved AI integration with additional devices and history. Added ChatGPT support.
+
+##### Fixes:
+- Fixed a rare restart at power-up. 
+- Bluetooth devices (Victron, RuuviTag, Mopeka / Lippert propane, SeeLevel) now offer to create their dashboard card when added, and have Add to dashboard in their menu.
+
+-------------------------------------
+
+### v0.8.39
 10-9-2026
 
 ##### Features:
