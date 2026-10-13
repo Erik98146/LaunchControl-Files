@@ -147,3 +147,20 @@ Solar, Battery + Power, Alternator, temperature, and similar cards can draw a sm
 - **Themes —** choose the dashboard appearance in display settings; Touch 7 follows the dashboard theme.
 - **Units —** the Hub-wide Imperial/Metric setting covers temperatures, pressures, and speeds. Individual Victron devices can override units when needed.
 - **Background regions —** optional tinted regions can visually group related cards on a panel.
+
+## Add the dashboard to your home screen
+
+The dashboard can sit on your phone, tablet or computer like an app, with the LaunchControl icon. Open it at the address you want the icon to use: on the coach's Wi-Fi, the Hub's own address; through LaunchControl Remote, your Remote link. A Remote shortcut gets a green cloud on its icon and is named "LC Remote", so you can keep both.
+
+| **Device** | **How** |
+|---|---|
+| iPhone / iPad (Safari) | Share button → **Add to Home Screen** → **Add** |
+| Android (Chrome) | ⋮ menu → **Add to Home screen** → **Add** (choose **Create shortcut** if asked) |
+| Android (Samsung Internet) | ☰ menu → **Add page to** → **Home screen** |
+| Windows / Mac / Chromebook (Chrome) | ⋮ menu → **Cast, save and share** → **Create shortcut** (tick **Open as window** for its own window) |
+| Windows (Edge) | ⋯ menu → **Apps** → **Install this site as an app** |
+| Mac (Safari 17 or later) | **File** → **Add to Dock** |
+
+::: note "Already added one?"
+A phone copies the icon when the shortcut is made. If yours shows a plain letter, delete it and add it again.
+:::

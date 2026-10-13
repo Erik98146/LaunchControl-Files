@@ -142,6 +142,7 @@ The Hub can listen directly to supported Bluetooth broadcasts without normal Blu
 
 - **Victron Instant Readout —** SmartShunts, SmartSolar chargers, and similar supported devices can broadcast readings directly, but a Cerbo GX is preferred if available.
 - **Ruuvi tags —** battery-powered temperature and humidity sensors suitable for locations such as a refrigerator or outdoor reading.  
+- **Shelly BLU button remotes —** each press of each button runs a macro, recalls a lighting scene, switches a device or turns an automation on or off. See **Shelly Setup**.
 
 Open **Settings → Integrations → Bluetooth**, choose **On** and press **Save and restart**. The Hub restarts — the dashboard and displays pause for about 30 seconds and reconnect by themselves — and the card confirms Bluetooth is on. Then press **Add Bluetooth devices** (or use the Devices page) to add the sensors you want; the Hub only reads devices you add.
 

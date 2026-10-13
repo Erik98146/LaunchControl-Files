@@ -112,6 +112,20 @@ Each Shelly input has a type, set in the input's settings in the Shelly app or o
 
 Each macro can have one button trigger. Different presses of the same button can run different macros, for example a single press for "Lights on" and a long press for "All off".
 
+## Shelly BLU button remote (RC Button 4)
+
+The BLU RC Button 4 talks to the Hub directly over Bluetooth; it needs no broker and no Shelly gateway. Bluetooth must be on (Settings → Integrations → Bluetooth).
+
+1. **Add it.** On the Devices page choose **Add devices → Scan for Bluetooth devices** and press any button on the remote while the scan runs. Press **Add** beside it.
+2. **Name it**, and enter its **encryption key** only if encryption is turned on for it in the Shelly app.
+3. **Pick what each press does.** Each of the four buttons has seven press types (press, double, triple, long, long double, long triple, hold). For each, choose **Run a macro**, **Recall a lighting scene**, **Toggle a device**, **Turn a device on**, **Turn a device off** or **Turn an automation on/off**, then press **Save**.
+
+The editor's **Last press** line shows what the Hub heard, which is the quickest way to tell the buttons apart. While a remote is added the Hub listens to Bluetooth continuously, so a press acts at once.
+
+::: note "Zigbee"
+The "ZB" model also speaks Zigbee. The Hub uses its Bluetooth mode, so leave it paired by Bluetooth.
+:::
+
 ## Use Shelly devices in automations
 
 - **As a trigger:** in an automation's **Sensor**, choose the Shelly device (marked **MQTT**) and its field: Relay, Switch input, Input or Temperature. On and off read as 1 and 0, so a rule with **Above 0.5** fires when the input turns on.

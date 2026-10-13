@@ -1,3 +1,18 @@
+### v0.8.56
+10-12-2026
+
+##### Features:
+- Shelly BLU RC Button 4 remotes can now run macros, recall lighting scenes, toggle devices or switch automations on and off, straight from the hub’s Bluetooth. Macros gain the same three steps.
+- LaunchControl Remote’s Status page now shows your router’s internet quality, with a 30-day history and recent speed tests.
+- Optimizations for LaunchControl web apps: Add to Home Screen, Add as app.  Additional instructions in user guide.
+- Lighting scenes and zones now hold up to 32 lights each, and the settings page warns you when a list is full instead of quietly dropping lights.
+
+#### Fixes:
+- The Battery card now shows charge as a whole percent.
+- The compact Hydronic card no longer overlaps its own text when the name is long.
+
+--------------------------------------
+
 ### v0.8.44
 10-9-2026
 

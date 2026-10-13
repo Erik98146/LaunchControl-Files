@@ -29,8 +29,11 @@ When the Hub starts, or when an automation is edited or re-enabled, the rule ado
 
 A macro runs up to eight actions in order. For example, an Away macro might switch off the water pump and lower the thermostat; a Return macro can reverse those actions. Run it from the **Run** button in the list or from its dashboard card.
 
-An extra choice available in a macro:
+Extra choices available in a macro:
 
+- **Lighting scene —** recalls one of a Lighting card's scenes.
+- **Toggle a card —** switches a card's device to the opposite of how it is now (**Switch a card** sets it on or off).
+- **Automation on/off —** enables a disabled automation rule, or disables an enabled one.
 - **Wait (delay) —** pauses for 1 to 3600 seconds before the next action, for example to let the inverter come up before the water pump starts. The wait runs on the Hub, so the macro finishes even if you close the page. Each wait uses one of the eight action slots. Running the macro again while it is waiting starts it over from the first action; editing or deleting the macro cancels the wait.
 
 
