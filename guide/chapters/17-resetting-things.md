@@ -4,6 +4,10 @@
 LaunchControl offers several very different reset actions. Choose the one that matches what you actually want to clear.
 :::
 
+**Save a backup before clearing configuration.** Use **Settings → System → Backup & restore → Download backup**. Backups exclude network credentials, access keys, and integration connections; see [Settings Reference](#settings-reference).
+
+For a connection problem, try [Troubleshooting](#troubleshooting) first. For a sale or ownership transfer, also review unlinking Remote in [Remote Access](#remote-access).
+
 | **Action** | **What it clears** | **What it keeps** |
 | --- | --- | --- |
 | Reset Floor Plan<br> (Settings → Floor Plans) | Panels, cards, devices, lighting configuration, schedules — the coach configuration. | Wi-Fi, PIN, hotspot password, integrations. Use before starting a new floor plan from scratch. |

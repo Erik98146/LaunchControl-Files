@@ -4,6 +4,10 @@
 LaunchControl updates are released as a tested set of compatible Hub, web dashboard, Touch 8, and Mini versions. The updater manages order and compatibility.
 :::
 
+## Before updating
+
+Keep the Hub and displays powered until the update finishes. The Hub restarts during installation. For an online update, the phone or computer running the browser needs internet; for an offline update, use **Install from file** below.
+
 ## Update the system
 
 1. **Open Settings → System → Software updates and select Check for Updates.** The phone or computer running the browser needs internet access. The Hub does not require internet access to update.

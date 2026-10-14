@@ -4,6 +4,24 @@
 The Devices page is where LaunchControl manages the equipment it knows about. Adding equipment is one screen: find it, name it, say what it is, and its dashboard cards are made at the same time. This is also where you test a device, change its name, or set up an integration such as Victron, Shelly or Bluetooth sensors. Add only the integrations your coach actually uses.
 :::
 
+## Choose the equipment you are adding
+
+Use only the sections that match your installation. Built-in RV equipment may be your only source; integrations are optional.
+
+| Equipment | Where to begin |
+| --- | --- |
+| Built-in lights, pumps, tanks, or climate | **Devices → Add devices**; follow the scan below |
+| Lippert OneControl equipment | Check **Settings → System → Connection protocol**; see the note below |
+| Victron equipment with a GX device | **Settings → Integrations → Victron GX** |
+| Shelly relays, inputs, or RGBW lights | [Shelly Setup](#shelly-setup); choose the broker before configuring devices |
+| Bluetooth sensors or a Shelly BLU remote | **Settings → Integrations → Bluetooth** |
+| Starlink, GL.iNet router, or Weather | The matching card under **Settings → Integrations** |
+| Other MQTT equipment | Custom MQTT devices; technical setup is optional |
+
+::: note "OneControl installations"
+For a Lippert OneControl installation, choose the matching **Connection protocol** under **Settings → System** before scanning. Changing protocol removes source-specific configuration and restarts the Hub; review the effects and back up an existing setup first. See [Settings Reference](#settings-reference).
+:::
+
 ## RV-C devices
 
 RV-C devices are the coach’s built-in lights, pumps, tanks, thermostats, awnings, slides, generators, batteries, inverters, and similar equipment. The Devices page lists everything currently configured on the Hub, grouped by its source: RV-C devices, Victron devices, and so on.
@@ -35,9 +53,9 @@ Everything happens on the one screen:
 
 1. **Tick the devices to add.** Ready-to-add and just-operated devices start ticked; untick any you do not want. **Select all** and **none** under Ready to add tick or clear that section.
 2. **Name each device** in its row — Bench Light, Kitchen Ceiling, Water Pump.
-3. **Say what each switched circuit is** in its **What is it?** box. A dimmer or relay output can drive a light, a water pump, a fan, an awning, shades, a door lock or a Starlink dish, and only you know which. LaunchControl shows a guess under the box but never picks for you; choose **No card** for an output you do not want on the dashboard. Batteries, tanks, thermostats and the like show the card they will get.
+3. **Say what each switched circuit is** in its **What is it?** box. A dimmer or relay output can drive a light, a water pump, a fan, an awning, shades, a door lock or a Starlink dish, and only you know which. LaunchControl shows a guess under the box but never picks for you. Choose **No card** to add the device without a dashboard card; untick the row to leave the device out. Batteries, tanks, thermostats and the like show the card they will get.
 4. **Choose where the cards go** — only when you have more than one dashboard, or in Expert mode. **Put the cards on**, in the bar under the list, picks the panel or makes a new one; otherwise the cards go on your dashboard.
-5. **Press Add Equipment & Create Dashboard.** The bar says what one press will do — how many devices and how many cards. While a ticked switched circuit has no answer yet, the button stays grey and a red note beside it says to set the device type for them; the note jumps to the first one; an output set to **No card** counts as answered and is never asked for again. The devices are added one at a time and their cards are created straight after. From the setup guide it returns you to the guide.
+5. **Press Add Equipment & Create Dashboard.** The bar says what one press will do — how many devices and how many cards. If a selected switched circuit has no type, you cannot continue. The red note takes you to the first unfinished row. **No card** counts as an answer and is not requested again. The devices are added one at a time and their cards are created straight after. From the setup guide it returns you to the guide.
 
 ![Add Device – Found RV-C devices page](images/devices01.png)
 
@@ -61,7 +79,7 @@ Select a device in the list to test it, rename it, or edit its fields — which 
 
 ## Victron equipment
 
-If your coach has a Victron GX device such as a Cerbo GX, LaunchControl can read and control supported Victron equipment including MultiPlus inverter/chargers, battery monitors, solar chargers, GPS, and temperature sensors. This is always the best way to connect to Victron equipment and any third-party devices that use MQTT.
+If your coach has a Victron GX device such as a Cerbo GX, LaunchControl can read and control supported Victron equipment including MultiPlus inverter/chargers, battery monitors, solar chargers, GPS, and temperature sensors. Use the GX integration when you have a supported GX device. Other MQTT equipment can share its broker.
 
 1. **Enable MQTT on the Cerbo GX.** On the GX device: Settings → Services → **MQTT on LAN (plaintext)** on.
 2. **Find the Cerbo.** On the Hub, open **Settings → Integrations → Victron GX** and press **Set up**. Press **Find Cerbo GX**; the Hub looks for the GX device on your network and offers it. Press **Use this Cerbo**. LaunchControl connects MQTT to it, finds its Portal ID and turns Victron on, in one go.
@@ -92,8 +110,8 @@ Shelly, ESPHome and other MQTT devices are pointed at that address in their own 
 
 Shelly relays, inputs and colour lights (Gen2, Gen3 and Gen4 models such as the Plus, Pro and Gen4 lines, and the Plus RGBW PM) connect to the Hub over MQTT and are found automatically: there are no topics to type. The short version:
 
-1. **Turn on the Hub's broker.** In **Settings → Integrations → MQTT**, turn on MQTT, choose **Use Hub's built-in broker** and press **Save changes**. Note the **Broker address** the card shows.
-2. **Point the Shelly at the Hub.** On the Shelly's own web page, open **Settings → MQTT**, turn MQTT on, enter the Hub's broker address as the server, and turn on **RPC status notifications** and **Generic status update**. Leave the client ID / prefix at its default.
+1. **Choose the broker.** If you use Victron GX, keep **Connect to another broker** and use the Cerbo’s broker address. Otherwise, in **Settings → Integrations → MQTT**, turn on MQTT, choose **Use Hub's built-in broker**, and press **Save changes**. Note the **Broker address**.
+2. **Point the Shelly at that broker.** On the Shelly's own web page, open **Settings → MQTT**, turn MQTT on, enter the chosen broker address as the server, and turn on **RPC status notifications** and **Generic status update**. Leave the client ID / prefix at its default.
 3. **Add it.** On the Devices page choose **Add devices → Scan for Shelly devices**. Each relay, input and colour light appears within a minute; press **Add** for the ones you want.
 4. **Create cards.** Close the list and accept **Create cards**. A relay becomes a switch card (with its wired switch input shown under the icon when it has one); an input-only device such as a Plus i4 becomes a card that shows On or Off; a colour light becomes a **Color Light** card.
 
@@ -113,7 +131,7 @@ The Hub can listen directly to supported Bluetooth broadcasts without normal Blu
 
 - **Victron Instant Readout —** SmartShunts, SmartSolar chargers, and similar supported devices can broadcast readings directly, but a Cerbo GX is preferred if available.
 - **Ruuvi tags —** battery-powered temperature and humidity sensors suitable for locations such as a refrigerator or outdoor reading.
-- **Shelly BLU button remotes —** each press of each button runs a macro, recalls a lighting scene, switches a device or turns an automation on or off. See **Shelly Setup**.
+- **Shelly BLU button remotes —** each press of each button runs a macro, recalls a lighting scene, switches a device or turns an automation on or off. See [Shelly Setup](#shelly-setup).
 - **Garnet SeeLevel —** Bluetooth tank monitors; each tank they report becomes a Tank card.
 
 Open **Settings → Integrations → Bluetooth**, choose **On** and press **Save and restart**. The Hub restarts — the dashboard and displays pause for about 30 seconds and reconnect by themselves — and the card confirms Bluetooth is on. Then press **Add Bluetooth devices** (or use the Devices page) to add the sensors you want; the Hub only reads devices you add.
@@ -143,21 +161,19 @@ Press **Save changes**; the card then shows **Forecast ready** and offers **Add 
 
 ## Custom MQTT devices
 
+::: technical "Custom MQTT integration"
 Advanced users can add devices that publish to an MQTT broker. Map MQTT topics to LaunchControl fields for card bindings; writable topics can accept commands. This provides a general integration path for equipment that LaunchControl does not support natively.
+:::
 
 ## Tank Geometry Calibration (Optional)
 
 Tank sensors report the liquid level at the sensor, which may not accurately represent the amount of liquid in an irregularly shaped tank. LaunchControl’s optional Geometry Lookup feature corrects this by comparing the sensor reading with the tank’s actual contents. After calibration the tank will report the actual percentage and amount remaining.
 
-One-time tank calibration process:
-
-- Level the RV.
-- Open Devices and edit the tank device.
-- Enable Geometry Lookup.
-- Begin with the tank empty, then fill it in measured increments (a water flow meter is very helpful).
-- The more increments recorded, the better the results. We suggest entering data around 1 or 2 gal increments.
-- At each step, enter the amount of liquid added.
-- Finish the calibration when full and this will also record the maximum size of the tank.
+1. **Level the RV** and begin with the tank empty.
+2. **Open Devices**, edit the tank, and enable **Geometry Lookup**.
+3. **Fill in measured increments.** A water flow meter helps. Suggested increments are 1–2 gallons; more calibration points improve the result.
+4. **Record each increment** by entering the amount of liquid added.
+5. **Finish when full.** This also records the tank’s maximum capacity.
 
 LaunchControl uses these calibration points to calculate a corrected percentage and estimate the amount remaining. Volume is displayed in gallons or liters according to the Hub-wide units setting.
 

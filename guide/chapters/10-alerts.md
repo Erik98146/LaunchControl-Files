@@ -1,8 +1,19 @@
 # Alerts
 
 ::: lead
-Have the Hub tell you when something happens in the coach — a tank filling, a battery running low, the shore power dropping. Alerts show on the Hub's screens, and can also go to your phone as a notification or a text message. They are sent by an automation you set up.
+Have the Hub tell you when something happens in the coach — a tank filling, a battery running low, the shore power dropping. Alerts show on the Hub’s screens, and can also arrive as a phone notification, text message, or email. They are sent by an automation you set up.
 :::
+
+## Choose a delivery method
+
+| Method | What you need |
+| --- | --- |
+| **On-screen** | No external service or internet connection |
+| **Push** | ntfy app and the topic shown by the Hub |
+| **SMS** | Textbelt account, credits, sender name, and API key |
+| **E-mail (Remote)** | Hub linked to LaunchControl Remote with access running; sent to the linked account |
+
+Set up the service you want, send a test, then add **Send alert** to an automation. You can select several delivery methods on one alert.
 
 ## Where alerts appear
 
@@ -30,7 +41,7 @@ An alert is an **action on an automation**, in the same list as "turn the pump o
 2. Add **Send alert** as one of its actions and write the message.
 3. Tick where it should go: **On-screen** (the alert list), **Push**, **SMS**, **E-mail (Remote)**.
 
-On-screen needs nothing else, and neither does E-mail (Remote): with LaunchControl Remote linked (see [Remote Access](#remote-access)), alerts are e-mailed to the account the hub is linked to, with nothing to set up. Push and SMS need the services below, set up under Settings → Automations. Push is free; SMS is cheap — you pay the service, not us.
+On-screen needs no service setup. E-mail (Remote) uses the account linked to the Hub and requires active Remote access; see [Remote Access](#remote-access). Set up Push and SMS below under **Settings → Automations**. SMS charges are paid to the message service.
 
 ## Push notifications (free)
 
@@ -47,7 +58,7 @@ Repeat steps 2–4 on every phone that should get alerts.
 
 This uses **Textbelt**, where you buy a block of messages up front.
 
-1. **Buy credits.** Open [textbelt.com/purchase](https://textbelt.com/purchase/) and choose **generate a new API key**. Choose a pack, and pay. Packs start around $3 for 50 messages. **SAVE THE KEY. It cannot be retrieved if lost.**
+1. **Buy credits.** Open [textbelt.com/purchase](https://textbelt.com/purchase/) and choose **generate a new API key**. Choose a pack, and pay. Packs start around $3 for 50 messages. **Save the key; it cannot be retrieved if lost.**
 2. **Set a sender name.** On the Textbelt Account page, fill in the sender name. **Textbelt will not send anything until you do**, and it is the step almost everyone misses.
 3. **Paste the key** into Settings → Automations → **Text messages** → **API key**, add your 10-digit phone number, turn on **Turn on text messages**, and press **Save changes**.
 4. **Send test text.** This sends a real message and uses one credit.

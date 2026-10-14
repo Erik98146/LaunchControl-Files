@@ -1,8 +1,16 @@
 # Automations & Macros
 
+<a id="guide-automations"></a>
+
 ::: lead
 Automations let the coach react to changing conditions. Macros group several actions behind one tap. Both are managed under **Settings → Automations**; a dashboard card is optional.
 :::
+
+| Use… | When you want… |
+| --- | --- |
+| **Automation** | A sensor threshold to trigger actions automatically |
+| **Macro** | One tap or button press to run a sequence of actions |
+| **Send alert** action | A message when a rule triggers, releases, or a macro runs; see [Alerts](#alerts) |
 
 ## The Automations page
 
@@ -39,4 +47,4 @@ Extra choices available in a macro:
 
 ## Dashboard cards
 
-Cards are optional. From the dashboard's **+** menu choose **Automation** or **Macro**, then pick which automation the card should show. An Automation card shows whether the rule is armed and whether it is triggered; tapping it enables or disables the rule. A Macro card runs the macro on a tap. Each automation can have one card. Removing the card keeps the automation; deleting the automation removes its card.
+Cards are optional. In dashboard edit mode, use **Add a card…** under **Dashboard Cards**, choose **Automation** or **Macro**, then pick the rule or macro. An Automation card shows whether the rule is armed and whether it is triggered; tapping it enables or disables the rule. A Macro card runs the macro on a tap. Each automation can have one card. Removing the card keeps the automation; deleting the automation removes its card.

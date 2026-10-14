@@ -8,9 +8,16 @@ The dashboard is a set of live cards organized into panels. Cards update in real
 
 ## Panels
 
+Use any names and grouping that suit you. Panels group cards; sub-panels add a second level when you need more room.
+
+### Open a panel
+
 - **Panel tabs —** switch between groups such as Main, Power, and Climate. Each panel has its own name, icon (or two), and layout. As many tabs as fit are shown across the top; the rest are always one tap away under the **All panels** icon (the grid icon at the end of the tabs).
 - **Sub-panels —** each panel can hold up to three sub-panels. Tap a tab's name to open it, or tap the small arrow beside it to choose one of its sub-panels. While a sub-panel is open, its tab reads "Panel › Sub-panel".
 - **All panels —** shows every panel and sub-panel in your order, with the one showing marked. Tap any of them to go there. With more than eight panels a search box appears. **Manage panels** at the bottom opens the panel manager.
+
+### Manage panels
+
 - **Graph History —** each panel sets the history window used by graphs on that panel.
 - **Managing panels —** open **Manage panels** (from All panels, or from edit mode). Each panel has a **⋯** menu: **Edit** (name, icons and parent, with a preview), **Add sub-panel**, **Move…** (put it under another panel or back on top), **Duplicate**, **Move up / down** and **Delete**. Drag a panel by its handle to reorder it; the new order is saved when you press **Done**. Other changes save as soon as you make them, with **Undo** for a few seconds. Deleting a panel tells you first what happens to its cards and sub-panels.
 - **Coming back —** reloading the page returns to the panel you were on; opening the dashboard fresh starts on the first panel.
@@ -31,7 +38,7 @@ Cards are placed in the panel you are looking at. **Move or copy…** in a card�
 1. **Enter panel edit mode** from the menu at the top right.
 2. **Drag cards into position.** The grab handle is in the top left of the card. Cards snap into the dashboard grid.
 3. **Open a card’s gear menu** to edit, duplicate, move or remove it.
-4. **Exit edit mode.** The layout is stored on the Hub and is used by phones, browsers, and Touch 8 displays.
+4. **Exit edit mode.** The layout is stored on the Hub. Narrow screens can keep a separate card order, as described below.
 
 ::: note "Responsive layout"
 The dashboard grid adapts to screen size, so the same configuration can be used on desktop, phone, and Touch 8 displays. Narrow screens keep their own card positions: the first time you drag a card on a phone, the phone layout is yours to arrange separately.
@@ -83,7 +90,7 @@ When a panel header shows the weather and space is tight, the place name is left
 
 A card is connected to the device readings and controls it shows. LaunchControl makes those connections when it creates the card, so in normal use there is nothing to set up: test each new card from the dashboard, and if its values appear and its controls operate the intended equipment, you are done.
 
-To check or change a card’s source, enter edit mode, open the card’s gear menu and choose **Edit**. **Data source** picks the device; **What this card will show** lists each reading with an on/off switch. A dash on a card, a missing control, or a control that operates the wrong device means the source is wrong — change it here. The full per-slot binding editor is under **Advanced**, and the [Technical Reference](#technical-reference) lists the usual bindings for each card type.
+To check or change a card’s source, enter edit mode, open the card’s gear menu and choose **Edit**. **Data source** picks the device; **What this card will show** lists each reading with an on/off switch. If a card shows a dash, first check that its device is powered and reporting. If data or controls are still missing, check the selected source. If a control operates the wrong device, correct its source before using it again. The full per-slot binding editor is under **Advanced**, and the [Technical Reference](#technical-reference) lists the usual bindings for each card type.
 
 ![Card bindings](images/card-settings01.png)
 

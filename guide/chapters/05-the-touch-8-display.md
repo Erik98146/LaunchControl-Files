@@ -3,7 +3,6 @@
 ::: lead
 Touch 8 mirrors the dashboard you build on the web: the same panels, cards, names, positions, and theme, with touch control for supported cards. When you change the web dashboard layout, Touch 8 updates to match. It connects to the Hub’s own hotspot and continues to work when the RV router is off.
 :::
-:::
 
 ## Set up a Touch 8
 
@@ -27,7 +26,7 @@ The hamburger button at the top right of the Touch 8 opens its Settings screen: 
 
 ## Choose which devices it uses
 
-The Touch 8 asks the Hub for semantic roles such as “the battery,” “the water pump,” or “the climate zone.” The Hub normally resolves those roles from your dashboard cards automatically. If the coach has multiple devices that could fill the same role, use Settings → Displays to choose which card each Touch 8 should use. (in a different room for example)
+The Hub normally chooses the battery, water pump, climate zone, and other controls from your dashboard cards automatically. If the coach has multiple devices that could fill the same role, use Settings → Displays to choose which card each Touch 8 should use. For example, assign the climate card for the room where the display is installed.
 
 ## If the Hub changes
 

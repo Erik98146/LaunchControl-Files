@@ -4,6 +4,16 @@
 Open your coach's dashboard from anywhere — the campground, the office, the other side of the country — in the same browser, with the same cards and controls. No app, no router settings, no port forwarding. LaunchControl Remote does the connecting for you.
 :::
 
+## Choose what you need
+
+| Action in My hubs | Use it to… |
+| --- | --- |
+| **Open dashboard** | Control equipment or change Hub settings |
+| **Live status** | Check power, tanks, temperatures, and recent alerts without operating equipment |
+| **Manage Hub** | Manage access, sharing, and the Remote plan |
+
+For a quick check while the RV is in storage or someone else is using it, start with **Live status**. Check the report’s age before treating its readings as current.
+
 ## How it works
 
 You connect the Hub to the internet, and visit the portal at remote.launchcontrol.tech. Everything local keeps working whether or not Remote is on.
@@ -20,7 +30,7 @@ Remote needs three things: the Hub on a network with internet access, the Hub's 
 
 1. **Enable it.** On the dashboard, go to **Settings → Integrations**, press **Set up** on the **LaunchControl Remote** card, then **Set up LaunchControl Remote**. The card shows *Connecting*, then *Ready to link*. (The setup wizard offers the same step at the end of a new installation.)
 2. **Link it to you.** Press **Continue in browser**, or **Scan with your phone** to show a QR code and a six‑digit link code. You can also open **remote.launchcontrol.tech** in any browser and press **Link a hub**. Sign in with your e‑mail — a sign‑in link is sent to you; there is no password to remember — and enter the six‑digit link code.
-3. **Open your coach.** The portal shows the hub under **My hubs**; press **Open**. Bookmark the remote address: it is yours for as long as the Hub is linked.
+3. **Open your coach.** The portal shows the hub under **My hubs**; press **Open dashboard**. Bookmark the remote address: it is yours for as long as the Hub is linked.
 
 ::: note "The PIN still applies"
 The first time a browser opens the remote address, LaunchControl asks for your Dashboard PIN, exactly as it would on an untrusted network at the coach. Your account proves who you are to LaunchControl; the PIN proves it to the Hub.
@@ -38,9 +48,11 @@ If the Hub is not connected to Remote when you open the remote address, the page
 
 Siri, Shortcuts and other controllers work from anywhere through Remote too: under Shortcuts & API pick **LaunchControl Remote** as the **Connection method** before copying a link (see [Voice Control, Shortcuts, Siri and Other Controllers (API)](#voice-control-shortcuts-siri-and-other-controllers-api)).
 
-## Status page
+## Live status
 
-Each hub on **My hubs** has a **Status** button next to **Open dashboard** and **Manage Hub**. It opens a one‑page summary of the coach that loads in a second and works **even when the Hub is offline**. It then shows the last report the Hub sent, and says how long ago that was.
+<a id="status-page"></a>
+
+Each hub on **My hubs** has a **Live status** button next to **Open dashboard** and **Manage Hub**. It opens a one‑page summary of the coach that loads in a second and works **even when the Hub is offline**. It then shows the last report the Hub sent, and says how long ago that was.
 
 - **Power:** state of charge, voltage and net power of each battery card on your dashboard, the start battery if an Alternator card shows it, solar power, whether the inverter is on (with its power), charging only or off, and whether shore power is connected (with the power it supplies) or disconnected.
 - **Tanks:** level of each tank card, the water remaining when the tank has a fill table, and a **Warning** or **Alarm** tag when the tank's alarm is set off.
@@ -51,10 +63,10 @@ Each hub on **My hubs** has a **Status** button next to **Open dashboard** and *
 
 The rows are your own dashboard cards, under the names you gave them, showing the same numbers the dashboard shows. While the page is open it refreshes every 30 seconds.
 
-Two switches on the Hub control what is sent, under **Settings → Integrations → LaunchControl Remote**: **Share Hub status** and **Include location history**. Both are on unless you turn them off. Turning either off deletes what LaunchControl Remote holds for it. The owner can also delete the location history from the Status page. People you share the hub with see the Status page too, map included.
+Two switches on the Hub control what is sent, under **Settings → Integrations → LaunchControl Remote**: **Share Hub status** and **Include location history**. Both are on unless you turn them off. Turning either off deletes what LaunchControl Remote holds for it. The owner can also delete the location history from the Live status page. People you share the hub with see the Live status page too, map included.
 
 ::: technical
-The Hub sends a short report every 15 minutes, and more often while someone has the Status page open. Location points are recorded on the Hub itself, so a drive with no internet still appears on the map once the Hub reconnects. LaunchControl Remote keeps 30 days of location history and deletes older points automatically. After remote access ends, the last report stays viewable for 14 days.
+The Hub sends a short report every 15 minutes, and more often while someone has the Live status page open. Location points are recorded on the Hub itself, so a drive with no internet still appears on the map once the Hub reconnects. LaunchControl Remote keeps 30 days of location history and deletes older points automatically. After remote access ends, the last report stays viewable for 14 days.
 :::
 
 ## Your plan
@@ -81,7 +93,7 @@ While the window is open, every page of your hub, on your own screen as well as 
 
 ## Selling the coach, or starting over
 
-**Unlink** (under **Turn off or unlink** on the LaunchControl Remote card in Settings, or on the hub's page in the portal) removes the hub from your account. **Turn off** in the same place only pauses Remote; the hub stays linked. The Hub shows a new code, ready for its next owner to link; your plan is cancelled. To close your account entirely, use **Delete my account** at the bottom of the portal: every hub is unlinked, every plan cancelled, and your sign‑in is removed.
+**Turn off** pauses Remote and keeps the Hub linked to your account. **Unlink** removes the Hub from your account, cancels your plan, and gives the Hub a new code for its next owner. Find both under **Turn off or unlink** on the LaunchControl Remote card in Settings, or unlink from the Hub’s page in the portal. To close your account entirely, use **Delete my account** at the bottom of the portal: every hub is unlinked, every plan cancelled, and your sign‑in is removed.
 
 ::: warning "No subscription, no internet — still your coach"
 Remote never stands between you and the coach. If the service is unreachable, the plan has ended or the Hub has no internet, everything on the coach's own Wi‑Fi works exactly as before.
@@ -93,4 +105,6 @@ The Hub holds one outbound WebSocket over TLS (port 443) to the relay and carrie
 
 ## Free remote access
 
-For those that are technically inclined, Tailscale, running on a travel router, or a similar VPN, can be used for remote access with no subscription fee.
+::: technical "Alternative: a VPN on your router"
+A VPN such as Tailscale running on a travel router can provide remote access without a LaunchControl Remote subscription. This requires separate router and VPN configuration.
+:::

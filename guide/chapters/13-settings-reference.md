@@ -5,6 +5,22 @@
 All system configuration is organized under Settings. Use this chapter as a reference rather than a setup checklist.
 :::
 
+## Find a common setting
+
+| Task | Location |
+| --- | --- |
+| Change units or time zone | **Settings → System → Units** or **Date & time** |
+| Reopen the setup checklist | **Settings → System → Setup guide** |
+| Save or restore a backup | **Settings → System → Backup & restore** |
+| Change Wi-Fi, Dashboard PIN, or hotspot password | **Settings → Network** |
+| Pair or assign displays | **Settings → Displays** |
+| Connect equipment or Remote | **Settings → Integrations** |
+| Create rules, macros, or notifications | **Settings → Automations** |
+| Show technical fields | **Expert mode**; this preference is saved in the current browser |
+| Check health or restart the Hub | **Settings → Status** |
+
+## Settings tabs
+
 ![Settings page](images/ch09-settings-page.png)
 
 | **Tab** | **What lives there** |
@@ -26,7 +42,7 @@ The Debug Data button on the Settings > Status page provides logs which may be d
 
 Each integration is one card. Closed, it shows a status badge, a one‑line summary and anything that needs your attention; **Set up** or **Manage** opens its settings in place, and **Close** folds them away again without losing what you typed. Several cards can be open at once — handy for MQTT and Victron GX together.
 
-- Settings are kept until you press **Save changes**. Until then the card shows **Unsaved changes**, and the page warns before you leave it. The badge always shows what is saved and running, never an unsaved switch.
+- Edits remain a draft until you press **Save changes**. Until then the card shows **Unsaved changes**, and the page warns before you leave it. The badge always shows what is saved and running, never an unsaved switch.
 - After a successful setup the card offers the next step — **Add Victron devices**, **Add Bluetooth devices**, **Add router card**, **Add weather card** — but never forces it.
 - **Advanced settings** holds optional configuration; **Technical details** holds diagnostics, with **Copy diagnostics** for support (passwords and keys are never included).
 - **Expert mode**, at the bottom of the LaunchControl Remote card, is the one Expert mode for the whole product: it shows the relay override and the Shortcuts custom address here, and the technical detail everywhere else — DGNs, instances, source addresses, raw bindings. The same switch sits at the top of the Devices page. It is remembered on this browser only.
@@ -45,7 +61,15 @@ The Hub always broadcasts LaunchControl-Hub-XXXX. Touch 8 and Mini displays use 
 
 ## System
 
-Settings → System holds these cards, in this order: **Date & time**, **Units**, **Setup guide**, **Expert mode**, **Software updates**, **Backup & restore**, **Connection protocol**, **Factory reset** and **About & Legal**. **Units** switches the whole product between US customary and metric at once. **Setup guide** opens the seven-step first-run checklist over the dashboard, with what is done and what is left. **Expert mode** is the one switch that shows the technical detail everywhere; the same switch sits at the top of the Devices page. Settings you change are kept as a draft until you press **Save changes** (or **Apply and restart** for the protocol), and the page warns before you leave it with unsaved changes. Only one action that restarts the Hub can run at a time. **Restart Hub** is on Settings → Status.
+Settings → System contains **Date & time**, **Units**, **Setup guide**, **Expert mode**, **Software updates**, **Backup & restore**, **Connection protocol**, **Factory reset**, and **About & Legal**.
+
+- **Units** changes the whole product between US customary and metric.
+- **Setup guide** reopens the seven-step checklist with completed and remaining steps.
+- **Expert mode** shows technical detail throughout the product. The Devices page has the same switch.
+- **Save changes** applies your draft edits. For the connection protocol, use **Apply and restart** instead. The page warns before you leave with unsaved changes.
+- Only one restart action can run at a time. **Restart Hub** is under **Settings → Status**.
+
+Before changing the connection protocol or restoring a backup, read what will be replaced and download your current backup.
 
 ## Date & time
 

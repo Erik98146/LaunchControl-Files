@@ -4,11 +4,19 @@
 Say "Hey Siri, kitchen lights on" and the lights come on. LaunchControl works with the Shortcuts app that is already on every iPhone, iPad, Mac and Apple Watch — no extra hub, no HomeKit. Android phones and other automation tools can use the same links.
 :::
 
+## Choose a shortcut
+
+- **One shortcut for everything:** Siri asks what you want, then sends your spoken command to the Hub.
+- **One-tap shortcuts:** create a specific action you can run by name, button, or widget.
+- **Other phones and apps:** use the **API & custom integrations** tab; parameter details are in [Technical Reference](#technical-reference).
+
+Use your existing card, zone, scene, macro, or automation names. You do not need to reorganize your dashboard.
+
 ## How it works
 
 Every control on your dashboard already has a name — the card name you gave it. The Hub accepts a simple web address that uses those names, such as *turn Kitchen Pendants on* or *set Bedroom to 72*. 
 
-For Siri, A Shortcut opens that address; Siri runs the Shortcut when you say its name. The Hub works out which device, which command and which setting, and answers with a short sentence that Siri can show or speak.
+For Siri, a Shortcut opens that address; Siri runs the Shortcut when you say its name. The Hub works out which device, which command and which setting, and answers with a short sentence that Siri can show or speak.
 
 What you can address by name:
 
@@ -86,18 +94,6 @@ Any tool that can open a web address can use the same links: Android's Shortcut 
 A link names the card. If you rename a card, a zone or a scene, update the shortcuts that use the old name — the Hub answers *I don't know a device called …* until you do.
 :::
 
-::: technical "The control address"
-`GET /api/control` on the Hub, authenticated by a session (the Dashboard PIN or a trusted network) or by the API key as `?key=<key>` or an `Authorization: Bearer <key>` header. The key is accepted by this address only.
+## API reference
 
-| Parameter | Meaning |
-| --- | --- |
-| `say=<sentence>` | Free text; the Hub extracts the device, the action and any number. Also accepted as an `X-Say` request header. |
-| `device=<name>` | A card, zone, scene, macro or automation name (`#<id>` for a card id). |
-| `action=` | `on` `off` `toggle` `lock` `unlock` `run` `status` |
-| `level=` `temp=` `limit=` `mode=` | A brightness %, a setpoint in the Hub's display units, a shore limit in amps, or `heat` `cool` `auto` `fan` `off` |
-| `fmt=text` | Reply as one spoken line with HTTP 200 regardless of outcome. Without it the reply is JSON (`ok`, `device`, `action`, `say`, `error`, `candidates`) with 400/404/409/502 on failure. |
-| *(no device)* | Lists every name and what each accepts, as JSON. |
-| `op=newkey` | Rotates the key; PIN or trusted-network session required. |
-
-A successful reply means the Hub accepted and sent the command, not that the device obeyed; the dashboard and displays show the real state as the device reports it.
-:::
+For request parameters, authentication, response formats, and error codes, see **The control address** in [Technical Reference](#technical-reference).

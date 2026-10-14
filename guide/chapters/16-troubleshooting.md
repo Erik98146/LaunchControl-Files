@@ -5,9 +5,17 @@
 Find the symptom below. Settings → Status shows the Hub’s own health — network, RV-C, clock, Remote — and is the first place to look. Still stuck? Open Settings → Status before contacting support; its **Debug data** is what support will ask for.
 :::
 
+## Start with these checks
+
+1. **Check power and connection.** Is the Hub powered, and are you using its local network or Remote?
+2. **Check Settings → Status** if the dashboard opens. Note the reported problem before changing anything.
+3. **Follow the matching symptom below.** Start with connection and device checks before resetting configuration.
+
+For detailed notification checks, see [Alerts](#alerts). For Shelly relay, button, and color-light issues, see [Shelly Setup](#shelly-setup).
+
 ## I can't connect to LaunchControl
 
-- **launchcontrol.local does not open.** Make sure your phone or computer is on the coach Wi-Fi. On Android, use the router's device list to find launchcontrol-xxxx. The recovery path always works: join LaunchControl-Hub-XXXX and open 192.168.4.1.
+- **launchcontrol.local does not open.** Make sure your phone or computer is on the coach Wi-Fi. On Android, use the router's device list to find launchcontrol-xxxx. For direct access, join **LaunchControl-Hub-XXXX** and open [192.168.4.1](http://192.168.4.1). If you cannot join or have forgotten credentials, see [Security](#security).
 - **New router, or the router changed.** Join the Hub hotspot, open the dashboard, and add the new network under Settings → Network.
 - **Everything froze after a power blip.** The Hub and router may be rebooting together. Give the router time to return; the Hub keeps retrying its saved network.
 - **The setup page did not pop up.** Open a browser and go to 192.168.4.1 while on the Hub's Wi-Fi.
@@ -15,7 +23,7 @@ Find the symptom below. Settings → Status shows the Hub’s own health — net
 ## No RV equipment appears
 
 - **Settings → Status shows no RV-C activity**, or the setup guide's first step is not done. Check Hub power and the physical RV-C connection. Reversed RV-C H and L wires do not damage anything, they simply do not work, so try swapping them. Never swap the RV-C and power wires. Confirm the correct coach connection or adapter using the LaunchControl FAQ.
-- **The scan is empty but Status shows data.** Lights, pumps and switched circuits appear only when operated — turn one on and off in the coach. Everything you already added is folded under **Already configured**; press **Show** to see it.
+- **The scan is empty but Status shows data.** Operate one light, pump, or switched circuit in the RV and watch **Devices you just operated**. Devices awaiting identification may also be under **Needs identification**. Everything you already added is folded under **Already configured**; press **Show** to see it.
 - **A Lippert coach.** Lippert OneControl coaches do not speak RV-C. Switch the protocol under Settings → System → Connection protocol and restart; the scan then lists OneControl devices. The setup guide’s **Fix connection** says the same.
 
 ## A device is missing
@@ -55,7 +63,10 @@ Find the symptom below. Settings → Status shows the Hub’s own health — net
 
 - **A schedule will not enable.** The Hub's clock is not set. The Hub sets it automatically from the internet, the coach network, a GPS or the browser that is open; Settings → System → Date & time shows which source it is using and offers **Set to this device's time**.
 - **Events fire an hour off.** Check the time zone and daylight saving under Settings → System → Date & time. The card warns when two sources disagree.
-- **Bluetooth says "Restart needed".** Normal after changing Bluetooth without restarting. Open Settings → Integrations → Bluetooth and press **Restart now**; **Save and restart** does both in one step.
+
+## Bluetooth says "Restart needed"
+
+This is expected after changing Bluetooth without restarting. Open Settings → Integrations → Bluetooth and press **Restart now**; **Save and restart** does both in one step.
 
 ## I forgot my PIN
 
@@ -64,3 +75,7 @@ Power-cycle recovery works without a cable or a support call: 3 quick power cycl
 ## The update check finds nothing
 
 The phone or computer running the browser needs internet access for the update check. The Hub itself does not.
+
+## Still need help?
+
+Open **Settings → Status → Debug data** and download the support information. Include the symptom, the device or card affected, the software version, whether you were local or using Remote, and what you already tried. Use [LaunchControl support](https://launchcontrol.tech/pages/support-faq) for installation and connection guidance.

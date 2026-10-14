@@ -1,6 +1,12 @@
 <!-- part: Using LaunchControl -->
 # Controls
 
+::: lead
+Use dashboard cards for everyday lighting, climate, tanks, and timers. The sections below explain gestures and what each control does.
+:::
+
+A tap, a press-and-hold, and a timer action can do different things on different card types. Follow the instructions for the card you are using.
+
 ![Lighting master controls](images/ch05-lighting-master-controls.png)
 
 ## Lighting Masters & Scenes
@@ -14,6 +20,8 @@ The Lighting card provides whole-coach lighting controls:
 The Lighting card setup lets you choose which lights are controlled by Zone 1 master, Zone 2 master, and lighting scenes. Each Lighting card maintains its own list of lights, allowing you to create multiple cards for different zones throughout the coach.
 
 When the master is turned off, LaunchControl remembers the state of each light. Turning the master back on restores the lights to their previous settings. To turn all lights on at 100%, press and hold the On button.
+
+Each lighting zone and scene list supports up to **32 lights**. The settings page warns when a list is full.
 
 ## Lighting Dimmers
 
@@ -35,7 +43,7 @@ Schedules only run when the Hub has valid time. The Hub keeps its clock automati
 
 Fluid tanks with heaters that have been bound to a card may be toggled by pressing and holding the card. 
 
-Irregularly shaped tanks may produce sensor readings that do not accurately represent the amount of liquid they contain. The optional Geometry Lookup calibration corrects this by mapping sensor readings to the tank’s actual contents. To create a calibration table, open the tank device for editing and enable geometry. Fill the tank in measured increments (like 1 or 2 gal at a time) using a flow meter and enter the values as you go. LaunchControl uses these calibration points to calculate the tank’s actual percentage full and estimated amount remaining. Volume is displayed in gallons or liters according to the Hub’s system-wide units setting.
+For an irregularly shaped tank, **Geometry Lookup** maps sensor readings to measured contents. Calibrate once under **Devices → edit the tank**; see **Tank Geometry Calibration (Optional)** in [Add or Change Equipment](#add-or-change-equipment). The Hub then shows corrected percentage and estimated volume in your selected units.
 
 ## Awnings & Shades
 

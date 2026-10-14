@@ -1,17 +1,27 @@
 # Set Up Your Hub
 
 ::: lead
-A new Hub walks you through setup on its own screens, and the dashboard then shows a seven-step setup guide until the coach is ready. This chapter follows the same path: connect the Hub, join it, confirm a few preferences, then let LaunchControl find your equipment and build the dashboard. If a floor plan exists for your coach, it does the last two steps for you.
+Connect the Hub, open its setup page, and follow the seven-step setup guide. LaunchControl finds your equipment and creates dashboard cards as you add it. If a floor plan is available for your RV, you can load that configuration instead.
 :::
 
 ![Figure 1 — LaunchControl setup at a glance.](images/ch02-figure-1-launchcontrol-setup-at-a-glance.png)
+
+## Before you start
+
+Have the correct Hub cable or adapter for your RV, one supported power source, and a phone, tablet, or computer with Wi-Fi. Have your RV router’s Wi-Fi password available if you plan to use it.
+
+- **Required:** connect and power the Hub, join its Wi-Fi, confirm preferences, add your equipment, and check the dashboard.
+- **Only if installed:** configure Victron, Shelly, Bluetooth, or other integrations. Your RV’s built-in equipment may be all you need.
+- **Optional:** add displays and enable LaunchControl Remote. Local control needs no internet connection or Remote subscription.
+
+Choose a hotspot password before pairing displays if you plan to use one. You can also set it later and pair the displays again.
 
 ## Connect the Hub
 
 ![LaunchControl Hub wiring diagram showing 12–24 VDC or USB-C power and RV-C CAN-H and CAN-L connections.](images/ch02-launchcontrol-hub-wiring-connections-power.png "LaunchControl Hub wiring connections. Power the Hub from either 12–24 VDC or USB-C—do not connect both power sources at the same time.")
 
 1. **Connect RV-C.** Connect the Hub to the coach’s RV-C bus using the correct LaunchControl cable, adapter, or harness for your RV.
-2. **Connect power.** The Hub can be powered from 12–24 V or USB-C. **DO NOT CONNECT BOTH SIMULTANEOUSLY.**
+2. **Connect power.** The Hub can be powered from 12–24 V or USB-C. **Use only one power source at a time.**
 
 ::: warning "Connection types vary by RV"
 RV-C connector styles and available connection points differ by manufacturer and coach. See the [LaunchControl FAQ at launchcontrol.tech](https://launchcontrol.tech/pages/support-faq) for supported RV-C connection types, adapter options, and installation-specific connection guidance. Use the same FAQ for the supported Hub power connection options.
@@ -77,6 +87,12 @@ Changing the Hub hotspot password disconnects Touch 8 and Mini displays from tha
 
 A floor plan is a complete pre-built LaunchControl configuration for a specific coach. If one is available for your make and model, use it before adding devices or building dashboards by hand.
 
+::: warning "Loading replaces your current configuration"
+Loading a floor plan replaces the current coach configuration, including devices and dashboards. If you already customized the Hub, download a backup first under **Settings → System → Backup & restore**.
+:::
+
+A floor plan with Victron equipment still needs its Victron integration configured under **Settings → Integrations**, because passwords and integration IDs are unique.
+
 1. **Go to Settings → Floor Plans.** The setup guide’s **Load a Floor Plan** button takes you there.
 2. **Browse to your manufacturer and model.** Select the plan and review its description.
 3. **Press Load.** The Hub restarts with the supported devices, panels, cards, and bindings configured for that coach.
@@ -84,22 +100,16 @@ A floor plan is a complete pre-built LaunchControl configuration for a specific 
 
 ![Floor plan page.](images/ch02-floor-plan-page.png)
 
-::: technical "Technical detail"
-A floor plan includes devices and dashboards. Because passwords and integration IDs are unique, floor plans with Victron equipment still require setting up the Victron integration in Settings → Integrations. **Loading a floor plan replaces the current coach configuration.**
-:::
+
 
 ## No floor plan? Find your equipment
 
-The setup guide’s **Find equipment** opens one screen that does the whole job:
+1. **Open Find equipment** from the setup guide.
+2. **Identify and name equipment.** Operate one switch at a time in the RV, then choose its type in **What is it?**. Keep factory-useful names or use your own.
+3. **Add the selected equipment.** **Add Equipment & Create Dashboard** creates devices and their cards. Selected switched outputs need a type or **No card** before you can continue.
+4. **Check the result.** Confirm readings appear and each control operates the intended equipment. Arrange the cards whenever you are ready.
 
-1. **Scan.** LaunchControl listens to the RV and lists the equipment it hears, in sections. Batteries, inverters, tanks and thermostats appear under **Ready to add**, already ticked. Lights, pumps and other switched circuits wait under **Needs identification** until you operate them in the RV; the one you just used moves to the top under **Devices you just operated**, ticked and highlighted in green.
-2. **Name each device** in its row — Kitchen Ceiling, Water Pump, Fresh Water.
-3. **Say what each switched circuit is** in its **What is it?** box: a light, a water pump, a fan, an awning, shades, a door lock. LaunchControl shows a guess under the box but never chooses for you. Press **ID** to switch an output on from the Hub when you cannot tell which one it is.
-4. **Add Equipment & Create Dashboard.** The bar under the list says how many devices and cards one press will make. While a ticked switched circuit has no answer yet, the button is hidden and a red note says to set the device type for them; the note jumps to the first one. Press it: the list closes, a window shows the progress, and when it is done it asks whether you have additional equipment. Either answer returns you to the setup guide.
-
-![Add Device – Found RV-C devices page](images/devices01.png)
-
-Chapter 3 covers the scan in detail, and chapter 4 how to arrange the cards.
+See [Add or Change Equipment](#add-or-change-equipment) for the complete scan, identification, and integration procedures; see [The Dashboard](#the-dashboard) to arrange cards and panels.
 
 ## Add displays and Remote
 
@@ -108,4 +118,4 @@ Chapter 3 covers the scan in detail, and chapter 4 how to arrange the cards.
 
 ![LaunchControl interface screenshot](images/ch02-launchcontrol-interface-screenshot.png "")
 
-Your LaunchControl system is now ready for normal use.
+**Setup is complete when** the guide says **LaunchControl is ready**, your expected readings appear, and you have checked that controls operate the intended equipment. Continue with [Controls](#controls) for everyday use.

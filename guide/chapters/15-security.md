@@ -4,6 +4,14 @@
 A new Hub is intentionally easy to access so first-time setup cannot lock you out. After commissioning, you can add a Dashboard PIN, a hotspot password, or both.
 :::
 
+| Protection | What it protects |
+| --- | --- |
+| **Dashboard PIN** | Dashboard access from untrusted networks, including Remote |
+| **Hotspot password** | Joining the Hub’s own Wi-Fi network |
+| **API access key** | Named controls used by Shortcuts and integrations |
+
+These credentials serve different purposes. Changing a hotspot password also requires reconnecting displays; replacing an API key requires updating shortcuts.
+
 ## Dashboard PIN
 
 The Dashboard PIN is 4–32 digits. LaunchControl requests it only on networks the Hub does not trust. Mark your own RV/home network as trusted to avoid repeated prompts while still protecting access from an untrusted campground network.
@@ -18,7 +26,7 @@ Touch 8 and Mini displays connect to the Hub hotspot. If you change its password
 
 ## API key
 
-Shortcuts, Siri and other integrations (see the Shortcuts, Siri & Voice Control chapter) use an **API key** instead of the Dashboard PIN. It is kept masked under **Settings → Integrations → Shortcuts & API → API access key** and works for the control address only: a key that leaks can operate named controls, but cannot change settings, read a backup or join a network. Press **Replace key** to replace it; every shortcut then needs its link updated. The key is not included in configuration backups.
+Shortcuts, Siri and other integrations (see [Voice Control and Shortcuts](#voice-control-shortcuts-siri-and-other-controllers-api)) use an **API key** instead of the Dashboard PIN. It is kept masked under **Settings → Integrations → Shortcuts & API → API access key** and works for the control address only: a key that leaks can operate named controls, but cannot change settings, read a backup or join a network. Press **Replace key** to replace it; every shortcut then needs its link updated. The key is not included in configuration backups.
 
 ## Remote access
 

@@ -7,7 +7,29 @@ LaunchControl gives you one place to monitor and control the systems in your RV:
 
 LaunchControl runs locally in your RV. There is no cloud account, subscription, or internet requirement for normal monitoring and control.
 
-LaunchControl HUB and the panels boot in just a couple seconds. Network connections, rebooting Victron Cerbo or rebooting the RV router may take longer. The hub is tolerant of power disconnects so there is not a shutdown procedure.
+The Hub and displays start within a few seconds. Network connections, a Victron Cerbo GX, and the RV router may take longer. The Hub tolerates power disconnections; no shutdown procedure is required.
+
+## Start with your task
+
+| I want to… | Go to |
+| --- | --- |
+| Set up a new Hub | [Set Up Your Hub](#set-up-your-hub) |
+| Add equipment or identify a switch | [Add or Change Equipment](#add-or-change-equipment) |
+| Arrange cards, panels, or my phone layout | [The Dashboard](#the-dashboard) |
+| Use lights, climate, or timers | [Controls](#controls) |
+| Use a Touch 8 or Mini | [Touch 8](#the-touch-8-display) · [Mini](#the-mini-display) |
+| Check or control my RV from elsewhere | [Remote Access](#remote-access) |
+| Create a rule, macro, or notification | [Automations & Macros](#guide-automations) · [Alerts](#alerts) |
+| Use a TV or wall tablet | [TV & Wall Displays](#guide-tv-displays) |
+| Set up Siri or a shortcut | [Voice Control and Shortcuts](#voice-control-shortcuts-siri-and-other-controllers-api) |
+| Back up, restore, or change a setting | [Settings Reference](#settings-reference) |
+| Update software | [Software Updates](#software-updates) |
+| Fix a problem | [Troubleshooting](#troubleshooting) |
+| Look up bindings, protocols, or API parameters | [Technical Reference](#technical-reference) |
+
+You choose the names and organization of your equipment and panels. Names in this guide are examples.
+
+**Three useful terms:** a **device** is equipment or a function in your RV; a **card** shows or controls it; a **panel** groups cards on the dashboard.
 
 ## What’s in the system
 

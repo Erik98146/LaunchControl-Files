@@ -1,5 +1,7 @@
 # TV & Wall Displays
 
+<a id="guide-tv-displays"></a>
+
 ::: lead
 Any TV, HDMI streaming stick, or wall tablet with a web browser can show one of your dashboard panels full-screen. LaunchControl calls this a **web kiosk**. Several can run at once without slowing the Hub, your phone, or your touchscreens down.
 :::
@@ -8,7 +10,7 @@ Any TV, HDMI streaming stick, or wall tablet with a web browser can show one of 
 
 A web kiosk is the ordinary LaunchControl dashboard, in a display mode: one panel, edge to edge, no tabs or menus, scaled up to fill the screen. It shows exactly what your phone shows, because it *is* the same dashboard — so every card you have, and every card added in a future update, works on a TV with nothing extra to set up.
 
-A kiosk is **read-only on purpose**. It never sends a command. If one of your displays is a touchscreen or your TV has cursor mode and you do want to control from it, turn **Allow touch** on for that display alone.
+A kiosk is **read-only by default**. To control equipment from a wall tablet or a TV with cursor mode, turn **Allow touch** on for that display alone.
 
 ::: note "It updates every few seconds, not instantly"
 A kiosk checks in with the Hub every 12 seconds by default, rather than holding a live connection the way your phone does. That is what keeps several of them almost free for the Hub to serve. You can change this if desired. Values on a TV can be a few seconds behind — for a screen you glance at across a room, that is the right trade.
@@ -24,14 +26,14 @@ A wall-mounted tablet is also a good kiosk. On an iPad, add the page to the Home
 
 ## Set up a display
 
-1. Go to **Settings>Displays** to find the web address that you should point your TV or stick to. 
-2. **Open that address on your TV or stick** The device needs to be on the same network as the Hub.
+1. **Get the display address.** Open **Settings → Displays** on the Hub and copy the web address shown.
+2. **Open it on the TV or stick.** The device must be on the same network as the Hub.
 3. **Set the size while watching the TV.** The controls under that display's name take effect on the screen within a few seconds — no reloading, no walking back and forth. Adjust them with the TV in view.
 4. **Make it start by itself.** In your kiosk browser's settings, set the same address as the start page, and turn on "launch on boot" and "keep screen on" if it offers them.
 
 ## If the edges are cut off
 
-Most televisions crop the outside of the picture slightly — it is called **overscan**, and it is why the right-hand cards looked chopped off on the first TV we tried this on.
+Most televisions crop the outside of the picture slightly — it is called **overscan**, and it can cut off cards at the edges.
 
 1. **Fix it on the TV first.** In the TV's picture settings, find the aspect or size option and choose **Just Scan**, **Screen Fit**, **Full Pixel** or **1:1** — the name varies by brand. This is the real fix and costs no screen space.
 2. **Then use Safe area for whatever is left.** Raise the **Safe area** control for that display until nothing is clipped. It pulls the whole dashboard in from every edge.
@@ -74,7 +76,7 @@ A link built this way carries its settings in the address, so it overrides anyth
 
 Press **Remove** beside it in Settings → Displays. Its settings are erased and the screen goes back to showing a pairing code, ready to be added again — so this is also how you start a display over.
 
-On the display itself, a long press in the **bottom-left corner** brings up a small panel with "Reload now" and "Forget this display". That is the only thing a kiosk responds to being touched; it is there for when you are standing at the screen without a phone.
+On the display itself, a long press in the **bottom-left corner** brings up a small panel with "Reload now" and "Forget this display". This recovery panel remains available when **Allow touch** is off, so you can use it without a phone.
 
 ::: note "Do I need the PIN on every TV?"
 Only if the Hub's Dashboard PIN is on and the TV is on an untrusted network. Mark your coach's Wi-Fi as trusted in Settings → Network, and your displays never ask for a PIN. See [Security](#security).

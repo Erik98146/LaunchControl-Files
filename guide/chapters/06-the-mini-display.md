@@ -34,4 +34,4 @@ The Mini is a 1.75-inch round AMOLED touchscreen intended for glanceable status 
 
 ## Choose which devices it uses
 
-The Mini asks the Hub for semantic roles such as “the battery,” “the water pump,” or “the climate zone.” The Hub normally resolves those roles from your dashboard cards automatically. If the coach has multiple devices that could fill the same role, use Settings → Displays to choose which card each Mini should use.
+The Hub normally chooses the battery, water pump, climate zone, and other controls from your dashboard cards automatically. If the coach has multiple devices that could fill the same role, use Settings → Displays to choose which card each Mini should use.

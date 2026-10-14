@@ -4,17 +4,29 @@
 Connect Shelly relays, inputs and colour lights to the Hub, add them on the Devices page, and use them on the dashboard, the Touch 8, in Lighting scenes and in automations.
 :::
 
+## Choose your setup path
+
+- **Wi-Fi relay, input, or RGBW light:** follow the MQTT steps below.
+- **Shelly BLU RC Button 4:** skip MQTT and go directly to **Shelly BLU button remote (RC Button 4)**. It uses the Hub’s Bluetooth.
+- **Already connected but not working:** use the troubleshooting table near the end of this appendix.
+
+::: note "Already using Victron GX?"
+Keep the Cerbo’s broker. Point Shelly devices at that broker instead of enabling the Hub’s built-in broker. LaunchControl discovers Shelly devices through either broker, but the Hub uses only one broker at a time.
+:::
+
 ## What you need
 
 - A Shelly **Gen2, Gen3 or Gen4** device: the Plus and Pro lines, Gen3 and Gen4 relays, input devices such as the Plus i4, and the **Plus RGBW PM** colour LED controller. First-generation Shelly devices (the original Shelly 1 and Shelly 2.5) are not discovered automatically yet.
 - The Shelly joined to the same network as the Hub: the RV router's Wi-Fi, or the network the Hub is connected to.
-- The Hub's **Broker address**, shown on the MQTT card once the built-in broker is on (the Hub's IP address on port 1883, for example `192.168.8.8:1883`).
+- Your selected **broker address**: the Hub’s address shown on the MQTT card when using its built-in broker (for example `192.168.8.8:1883`), or the Cerbo’s IP address and port 1883 when using Victron GX.
 
-::: note "Use the Hub's IP address"
-Shelly devices do not look up names such as `launchcontrol.local`. Enter the Hub's IP address. If the Hub's address changes, the Shelly loses its connection, so give the Hub a fixed (reserved) address in the RV router if you can.
+::: note "Use the broker’s IP address"
+Shelly devices do not look up names such as `launchcontrol.local`. Enter your broker’s IP address. If that address changes, the Shelly loses its connection. Reserve the Hub’s address in the RV router when using the built-in broker, or use the Cerbo’s fixed address when using its broker.
 :::
 
 ## Turn on the Hub's broker
+
+Skip this section if you are keeping a Cerbo’s broker; continue with **Configure the Shelly** using the Cerbo’s address.
 
 1. **Open the MQTT card.** Go to **Settings → Integrations → MQTT** and press **Set up** (or **Manage**).
 2. **Choose the built-in broker.** Turn on MQTT and choose **Use Hub's built-in broker**.
@@ -32,15 +44,15 @@ Open the Shelly's own web page by typing its IP address into a browser (the Shel
 | Setting | Value |
 | --- | --- |
 | Enable MQTT | On |
-| Server | The Hub's broker address, for example `192.168.8.8:1883` |
+| Server | Your selected broker’s IP address and port, for example `192.168.8.8:1883` |
 | Client ID / MQTT prefix | Leave the default (it starts with `shelly`, for example `shelly1g4-acebe6f55504`) |
-| Username / Password | Blank, unless you set them on the Hub |
+| Username / Password | The credentials required by your selected broker; blank if none are configured |
 | TLS / SSL | Off (no TLS) |
 | RPC status notifications over MQTT | On |
 | Generic status update over MQTT | On |
 | Enable "MQTT Control" | On, where the device offers it |
 
-Press **Save**. Some models restart to apply the change. The MQTT card on the Hub then counts one more client.
+Press **Save**. Some models restart to apply the change. When using the Hub’s built-in broker, its MQTT card then counts one more client.
 
 ::: warning "Keep the default prefix"
 LaunchControl recognises a Shelly by its default prefix, the device ID beginning with `shelly`. If you have changed the prefix, set it back to the default.

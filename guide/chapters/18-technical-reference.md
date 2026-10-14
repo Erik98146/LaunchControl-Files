@@ -5,6 +5,15 @@
 Everything in this chapter is optional. Normal installation and use do not require this information.
 :::
 
+## Use this reference when you need to…
+
+- Understand network addresses, connection paths, or hardware.
+- Inspect a card’s source and individual bindings.
+- Interpret RV-C DGNs, instances, and device fields.
+- Build API requests or understand their responses.
+
+For installation, start with [Set Up Your Hub](#set-up-your-hub). For an equipment problem, use [Troubleshooting](#troubleshooting) before changing advanced fields.
+
 ## Architecture in one paragraph
 
 The Hub connects to the coach RV-C bus (CAN at the physical layer), decodes bus traffic into a live device model, and serves the dashboard locally over HTTP. Dashboard state changes are pushed over WebSockets. Touch 8 subscribes to the dashboard card model so it can mirror the configured panels and cards, while Mini asks the Hub for semantic roles such as “the battery.” Commands flow back through the Hub, which is the only LaunchControl device that transmits on RV-C.
@@ -150,7 +159,7 @@ LaunchControl handles these relationships for you. In normal use, you simply add
 
 **Device Fields**
 
-Within a device, LaunchControl exposes individual pieces of information as fields. Such as a dimming level of a light, or the mode of the thermostat.
+A device exposes individual readings and controls as fields, such as a light’s brightness or a thermostat’s mode.
 
 Dashboard cards are then bound to these fields. For example, a Climate card might bind its mode control to the mode field of a thermostat device.
 
@@ -159,3 +168,19 @@ Dashboard cards are then bound to these fields. For example, a Climate card migh
 A device’s **Advanced** settings expose its individual fields and allow changing the field name and unit rounding as well as the calculated offset and multiplier (which are set by default to the RV-C specification); Expert mode lists every field the device defines.
 
 You normally do not need to know the underlying DGN or instance numbers. LaunchControl discovers and manages them automatically, but understanding the relationship can be helpful when identifying devices or troubleshooting an RV-C installation.
+
+## The control address
+
+`GET /api/control` on the Hub, authenticated by a session (the Dashboard PIN or a trusted network) or by the API key as `?key=<key>` or an `Authorization: Bearer <key>` header. The key is accepted by this address only.
+
+| Parameter | Meaning |
+| --- | --- |
+| `say=<sentence>` | Free text; the Hub extracts the device, the action and any number. Also accepted as an `X-Say` request header. |
+| `device=<name>` | A card, zone, scene, macro or automation name (`#<id>` for a card id). |
+| `action=` | `on` `off` `toggle` `lock` `unlock` `run` `status` |
+| `level=` `temp=` `limit=` `mode=` | A brightness %, a setpoint in the Hub's display units, a shore limit in amps, or `heat` `cool` `auto` `fan` `off` |
+| `fmt=text` | Reply as one spoken line with HTTP 200 regardless of outcome. Without it the reply is JSON (`ok`, `device`, `action`, `say`, `error`, `candidates`) with 400/404/409/502 on failure. |
+| *(no device)* | Lists every name and what each accepts, as JSON. |
+| `op=newkey` | Rotates the key; PIN or trusted-network session required. |
+
+A successful reply means the Hub accepted and sent the command, not that the device obeyed; the dashboard and displays show the real state as the device reports it.
