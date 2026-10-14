@@ -412,8 +412,20 @@ def main():
             warn(f'{f.name}: not a chapter (NN-name.md) or an appendix (A-name.md); skipped')
     toc, bodies = [], []
     numbered = list(enumerate(files, 1)) + [(f.name[0], f) for f in appendices]
+    # Parts (2026-10-13): a chapter file may open with `<!-- part: Start here -->`.
+    # The part heads the table of contents and a label above the chapter; it
+    # stays in force until another chapter declares the next part. Appendices
+    # sit under "Advanced" unless they declare their own.
+    part_re = re.compile(r'^\s*<!--\s*part:\s*(.+?)\s*-->[ \t]*\r?\n')
     for num, f in numbered:
-        cid, title, body = chapter_html(num, f.read_text(encoding='utf-8'), images, f.name)
+        text = f.read_text(encoding='utf-8')
+        pm = part_re.match(text)
+        if pm:
+            text = text[pm.end():]
+            part = pm.group(1).strip()
+            toc.append(f'<div class="lc-toc__part">{inline_md(part)}</div>')
+            bodies.append(f'<div class="lc-part">{inline_md(part)}</div>')
+        cid, title, body = chapter_html(num, text, images, f.name)
         tag = num if isinstance(num, str) else f'{num:02d}'
         toc.append(f'<a class="lc-toc__link" href="#{cid}"><span>{tag}</span>{inline_md(title)}</a>')
         bodies.append(body)

@@ -1,3 +1,4 @@
+<!-- part: Customize -->
 # Settings Reference
 
 ::: lead
@@ -14,7 +15,7 @@ All system configuration is organized under Settings. Use this chapter as a refe
 | Automations | Every automation rule and macro, the editor, and the Push / SMS alert services. |
 | Floor Plans | Browse/load pre-built coach configurations and reset the current floor plan. |
 | Displays | Connected displays, online status, and role-to-card assignments. |
-| System | Date & time, software updates, backup & restore, connection protocol, factory reset. |
+| System | Date & time, units, the setup guide, Expert mode, software updates, backup & restore, connection protocol, factory reset, about & legal. |
 | RV-C Tools | Diagnostics and live RV-C traffic. |
 
 ::: note "Logs"
@@ -28,7 +29,7 @@ Each integration is one card. Closed, it shows a status badge, a one‑line summ
 - Settings are kept until you press **Save changes**. Until then the card shows **Unsaved changes**, and the page warns before you leave it. The badge always shows what is saved and running, never an unsaved switch.
 - After a successful setup the card offers the next step — **Add Victron devices**, **Add Bluetooth devices**, **Add router card**, **Add weather card** — but never forces it.
 - **Advanced settings** holds optional configuration; **Technical details** holds diagnostics, with **Copy diagnostics** for support (passwords and keys are never included).
-- **Expert mode**, at the bottom of the LaunchControl Remote card, shows the relay override and the Shortcuts custom address. It is remembered on this browser only.
+- **Expert mode**, at the bottom of the LaunchControl Remote card, is the one Expert mode for the whole product: it shows the relay override and the Shortcuts custom address here, and the technical detail everywhere else — DGNs, instances, source addresses, raw bindings. The same switch sits at the top of the Devices page. It is remembered on this browser only.
 
 ## LaunchControl Remote (Integrations)
 
@@ -44,15 +45,15 @@ The Hub always broadcasts LaunchControl-Hub-XXXX. Touch 8 and Mini displays use 
 
 ## System
 
-Settings → System holds five cards, in this order: **Date & time**, **Software updates**, **Backup & restore**, **Connection protocol** and **Factory reset**. Settings you change are kept as a draft until you press **Save changes** (or **Apply and restart** for the protocol), and the page warns before you leave it with unsaved changes. Only one action that restarts the Hub can run at a time. **Restart Hub** is on Settings → Status.
+Settings → System holds these cards, in this order: **Date & time**, **Units**, **Setup guide**, **Expert mode**, **Software updates**, **Backup & restore**, **Connection protocol**, **Factory reset** and **About & Legal**. **Units** switches the whole product between US customary and metric at once. **Setup guide** opens the seven-step first-run checklist over the dashboard, with what is done and what is left. **Expert mode** is the one switch that shows the technical detail everywhere; the same switch sits at the top of the Devices page. Settings you change are kept as a draft until you press **Save changes** (or **Apply and restart** for the protocol), and the page warns before you leave it with unsaved changes. Only one action that restarts the Hub can run at a time. **Restart Hub** is on Settings → Status.
 
 ## Date & time
 
-Schedules and timers need valid time. The card shows the Hub's current time and date, a status — **Synced**, **Manually set** or **Not synchronized** — and where the time came from and when.
+Schedules and timers need valid time. The card shows the Hub's current time and date, a status — **Synced**, **Manually set** or **Not synchronized** — and where the time came from and when. The time source is **Automatic** unless you change it: internet time whenever the Hub has it, otherwise the RV-C network, then Victron GPS, then the browser that is open. The card warns when two sources disagree by more than a couple of minutes, and says which one is being used.
 
 - **Time zone** and **Daylight saving time** apply to Victron GPS and internet time, which report UTC. RV-C and manual time are already local. Daylight saving time is unavailable for zones that do not observe it.
 - **Send Hub time to the RV-C network** lets factory panels and thermostats use the Hub's time. It is sent once a minute while the clock is set, unless the time comes from the RV-C network itself.
-- **Change time source** lists RV-C network, Victron GPS, Manual and Internet time (NTP), each with the time it is offering and, if it cannot be used, why — for example *No GPS data available*.
+- **Time source (advanced)** lists **Automatic (recommended)** and the four manual choices — RV-C network, Victron GPS, Manual and Internet time (NTP) — each with the time it is offering and, if it cannot be used, why — for example *No GPS data available*. Pick a source only to force one.
 - **Manual** shows a date and a time, and **Set to this device's time**, which saves at once. Manual time is lost when the Hub loses power. **Set the time from this browser whenever the clock is not set** restores it simply by opening Settings after a power loss.
 - **Technical details** shows the RV-C address the time comes from and whether the Hub is sending time to RV-C.
 

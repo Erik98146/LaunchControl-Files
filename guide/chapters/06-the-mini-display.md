@@ -6,9 +6,9 @@ The Mini is a 1.75-inch round AMOLED touchscreen intended for glanceable status 
 
 ## Set up a Mini
 
-1. **Power the display.** It shows a QR code.
-2. **Scan the QR code with your unlocked phone.** Join the temporary setup network it offers.
-3. **Follow the display setup page.** Connect the display to the Hub.
+1. **Power the display near the Hub.** A new Mini looks for a LaunchControl Hub hotspot; with exactly one in range and no hotspot password set, it joins by itself.
+2. **If it shows a QR code instead,** scan it with your unlocked phone and join the temporary setup network it offers. That happens when no Hub is in range, more than one is, or the Hub hotspot has a password.
+3. **Follow the display setup page.** Pick the Hub and enter the hotspot password if there is one.
 4. **Finish.** The display downloads the dashboard and reconnects automatically after future restarts.
 
 ## What it shows

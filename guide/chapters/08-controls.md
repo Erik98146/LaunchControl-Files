@@ -1,3 +1,4 @@
+<!-- part: Using LaunchControl -->
 # Controls
 
 ![Lighting master controls](images/ch05-lighting-master-controls.png)
@@ -16,7 +17,7 @@ When the master is turned off, LaunchControl remembers the state of each light. 
 
 ## Lighting Dimmers
 
-The Light Dimmer card provides controls for an individual light. Dimmers for small cards can be accessed by pressing and holing the card. Lights remember their last value when turned back on. This setting can be changed in the device setup for each light.
+The Light Dimmer card provides controls for an individual light. Dimmers for small cards can be accessed by pressing and holding the card. Lights remember their last value when turned back on. This setting can be changed in the device setup for each light.
 
 ## Climate
 
@@ -27,14 +28,14 @@ The Thermostat card is available as a wide card, a large dial, or a compact tile
 A thermostat can follow four daily periods: Awake, Away, Return, and Sleep. Each period has its own time, mode, and setpoint. The clock control switches between following the schedule and manual hold.
 
 ::: note "Clock required"
-Schedules only run when the Hub has valid time. Choose a time source under Settings → System → Date & time if a schedule will not enable.
+Schedules only run when the Hub has valid time. The Hub keeps its clock automatically — internet time when it has it, otherwise the coach network, a GPS or the browser that is open. If a schedule will not enable, see Settings → System → Date & time.
 :::
 
 ## Tanks
 
 Fluid tanks with heaters that have been bound to a card may be toggled by pressing and holding the card. 
 
-Irregularly shaped tanks may produce sensor readings that do not accurately represent the amount of liquid they contain. The optional Geometry Lookup calibration corrects this by mapping sensor readings to the tank’s actual contents. To create a calibration table, open the tank device for editing and enable geometry. Fill the tank in measured increments (like 1 or 2 gal at a time) usig a flow meter and enter the values as you go. LaunchControl uses these calibration points to calculate the tank’s actual percentage full and estimated amount remaining. Volume is displayed in gallons or liters according to the Hub’s system-wide units setting.
+Irregularly shaped tanks may produce sensor readings that do not accurately represent the amount of liquid they contain. The optional Geometry Lookup calibration corrects this by mapping sensor readings to the tank’s actual contents. To create a calibration table, open the tank device for editing and enable geometry. Fill the tank in measured increments (like 1 or 2 gal at a time) using a flow meter and enter the values as you go. LaunchControl uses these calibration points to calculate the tank’s actual percentage full and estimated amount remaining. Volume is displayed in gallons or liters according to the Hub’s system-wide units setting.
 
 ## Awnings & Shades
 
@@ -44,7 +45,7 @@ Awning and Shades cards have two direction buttons. Depending on the device, a b
 
 ## Graphs
 
-Solar, Shore Power, Alternator, Generator, Battery and Net Power cards have graphs that can be configured for time and scal markers from the panel edit mode.
+Solar, Shore Power, Alternator, Generator, Battery and Net Power cards have graphs that can be configured for time and scale markers from the panel edit mode.
 
 ## Device Off-timers
 

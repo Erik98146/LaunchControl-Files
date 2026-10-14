@@ -1,110 +1,81 @@
-# Devices & Integrations
+# Add or Change Equipment
 
 ::: lead
-The Devices page is where LaunchControl manages the equipment it knows about. If you loaded a floor plan, many RV-C devices may already be present. This is also the place you can test device control and status. Add only the integrations and devices your coach actually uses.
+The Devices page is where LaunchControl manages the equipment it knows about. Adding equipment is one screen: find it, name it, say what it is, and its dashboard cards are made at the same time. This is also where you test a device, change its name, or set up an integration such as Victron, Shelly or Bluetooth sensors. Add only the integrations your coach actually uses.
 :::
 
 ## RV-C devices
 
-RV-C devices include the coach’s built-in lights, pumps, tanks, thermostats, awnings, slides, generators, batteries, inverters, and similar equipment.
+RV-C devices are the coach’s built-in lights, pumps, tanks, thermostats, awnings, slides, generators, batteries, inverters, and similar equipment. The Devices page lists everything currently configured on the Hub, grouped by its source: RV-C devices, Victron devices, and so on.
 
-The Devices page lists everything currently configured on the Hub. Devices are organized into groups based on their source, such as RV-C Devices and Victron Devices.
-
-### Scan for RV-C devices
+### Find equipment
 
 1. **Open Devices.**
-2. **Select Add Devices.** 
-3. **Begin the scan.**
+2. **Press Add devices.** If other sources are set up, choose **Scan RV**.
+3. **Wait a few seconds.** The list fills with what the Hub hears on the RV’s control network, with a live reading on each row, in sections: **Devices you just operated**, **Needs identification**, **Ready to add** and **Already configured**. Each row names the device type and its instance number, which is what the RV’s own paperwork uses; the **⋯ More** button holds the session details and a manual refresh. Leaving with devices ticked but not added asks first.
 
-LaunchControl listens to the RV-C network and displays the device types it finds.
-
-Some equipment, including thermostats, tank sensors, batteries, and inverters, regularly report status and normally appears without any additional action.
-
-Other equipment, including lights, pumps, awnings, and switched circuits, may not appear until it is operated.
+Equipment that reports all the time — thermostats, tank sensors, batteries, inverters, solar — appears under Ready to add, already ticked. Lights, pumps, awnings and other switched circuits wait under Needs identification until they are operated.
 
 ### Identify lights, pumps, and other switched devices
-The easiest way to identify a switched device is to operate it from the RV’s original control panel or switch.
 
-1. **Begin and RV-C device scan.**
-2. **Turn a device on then off.** 
-3. **Watch the results.** The most recent device reporting the change moves toward the top of the list and is highlighted.
-4. **Select the identified device.** 
-5. **Give it a meaningful name** 
+The easiest way to tell which row is which is to operate the device in the RV.
 
-Repeat the process as needed.
+1. **Turn it on, then off,** from the RV’s own switch or panel.
+2. **Watch the list.** The device that just changed moves to the top under **Devices you just operated**, ticked and highlighted in green. Work with one device at a time so it stays clear which row is which.
 
-Work with one device at a time so it is clear which RV-C instance corresponds to each physical control.
-
-When you have finished identifying devices, select Done. LaunchControl can then create dashboard cards for the devices you added.
-
-Confirm device and card types
-
-LaunchControl normally recognizes the appropriate device type, but several different RV functions may appear as generic switches on the RV-C network.
-
-Before creating the dashboard cards, review each detected type. For example, change a generic switch to Water Pump when it controls the pump. Choosing the correct type gives the card the proper name, icon, controls, and behavior.
-
-### Add continuously reporting devices
-After identifying switches and lights, run another scan to add equipment that is already visible on the network. This may include:
-
-- House batteries
-- Inverters and chargers
-- Fresh, gray, and black tanks
-- Thermostats
-- Generator information
-- Solar and other power equipment
-
-Select a device, review or change its name, and choose Save and Add More until everything needed has been added.
-
-### Add many devices at once
-On a large coach coach with many lights, shades, etc., adding them one by one is slow. The **All Detected Devices** list has a tick box on every row for adding several devices in one pass.
-
-1. **Tick the devices to add.** Use **Select all** or **Select none** to tick or clear every row on screen.
-2. **Select Add all selected.** A review table lists each ticked device with its type, DGN, and instance.
-3. **Name each device.** Type a name in each row, or select **Remove** to leave a device out.
-4. **Select Add all.** The devices are added one at a time. If any cannot be added, the page lists them and the rest are still added. LaunchControl then offers to create their dashboard cards.
-
-### Identify from the review table (ID button)
-Operating a switch in the coach tells you which device is which. The **ID** button works the other way around: it switches a device on from the Hub so you can see which light comes on. This is the easiest way to tell a dozen identical lighting channels apart.
-
-- Select **ID** once to switch the output on. The button stays highlighted while it is on.
-- Select **ID** again to switch it back off.
-- Give the device a name.
-
-ID is offered only for lights and switched circuits. Awnings, slides, shades, and other moving equipment show a dash instead, because they should never be operated without someone watching them.
+The other direction works too: press a row’s **ID** button to switch that output on from the Hub and see which light comes on. Press **ID** again to switch it back off. ID is offered only for lights and switched circuits; awnings, slides and shades show a dash, because they should never be operated without someone watching them.
 
 ::: warning "Door locks"
 If a switched circuit drives a door lock, pressing ID on it will operate the lock.
 :::
 
-### Automatically create dashboard cards
-When you select Done after adding devices, LaunchControl offers to create matching dashboard cards.
+### Add the devices
+
+Everything happens on the one screen:
+
+1. **Tick the devices to add.** Ready-to-add and just-operated devices start ticked; untick any you do not want. **Select all** and **none** under Ready to add tick or clear that section.
+2. **Name each device** in its row — Bench Light, Kitchen Ceiling, Water Pump.
+3. **Say what each switched circuit is** in its **What is it?** box. A dimmer or relay output can drive a light, a water pump, a fan, an awning, shades, a door lock or a Starlink dish, and only you know which. LaunchControl shows a guess under the box but never picks for you; choose **No card** for an output you do not want on the dashboard. Batteries, tanks, thermostats and the like show the card they will get.
+4. **Choose where the cards go** — only when you have more than one dashboard, or in Expert mode. **Put the cards on**, in the bar under the list, picks the panel or makes a new one; otherwise the cards go on your dashboard.
+5. **Press Add Equipment & Create Dashboard.** The bar says what one press will do — how many devices and how many cards. While a ticked switched circuit has no answer yet, the button stays grey and a red note beside it says to set the device type for them; the note jumps to the first one; an output set to **No card** counts as answered and is never asked for again. The devices are added one at a time and their cards are created straight after. From the setup guide it returns you to the guide.
 
 ![Add Device – Found RV-C devices page](images/devices01.png)
 
-::: technical "Technical detail"
-A single device, such as a lighting dimmer, may have multiple “instances”. In the case of the dimmer, the instances define multiple switched lighting zones. Some experimentation may be necessary to figure out which physical device corresponds to which RV-C device and instance. This is best done using the test and status displays for the device. See section 14 – Technical Reference for additional detail.
+::: note "The card limit"
+The Hub holds up to 72 dashboard cards. The bar counts what it is about to create and the button stays off while the selection would go past that; untick a row or choose No card. It also says when more than 16 cards would keep a history graph on the Hub.
 :::
 
-::: technical "Expert Mode"
-To keep the found devices decluttered, some devices are hidden by default. If you can't find your RV-C device, use the Expert button to show all RV-C devices found on the bus. See the [Technical Reference](#technical-reference) for additional detail.
-:::
+### Scanning again
+
+A second scan folds the devices you already added under **Already configured**, with their count; press **Show** to list them anyway.
+
+Some coaches give their controllers new network addresses after a power cycle. A device that moved shows as **Moved here · updating** instead of as something new; the Hub updates its saved address, its cards and its lighting zones by itself within a couple of minutes, and notes it in the alert list. Nothing to do.
+
+### Expert mode
+
+To keep the list readable, protocol-level detail is hidden: message numbers (DGNs), instance numbers, source addresses and the rarely used device types. **Expert mode** — the switch at the top of the Devices page, and the same switch in the scan — shows all of it, on every page of LaunchControl, in this browser. If you cannot find a device, turn Expert mode on; some device types are listed only there. See the [Technical Reference](#technical-reference) for what the numbers mean.
+
+### Change a device
+
+Select a device in the list to test it, rename it, or edit its fields — which readings are shown, their units and rounding, a tank’s geometry table, a dimmer’s memory behaviour. A device’s ⋮ menu offers **Add to dashboard** for a device that has no card yet, and **Remove**. Removing a device clears its card bindings and deletes a card left with nothing bound.
 
 ## Victron equipment
 
 If your coach has a Victron GX device such as a Cerbo GX, LaunchControl can read and control supported Victron equipment including MultiPlus inverter/chargers, battery monitors, solar chargers, GPS, and temperature sensors. This is always the best way to connect to Victron equipment and any third-party devices that use MQTT.
 
-1. **Enable MQTT services on the Cerbo GX device: Settings → Integrations → MQTT Access On**
-2. **Connect MQTT to the Cerbo.** Open **Settings → Integrations → MQTT** and press **Set up**. Turn on MQTT, choose **Connect to another broker**, enter the Cerbo's IP address as the **Server address** (port 1883), and press **Save changes**. A username and password are not required for this integration. The card shows **Connected** once the Hub reaches the Cerbo.
-3. **Turn on Victron GX.** Open the **Victron GX** card on the same page. Its checklist shows whether MQTT is ready; if not, **Configure MQTT** takes you straight to the MQTT card. Turn on Victron GX, press **Find Victron GX** to fill in the Portal ID (or **Enter manually** — it is on the GX under Settings → VRM online portal → VRM Portal ID), and press **Save changes**.
-4. **Add the equipment.** Press **Add Victron devices** on the Victron GX card, or open Devices and run a Victron scan. Add the discovered equipment. LaunchControl will create matching dashboard cards.
+1. **Enable MQTT on the Cerbo GX.** On the GX device: Settings → Services → **MQTT on LAN (plaintext)** on.
+2. **Find the Cerbo.** On the Hub, open **Settings → Integrations → Victron GX** and press **Set up**. Press **Find Cerbo GX**; the Hub looks for the GX device on your network and offers it. Press **Use this Cerbo**. LaunchControl connects MQTT to it, finds its Portal ID and turns Victron on, in one go.
+3. **Add the equipment.** Press **Add Victron devices** on the Victron GX card, or open Devices and run a Victron scan. Add the discovered equipment; LaunchControl creates matching dashboard cards.
 
 ![Devices added after a Victron scan](images/ch03-devices-added-after-a-victron-scan.png)
+
+If the Cerbo is not found, press **Enter the address manually**: under **Settings → Integrations → MQTT** choose **Connect to another broker**, enter the Cerbo’s IP address as the **Server address** (port 1883) and press **Save changes**, then on the Victron GX card press **Find Victron GX** to fill in the Portal ID and **Save changes**.
 
 ::: technical
 The Hub is an MQTT client. Victron field values arrive through the GX device’s MQTT topic tree; writable fields such as inverter mode, input current limit, and setpoints are written back through MQTT. With a Cerbo, its broker is the natural place to add non RV-C equipment like Bluetooth Ruuvi temperature sensors, Shelly devices, or ESPHome devices; without one, the Hub can run its own broker (below). See the Wi-Fi setup guide found on the [launchcontrol.tech FAQ](https://launchcontrol.tech/pages/support-faq) for additional networking details.
 :::
 
-The hub always needs to know where to find the Cerbo GX. The Cerbo GX can be accessed directly over it's own hosted access point with a static IP, or may be accessed through your RV router. If you are using an RV router, the Cerbo GX will need static IP address. See the Wi-Fi setup guide at launchcontrol.tech for additional detail.
+The Hub always needs to know where to find the Cerbo GX. The Cerbo GX can be accessed directly over its own hosted access point with a static IP, or through your RV router. If you are using an RV router, the Cerbo GX will need a static IP address. See the Wi-Fi setup guide at launchcontrol.tech for additional detail.
 
 ## The Hub's own MQTT broker
 
@@ -113,7 +84,7 @@ Under **Settings → Integrations → MQTT** the **Broker** choice has two optio
 - **Connect to another broker —** the Hub connects to a broker somewhere else: a Cerbo GX, a Home Assistant broker, or any other. This is the Victron setup above.
 - **Use Hub's built-in broker —** the Hub runs the broker itself. Use this on a coach that has no Cerbo. The card shows the **Broker address** your devices should use (the Hub's IP address on port 1883) and how many **clients** are connected. The username and password are optional: leave the username blank and any device on the coach network can connect; enter one and devices must sign in with it and the password.
 
-Shelly, ESPHome and other MQTT devices are pointed at that address in their own settings. Home Assistant, Node-RED or MQTT Explorer can connect to it too and will see the Hub's published fields. The Hub uses one broker at a time: with the built-in broker selected, the Victron GX integration is unavailable, because it reads the Cerbo's broker — the Victron GX card then says **MQTT connection required**.
+Shelly, ESPHome and other MQTT devices are pointed at that address in their own settings. Home Assistant, Node-RED or MQTT Explorer can connect to it too and will see the Hub's published fields. The Hub uses one broker at a time: with the built-in broker selected, the Victron GX integration is unavailable, because it reads the Cerbo's broker — the Victron GX card then says **Victron isn’t connected**.
 
 **Publish data to MQTT** has three independent options — **RV-C data**, **Victron data** and **Bluetooth sensor data** — and turning one on never starts the others. RV-C data covers the fields marked "MQTT" on the Devices page. The topic prefix is under **Advanced settings**. Changes take effect when you press **Save changes**; the card shows **Unsaved changes** until you do.
 
@@ -141,8 +112,9 @@ ESPHome discovery is planned. Until then, add ESPHome and other MQTT devices as 
 The Hub can listen directly to supported Bluetooth broadcasts without normal Bluetooth pairing:
 
 - **Victron Instant Readout —** SmartShunts, SmartSolar chargers, and similar supported devices can broadcast readings directly, but a Cerbo GX is preferred if available.
-- **Ruuvi tags —** battery-powered temperature and humidity sensors suitable for locations such as a refrigerator or outdoor reading.  
+- **Ruuvi tags —** battery-powered temperature and humidity sensors suitable for locations such as a refrigerator or outdoor reading.
 - **Shelly BLU button remotes —** each press of each button runs a macro, recalls a lighting scene, switches a device or turns an automation on or off. See **Shelly Setup**.
+- **Garnet SeeLevel —** Bluetooth tank monitors; each tank they report becomes a Tank card.
 
 Open **Settings → Integrations → Bluetooth**, choose **On** and press **Save and restart**. The Hub restarts — the dashboard and displays pause for about 30 seconds and reconnect by themselves — and the card confirms Bluetooth is on. Then press **Add Bluetooth devices** (or use the Devices page) to add the sensors you want; the Hub only reads devices you add.
 
@@ -152,7 +124,7 @@ Bluetooth is off by default. Turning it on or off changes how Hub memory is allo
 
 ## Starlink
 
-The Starlink card can show ping success when integration is activated, which is the best indicator of reliable internet. Enable Starlink in Settings → Integrations. If the card is also bound to a switched power circuit, its toggle can control dish power.
+The Starlink card can show ping success when the integration is activated, which is the best indicator of reliable internet. Enable Starlink in Settings → Integrations. If the card is also bound to a switched power circuit, its toggle can control dish power.
 
 ## GL.iNet travel router
 
@@ -183,9 +155,9 @@ One-time tank calibration process:
 - Open Devices and edit the tank device.
 - Enable Geometry Lookup.
 - Begin with the tank empty, then fill it in measured increments (a water flow meter is very helpful).
-- The more increments recorded, the better results. We suggest entering data around 1 or 2 gal increments.
+- The more increments recorded, the better the results. We suggest entering data around 1 or 2 gal increments.
 - At each step, enter the amount of liquid added.
-- Finish the calibration when full and this will also record the maximum size of the tank
+- Finish the calibration when full and this will also record the maximum size of the tank.
 
 LaunchControl uses these calibration points to calculate a corrected percentage and estimate the amount remaining. Volume is displayed in gallons or liters according to the Hub-wide units setting.
 

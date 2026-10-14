@@ -7,9 +7,9 @@ Touch 8 mirrors the dashboard you build on the web: the same panels, cards, name
 
 ## Set up a Touch 8
 
-1. **Power the display.** It shows a QR code.
-2. **Scan the QR code with your unlocked phone.** Join the temporary setup network it offers.
-3. **Follow the display setup page.** Connect the display to the Hub.
+1. **Power the display near the Hub.** A new display looks for a LaunchControl Hub hotspot; with exactly one in range and no hotspot password set, it joins by itself and shows the dashboard — nothing else to do.
+2. **If it shows a QR code instead,** scan it with your unlocked phone and join the temporary setup network it offers. That happens when no Hub is in range, more than one is, or the Hub hotspot has a password.
+3. **Follow the display setup page.** Pick the Hub and enter the hotspot password if there is one.
 4. **Finish.** The display downloads the dashboard and reconnects automatically after future restarts.
 
 ![Touch 8 Dashboard](images/ch07-touch-8-dashboard.jpg)

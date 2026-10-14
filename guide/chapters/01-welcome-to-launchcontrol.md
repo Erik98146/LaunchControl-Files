@@ -1,3 +1,4 @@
+<!-- part: Start here -->
 # Welcome to LaunchControl
 
 ::: lead
@@ -21,7 +22,7 @@ The displays are optional. A Hub plus the web dashboard is a complete LaunchCont
 
 ## How the pieces fit together
 
-The Hub has three jobs:
+The Hub has four jobs:
 
 - **RV-C connection —** the Hub connects physically to the coach control bus and reads or sends RV-C messages.
 - **Device integration —** the Hub connects to other devices such as Victron equipment, Shelly devices and more through MQTT.
@@ -34,6 +35,6 @@ RV-C uses CAN at the physical layer. The Hub listens to the bus, maintains a liv
 
 ## How to use this guide
 
-Chapter 2 is the normal installation and setup path. Follow it in order. The rest of the guide explains customizations, devices, dashboard building, controls, displays, settings, security, updates, and troubleshooting.
+The guide is in five parts. **Start here** is the installation and setup path, in order; **Using LaunchControl** covers everyday operation; **Customize** the settings; **Something isn’t working** is organized by symptom; and the **Advanced** part holds the technical reference.
 
 Deeper implementation information appears in shaded “Technical detail (optional)” boxes and in the [Technical Reference](#technical-reference). You can skip those sections during normal setup.

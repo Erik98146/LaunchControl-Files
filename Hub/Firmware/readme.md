@@ -1,3 +1,17 @@
+### v0.8.75
+10-14-2026
+
+##### Features:
+- On phones and tablets in portrait, you can now arrange dashboard cards freely, with gaps, without changing the desktop/wide layout
+- First run and device add UI has been overhauled to make initial setup easier
+- Tool tips have been added to settings and edit screens
+- Added Thornwave PowerMon-5S shunt/battery monitor as a Bluetooth device that can be added to a Battery & Power card.
+
+#### Fixes:
+- Fixed the Hub clock jumping ahead by your UTC offset when Internet time was not the selected clock source.
+
+----------------------------------
+
 ### v0.8.56
 10-12-2026
 

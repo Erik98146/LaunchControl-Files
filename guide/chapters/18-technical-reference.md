@@ -1,3 +1,4 @@
+<!-- part: Advanced -->
 # Technical Reference
 
 ::: lead
@@ -39,6 +40,65 @@ Each component reports its own vMAJOR.MINOR.BUILD version in Settings → Status
 | Binding | The link between a dashboard card and the device field(s) it displays or controls. |
 | Panel | One dashboard tab: a named grid of cards. |
 | Floor plan | A complete pre-built coach configuration. Loading a floor plan restores that configuration to the Hub. |
+
+## Understanding Devices, Cards, and Dashboards
+
+Four things work together to turn information from your RV’s equipment into an organized control panel.
+
+**Device** — a piece of equipment or a function in the RV, such as a light, water pump, thermostat, tank sensor, inverter, or battery monitor. Devices are discovered through RV-C or added through integrations such as Victron, Bluetooth, or MQTT.
+
+**Card** — the control or information display for a device. A Light Dimmer card controls a light, a Tank card shows a tank level, a Thermostat card displays and controls the climate system.
+
+**Dashboard** — cards organized into one or more panels. Cards can be rearranged to match how you use your RV.
+
+**Binding** — the link between a card and the device information it displays or controls. LaunchControl creates the normal bindings automatically when it creates a card; this chapter lists them.
+
+## Expert mode
+
+Expert mode is one switch for the whole product — at the top of the Devices page, in the scan, and at the bottom of the LaunchControl Remote card in Settings — remembered in the browser you set it in. Off, LaunchControl shows equipment by name; on, it also shows the protocol underneath: DGNs, instance numbers, source addresses, every field a device defines, raw bindings in the card editor, the relay override and the custom Shortcuts address. Nothing is removed by turning it off; it is only hidden.
+
+## Card bindings
+
+A binding connects an element on a dashboard card to information or controls provided by a device. For example a Tank card’s level display is bound to the level field of a tank device; a Light Dimmer card to the status and brightness of a lighting device; a Thermostat card to temperature, setpoint, mode and fan fields; a Battery + Power card may combine information from a battery, a shunt and other power devices.
+
+To inspect a card’s bindings: enter dashboard edit mode, open the card’s edit menu, and review the device selected as the card’s data source. **Advanced** shows every slot. Change a binding only when the suggested source is incorrect or the card needs information from another device. Structured cards use named function slots so the card knows which field represents mode, setpoint, fan, status, and similar functions.
+
+The following table illustrates typical bindings for cards that refer to multiple source devices.
+
+::: bindings
+### Inverter
+| Card element | DGN name | DGN | Field |
+| Watts | Inverter Out Power | 1FFD5 | Real Power |
+| Enable | Inverter | 1FFD4 | Enable |
+| Charger | Charger Enable | 1FFC7 | Enable |
+
+### Shore Power
+| Card element | DGN name | DGN | Field |
+| Watts | Charger Input Power | 1FFC8 | Real Power |
+| Current Limit | Charger Current Limit | 1FFC9 | Capacity |
+Note: Charger enable ties to 1FFC7.
+
+### Battery + Power
+| Card element | DGN name | DGN | Field |
+| State of Charge | Battery | 1FFFC | State of Charge |
+| Voltage | Battery | 1FFFD | Voltage |
+| Temperature | Battery | 1FFFC | Temperature |
+| Net Power | Battery | 1FFFD | Power |
+| Remaining Time | Battery | 1FFFC | Time Remaining |
+| Current | Battery | 1FFFD | Current |
+| Consumption DC | — | — | — |
+| Consumption AC | Inverter Out Power | 1FFD5 | Real Power |
+
+### Climate
+| Card element | DGN name | DGN | Field |
+| Room Temp | Thermostat | 1FF9C | Temperature |
+| Setpoint | Thermostat | 1FFE2 | Setpoint Cool/Heat |
+| Mode | Thermostat | 1FFE2 | Mode |
+| Fan Mode | Thermostat | 1FFE2 | Fan Mode |
+| Fan Speed | Thermostat | 1FFE2 | Fan Speed |
+:::
+
+Bindings may point to an RV-C instance/field, a Victron MQTT value, a Bluetooth sensor reading, a Shelly/MQTT device field or a OneControl device.
 
 ## Understanding RV-C Devices, DGNs, and Instances
 
@@ -86,7 +146,7 @@ This is why a single RV-C device type may appear several times when LaunchContro
 
 Some RV-C functions use separate DGNs for status and commands. A lighting dimmer, for example, may report its current state using a lighting status DGN while accepting on/off or brightness changes through a related command DGN.
 
-LaunchControl handles these relationships for you. In normal use, you simply add the discovered device, give it a meaningful name such as Main Ceiling, and bind its fields to a dashboard card.
+LaunchControl handles these relationships for you. In normal use, you simply add the discovered device, give it a meaningful name such as Main Ceiling, and LaunchControl creates and binds its dashboard card.
 
 **Device Fields**
 
@@ -96,6 +156,6 @@ Dashboard cards are then bound to these fields. For example, a Climate card migh
 
 ![LaunchControl interface screenshot](images/ch14-launchcontrol-interface-screenshot.png "")
 
-The Device > Edit > Expert mode will expose additional device fields and allow for changing the field name and unit rounding as well as changing the calculated offset and multiplier (which are set by default to the RV-C specification).
+A device’s **Advanced** settings expose its individual fields and allow changing the field name and unit rounding as well as the calculated offset and multiplier (which are set by default to the RV-C specification); Expert mode lists every field the device defines.
 
 You normally do not need to know the underlying DGN or instance numbers. LaunchControl discovers and manages them automatically, but understanding the relationship can be helpful when identifying devices or troubleshooting an RV-C installation.

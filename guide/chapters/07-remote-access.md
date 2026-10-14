@@ -30,9 +30,9 @@ The first time a browser opens the remote address, LaunchControl asks for your D
 
 The remote dashboard is the real dashboard: lights, thermostats, tanks, the Settings pages, automations, alerts, the floor plan. Live values update as they do at the coach. 
 
-A small **cloud** next to the connection dot at the top of the dashboard shows the remote link: green while connected, amber while reconnecting. Tap it for the remote‑use guidance. On the localk network the same cloud appears while someone is viewing the Hub through Remote, so people at the coach can see that it is being used from afar.
+A small **cloud** next to the connection dot at the top of the dashboard shows the remote link: green while connected, amber while reconnecting. Tap it for the remote‑use guidance. On the local network the same cloud appears while someone is viewing the Hub through Remote, so people at the coach can see that it is being used from afar.
 
-**Awnings and slides do not move from Remote.** You cannot see what is around them, so the Hub refuses those commands when they arrive through Remote, whoever sends them, and their cards say "Not available remotely". Shades still work. Automations that move an awning run on the Hub itself and are unaffected.
+**Awnings, slides and leveling jacks do not move from Remote.** You cannot see what is around them, so the Hub refuses those commands when they arrive through Remote, whoever sends them, and their cards say "Not available remotely". Shades still work. Automations that move an awning run on the Hub itself and are unaffected. Siri and Shortcuts never move awnings, shades or slides at all.
 
 If the Hub is not connected to Remote when you open the remote address, the page says **Hub offline** and when the Hub was last seen, in UTC. The Hub reconnects by itself as soon as it has internet again.
 
