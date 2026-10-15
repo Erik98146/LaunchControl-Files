@@ -1,4 +1,4 @@
-### v0.8.75
+### v0.8.76
 10-14-2026
 
 ##### Features:
@@ -9,6 +9,8 @@
 
 #### Fixes:
 - Fixed the Hub clock jumping ahead by your UTC offset when Internet time was not the selected clock source.
+- Backgrounds can now be added and arranged in portrait (phone) view, separately from landscape.
+- Devices that change address after a coach power cycle no longer raise alerts; the Hub still updates them automatically.
 
 ----------------------------------
 
