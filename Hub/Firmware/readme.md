@@ -2,7 +2,7 @@
 10-15-2026
 
 ##### Features:
-- AI Improvements for option AI integration:
+- AI Improvements for option AI integration: THE AI ASSISTANT MUST BE TURNED ON IN INTEGRATIONS.  Additional setup is found in the AI assistant section of the remote admin: https://remote.launchcontrol.tech
 - One switch on the Hub now sets up the AI assistant; no more copying keys. And you can choose whether unusual readings are reported to your alert inbox on their own.
 - Your AI assistant’s history is now continuous across an internet outage: The assistant’s history no longer has holes after the Hub was offline: when the Hub reconnects, the relay fills in what the Hub recorded while the internet connection was down.
 - The assistant now sees your coach to the minute: ask what happened and when, how much solar you made today, how far and how fast you drove (with GPS), whether every sensor and display is reporting, and it will tell you about anything unusual before you ask.
