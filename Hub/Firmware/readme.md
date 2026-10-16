@@ -1,3 +1,25 @@
+### v0.8.83
+10-15-2026
+
+##### Features:
+- AI Improvements for option AI integration:
+- One switch on the Hub now sets up the AI assistant; no more copying keys. And you can choose whether unusual readings are reported to your alert inbox on their own.
+- Your AI assistant’s history is now continuous across an internet outage: The assistant’s history no longer has holes after the Hub was offline: when the Hub reconnects, the relay fills in what the Hub recorded while the internet connection was down.
+- The assistant now sees your coach to the minute: ask what happened and when, how much solar you made today, how far and how fast you drove (with GPS), whether every sensor and display is reporting, and it will tell you about anything unusual before you ask.
+- The LaunchControl AI assistant can now list what readings it has, pull any window of history at a chosen resolution, and tell you what happened and when. Times are always your coach’s own, and readings that cannot be right are marked rather than believed.
+- Energy totals (solar made, battery charged and discharged, shore power used) now survive a Hub reboot and reach back 30 days instead of 7.
+- The AI assistant can now estimate how long the battery will last from your usual overnight usage, and how many days until a fresh tank runs out or a gray or black tank fills, always saying it is an estimate.
+- Asking about devices now tells the assistant whether the shore power limit can be set and what the inverter is doing.
+- After a Hub reboot, the assistant still has the last week of readings at 15-minute resolution.
+
+##### Fixes:
+- Finding equipment no longer lists devices nobody touched, and a light you already added now shows up when you switch it.
+- Name Victron fields in the automation sensor picker
+- Bluetooth scans are now active instead of passive.
+- Change: Up to 32 dashboard background regions can now be defined.
+
+-----------------------------------
+
 ### v0.8.76
 10-14-2026
 
