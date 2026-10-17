@@ -1,3 +1,13 @@
+### v0.8.85
+10-16-2026
+
+##### Fixes:
+- When an update alert appears, Settings → System now shows that update’s release notes straight away.
+- Climate controls only offer Heat, Auto and Fuel on zones that support them.
+- Relay switched outputs now work properly
+
+--------------------------------------
+
 ### v0.8.83
 10-15-2026
 
