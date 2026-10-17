@@ -1,3 +1,11 @@
+### v0.8.86
+10-17-2026
+
+##### Fixes:
+- Fixed device discovery bug that hid switch changes after the first was seen.
+
+-----------------------------------------
+
 ### v0.8.85
 10-16-2026
 
