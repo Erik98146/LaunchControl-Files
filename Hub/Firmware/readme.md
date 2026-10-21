@@ -1,3 +1,19 @@
+### v0.8.99
+10-20-2026
+
+##### Features:
+- Added Wavetronix Fathom tank sensors. Choose the tank it is on, enter the tank depth or auto calibrate it empty.  Tank geometry is supported.
+- New Panel Backlight card: switch certain coach factory panel’s backlights between Off, Dim and On from the dashboard, the Touch 8, or an automation or macro.
+
+##### Fixes:
+- On phones, entering the PIN no longer leaves the page zoomed in.
+- Adding devices: when a device still needs its type, the scan now says so and highlights where to choose it.
+- Saving a hotspot password now reports when the Hub did not accept it.
+- Settings: saved Wi-Fi network names now show on narrow phone screens.
+- Adding devices: the button now says ‘Add Equipment & Cards to Dashboard’ when a dashboard already exists.
+
+--------------------------------
+
 ### v0.8.86
 10-17-2026
 
