@@ -1,3 +1,26 @@
+### v0.8.110
+10-22-2026
+
+##### Features:
+- Leak detection: Automations can now protect against leaks: a rule can latch until you reset it and act on a sensor that’s already triggered when the Hub starts, and the Hub can open and close Shelly-powered water valves.
+- New proactive alert: the Hub can text you when the heat or air conditioning has been running but the coach isn’t getting warmer or cooler. Turn it on in Settings → Automations.
+- LaunchControl now supports the ITC VersiControl RGB(W) Smart System lighting controller: its zones appear in Add Devices and can be switched from the dashboard.
+
+##### Improvements:
+- Improved Wi-Fi roaming: With several access points sharing one Wi-Fi name, the Hub now joins the strongest one and moves to a much stronger one if its signal gets weak.
+- The Add devices scan can now show one kind of equipment at a time (lights and switches, batteries, solar and more), which makes busy coaches much easier to set up.
+- A new dashboard panel now opens empty with an “Add a card” button instead of the setup checklist, and Panel Edit on an empty panel keeps its settings in view.
+- On a phone, the large thermostat dial opens a pop-up for changes, and the heat and cool setpoints can be adjusted separately.
+- Light dimmers now have a box next to the slider where you can type an exact brightness percent.
+
+##### Fixes:
+- When a device on the RV-C network changes address, the Devices page now shows its correct name instead of the name of the device that used that address before.
+- Dashboard cards no longer clip their text when the browser’s font size is set larger than normal; use the browser’s zoom to make the dashboard bigger.
+- When the coach’s touchpad has the thermostat open, LaunchControl now says so instead of reporting “did not take effect”.
+- Prefer Gas / Prefer Heat Pump now read and set correctly.
+
+-------------------------------------
+
 ### v0.8.99
 10-20-2026
 
