@@ -1,3 +1,19 @@
+### v0.8.116
+10-24-2026
+
+##### Features:
+- On Winnebago coaches with WinnConnect, LaunchControl now turns the lights on, off and dims them through WinnConnect itself, so the WinnConnect screen and the wall switches stay in sync.
+- LaunchControl now reads tank levels from CZone and other NMEA 2000 tank senders.
+- LaunchControl now reads Victron Blue Smart battery chargers over Bluetooth and shows what they’re doing (Bulk, Absorption, Float, Storage) on a new Battery Charger card. Bluetooth battery monitors now publish their full readings over MQTT.
+- New Leveler card for trailers: hold LEVEL to auto-level or HITCH to return to hitch height, with live step-by-step status.
+- WinnConnect ITC overhead lights can now be dimmed and switched off from LaunchControl, and a dimmer card on a switched output now turns it off at 0%.
+
+##### Fixes:
+- On Winnebago coaches, the Shore Power card now shows “On generator” instead of “Connected” while the generator is running.
+- Cards no longer show placeholder values such as “65535 W” when a device reports a reading as unavailable.
+
+------------------------------------
+
 ### v0.8.110
 10-22-2026
 
