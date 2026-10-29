@@ -1,3 +1,17 @@
+### v0.8.120
+10-29-2026
+
+##### Features:
+- New TV Lift card: raise or lower a TV lift with one tap, and see whether it’s up or down.
+- Winnebago coaches with WinnConnect: the generator can now be started and stopped from LaunchControl (not through Remote).
+
+##### Improvements:
+- Battery Charger card: long names and charger states now fit on phones.
+- Lighting scenes can now include a Panel Backlight, so one scene can set the coach’s panel backlights Off, Dim or On.
+- Outputs your coach’s panel turns on with a delay, such as an automatic tank fill, are now turned on the same way from LaunchControl.
+
+------------------------------
+
 ### v0.8.116
 10-24-2026
 

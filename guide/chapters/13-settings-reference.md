@@ -94,16 +94,6 @@ Schedules and timers need valid time. The card shows the Hub's current time and 
 2. Read what will be replaced. **Download current backup** first if you may want today's setup back.
 3. **Restore backup**, then confirm **Restore this backup?** The page shows *Restoring backup…*, *Restarting Hub…* and *Reconnecting…*, and confirms once the Hub is back. If the Hub does not answer in time, it says the result is not confirmed — reload the page a minute later.
 
-## Connection protocol
-
-The Hub talks to the coach's devices in one protocol at a time: **RV-C** (most RVs) or **OneControl** (Lippert coaches). The card shows the one in use. **Change protocol** opens a choice; picking one is only a draft, and the card lists exactly what the switch removes:
-
-| **Switching to** | **Removes** |
-| --- | --- |
-| OneControl | All RV-C devices and their field settings, Lighting card zones and scenes, tank calibration tables, saved RV-C device details, and RV-C data on dashboard cards (the cards stay). |
-| RV-C | All OneControl devices and OneControl data on dashboard cards (the cards stay). |
-
-Victron, MQTT and Bluetooth devices, dashboards, Wi-Fi and every other setting are kept. **Download backup** first, then **Apply and restart** and confirm. Restoring a backup made before the switch brings everything back, including the protocol.
 
 ## RV-C Tools
 
