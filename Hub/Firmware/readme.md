@@ -1,3 +1,13 @@
+### v0.8.124
+10-31-2026
+
+##### Fixes:
+- Fixed the TV Lift and Slide cards picking the wrong second output in the card editor; picking either button of a pair now sets up both.
+- The generator now appears in Add devices as “Generator” with a start/stop card, and the ID button is no longer offered for it.
+- ITC light outputs that drive separate lights on their colour channels now show each light as its own device; RGB strips stay one colour light, and a Light type choice is on the Devices page.
+
+---------------------------------
+
 ### v0.8.120
 10-29-2026
 
