@@ -1,3 +1,17 @@
+### v0.8.126
+11-6-2026
+
+##### Features:
+- You can now add a Leveler card from Add a card, and the Devices page has hold-to-test buttons for levelers.
+
+##### Improvements:
+- On the 4×1 light dimmer card, tap the brightness value to open a large slider with a big, easy-to-type percentage.
+
+##### Fixes:
+- LaunchControl can now switch ITC-controlled lights whose wall switch sends two signals per press, such as the hallway light on Winnebago coaches with Winnconnect.
+
+----------------------------------
+
 ### v0.8.124
 10-31-2026
 
