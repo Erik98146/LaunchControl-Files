@@ -1,3 +1,17 @@
+### v0.8.140
+11-9-2026
+
+##### Improvements:
+- If the hub drops off the RV-C network because of bus errors, it now reconnects by itself instead of needing a restart.
+
+##### Fixes:
+- A TV lift wired to two dimmer channels now sets up without Expert mode. Its down output appears in the card editor, and naming the outputs “TV Lift Up” and “TV Lift Down” fills both in automatically
+- Card editor: choosing a device for one button of a TV lift, fan or shade (⋮ on that line) now fills that button instead of the whole card.
+- Fan card: a vent wired to separate open and close outputs now has Open / Close buttons (hold to run) on the dashboard and the Touch 8.
+- The Leveler card now opens its Level / Hitch controls when tapped.
+
+---------------------------------------
+
 ### v0.8.135
 11-6-2026
 
