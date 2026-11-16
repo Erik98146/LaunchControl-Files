@@ -1,3 +1,21 @@
+### v0.8.143
+11-15-2026
+
+##### Features:
+- Add the ability to add some factory outdoor temp sensors to cards and the header.
+
+##### Improvements:
+- Device Status can be printed, saved as a snapshot and opened again later, including from a support file, and has a link back to RV-C Tools.
+- Hold-to-move buttons (leveler, awnings, slides, shades) keep running while you hold them, even if your finger shifts a little or another finger touches the screen.
+
+##### Fixes:
+- Fixed an issue with some coaches missing devices after a coach power cycle and change of device addresses. LaunchControl will now track changed addresses.
+- TV lifts wired to dimmer outputs now go all the way up or down with one tap.
+- The support file button no longer gets stuck if the connection drops.
+- LaunchControl no longer mistakes a group button like All Lights Off for one light’s switch.
+
+----------------------------------
+
 ### v0.8.140
 11-9-2026
 
