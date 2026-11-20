@@ -1,3 +1,18 @@
+### v0.8.147
+11-19-2026
+
+##### Features:
+- You can now hide devices you don’t use from the Add Devices list.
+
+##### Improvements:
+- Roof fans and thermostats stay connected when their controllers change address.
+- Additional dashboard panel icons have been added
+
+##### Fixes:
+- Leveling from a phone no longer stops partway when the Wi-Fi connection is briefly slow. 
+
+-------------------------
+
 ### v0.8.143
 11-15-2026
 
