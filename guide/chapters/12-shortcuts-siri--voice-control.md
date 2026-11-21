@@ -22,7 +22,7 @@ What you can address by name:
 
 - **Switches and lights —** Light, Switch, Water Pump, Starlink, Inverter, Tank Heat and Linked Switch cards: on, off, toggle, status. Lights also take a brightness.
 - **Thermostats —** a temperature, a mode (heat, cool, auto, fan, off), or status.
-- **Lighting zones and scenes —** each zone of a Lighting card (on, off) and every saved scene (run).
+- **Lighting zones and scenes —** each zone of a Lighting Scenes card (on, off) and every saved scene (run).
 - **Door locks —** lock, unlock, status.
 - **Shore power —** a current limit.
 - **Macros and automations —** run a macro; enable or disable an automation.

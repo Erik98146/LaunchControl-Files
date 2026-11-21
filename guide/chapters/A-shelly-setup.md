@@ -101,7 +101,7 @@ When **Color** goes to 0 and comes back up, the light returns to its last colour
 
 ### Lighting scenes and zones
 
-Colour lights appear in a Lighting card's settings (marked **(Shelly)**) and can be added to Zone 1, Zone 2 and the scenes:
+Colour lights appear in a Lighting Scenes card's **Edit** dialog (marked **(Shelly)**) and can be added to Zone 1, Zone 2 and the scenes:
 
 - **Zones** switch a colour light on and off. It keeps its own colour and levels.
 - **Scenes** remember each colour light's on/off state, colour, colour brightness and white level, and bring all of them back in one step. Set the lights the way you want them, then press and hold the scene to save it.

@@ -7,21 +7,74 @@ Use dashboard cards for everyday lighting, climate, tanks, and timers. The secti
 
 A tap, a press-and-hold, and a timer action can do different things on different card types. Follow the instructions for the card you are using.
 
-![Lighting master controls](images/ch05-lighting-master-controls.png)
+## Lighting Scenes
 
-## Lighting Masters & Scenes
+The Lighting Scenes card controls groups of lights from one place:
 
-The Lighting card provides whole-coach lighting controls:
+- **Two zone masters —** an On and an Off button for each of two groups of lights, such as inside and outside.
+- **Four scenes —** one-tap lighting presets such as Evening or Movie. Each scene remembers the level of every light in it.
 
-- **Two zone masters —** tap to switch each group on or off. Press and hold a master to bring that group to full brightness.
-- **Four scenes —** one-tap lighting scenes such as Evening or Movie. Set the lights as desired, then press and hold a scene to save. Scene names and icons may be customized in the card editor.
-- **Automation badge —** run lighting on a schedule from the card settings. Lights can be controlled by time of day or by using solar panels as a sensor.
+Each Lighting Scenes card keeps its own lights, zones and scenes, so you can add more than one: for example a full card on the main panel and a row of scene buttons by the bedroom.
 
-The Lighting card setup lets you choose which lights are controlled by Zone 1 master, Zone 2 master, and lighting scenes. Each Lighting card maintains its own list of lights, allowing you to create multiple cards for different zones throughout the coach.
+![The 8×2 Standard layout](images/ch05-lighting-master-controls.png "The 8×2 Standard layout: a zone master either side of the four scenes")
 
-When the master is turned off, LaunchControl remembers the state of each light. Turning the master back on restores the lights to their previous settings. To turn all lights on at 100%, press and hold the On button.
+### Layouts
 
-Each lighting zone and scene list supports up to **32 lights**. The settings page warns when a list is full.
+The card comes in four layouts. Pick one when you add the card, and change it at any time from the card's **Edit** dialog.
+
+| **Layout** | **What it shows** | **Use it for** |
+| --- | --- | --- |
+| 8×2 Standard | Both zone masters, the four scenes, and the automation badge | The main lighting card |
+| 8×1 Scenes | The four scene buttons in one row | Scenes in a single-row slot, with no masters |
+| 2×4 Scenes | The four scene buttons stacked | A narrow scene keypad |
+| 4×2 Masters | On and Off for each zone, as four large buttons | Zone switching without scenes |
+
+The Touch 8 shows the same layouts. On the 8×2 Standard layout only, **Touch Panel Alternate** turns the card on a Touch display into four large buttons.
+
+### Set up the card
+
+1. **Add the card.** Open panel edit mode, then **Dashboard Cards → Add a card… → Lights & switches → Lighting Scenes**. The Lighting Scenes dialog opens.
+2. **Name it and pick a layout.** Tap a layout button to see a preview of the card at its real size. The name is shown on the card and is how Siri and Shortcuts find it.
+3. **Set up the zones.** For Zone 1 and Zone 2, give the zone a name (up to 11 characters, for example Inside), then tick the lights it switches.
+4. **Choose the scene lights.** Under **Scenes**, tick every light that any scene should control. The four scenes share this one list.
+5. **Name the scene buttons.** Give each button a name, and optionally an icon or a second line of text.
+6. **Save.** The card appears on the panel. If the layout you picked does not fit where the card was, it moves to the first free space.
+
+To change any of this later, open the card's gear menu and choose **Edit**. Name, layout, zones and scenes are all in that one dialog.
+
+::: note "Sections that fold away"
+A layout with no master buttons folds the **Zones** section, and the Masters layout folds **Scenes**. Open a folded section to change it: its settings are kept, and zones and scenes still work by voice, from macros and from remotes even when the card does not show their buttons.
+:::
+
+Each zone and the scene list hold up to **32 lights**. The dialog warns when a list is full.
+
+### Use the zone masters
+
+- **On —** tap to switch the zone's lights on.
+- **Off —** tap to switch them all off.
+- **Full brightness —** press and hold **On** to bring every light in the zone to 100%.
+- **Memory —** a setting for each zone in the Edit dialog. With Memory on, **On** returns dimmable lights to the level they had before they were switched off. With it off, **On** always switches them on at full.
+
+The buttons also show what the lights are doing: **On** is lit while any light in the zone is on, and **Off** is lit when all of them are off. This stays correct when lights are switched at a wall switch.
+
+### Save and use scenes
+
+1. **Set the lights.** Use the dimmer cards, the masters or the wall switches to get the lights the way you want them.
+2. **Press and hold a scene button.** On the dashboard, confirm **Save**. On a Touch display the scene is saved as soon as you hold the button.
+3. **Tap the button to recall it.** Every light in the scene list goes to the level it had when you saved, including lights that were off.
+
+How scenes behave:
+
+- **Changing a scene —** set the lights again and press and hold the same button.
+- **A scene that has never been saved —** tapping it does nothing.
+- **Which scene is active —** the last scene recalled stays highlighted until you recall another or press a master.
+- **Lights outside the scene list —** a scene does not touch them.
+
+Scenes can also be run without the card: from a macro or automation (see [Automations & Macros](#automations-macros)), from a Shelly BLU button remote, and by name with Siri and Shortcuts.
+
+### Lighting automation
+
+On the 8×2 Standard layout, the clock badge in the top right corner opens Lighting Automation. It can switch lights on and off by time of day, or use a solar panel as a light sensor to switch them at dusk and dawn. The badge is yellow while automation is on.
 
 ## Lighting Dimmers
 

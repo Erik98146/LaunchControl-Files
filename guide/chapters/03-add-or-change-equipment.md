@@ -115,7 +115,7 @@ Shelly relays, inputs and colour lights (Gen2, Gen3 and Gen4 models such as the 
 3. **Add it.** On the Devices page choose **Add devices → Scan for Shelly devices**. Each relay, input and colour light appears within a minute; press **Add** for the ones you want.
 4. **Create cards.** Close the list and accept **Create cards**. A relay becomes a switch card (with its wired switch input shown under the icon when it has one); an input-only device such as a Plus i4 becomes a card that shows On or Off; a colour light becomes a **Color Light** card.
 
-A **Color Light** card switches the light on or off with a tap. Press and hold it for the colour wheel and three sliders: **Color** (the brightness of the coloured LEDs), **White** (the white LEDs, set separately) and **Master** (both together, keeping their balance). Colour lights can be added to a Lighting card's zones and scenes, and a scene remembers each light's colour and levels.
+A **Color Light** card switches the light on or off with a tap. Press and hold it for the colour wheel and three sliders: **Color** (the brightness of the coloured LEDs), **White** (the white LEDs, set separately) and **Master** (both together, keeping their balance). Colour lights can be added to a Lighting Scenes card's zones and scenes, and a scene remembers each light's colour and levels.
 
 Shelly devices work everywhere other devices do: on the Touch 8, in automations (a Shelly input can trigger a rule, and **Switch a card** can turn a Shelly relay on or off), and in backups. An input set to **Button** mode in the Shelly app has no on/off state, so it does not get a card; instead it can run a macro on a single, double, triple or long press.
 

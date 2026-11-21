@@ -28,7 +28,7 @@ Use any names and grouping that suit you. Panels group cards; sub-panels add a s
 Most cards are created when equipment is added (see [Add or Change Equipment](#add-or-change-equipment)). For the rest:
 
 - **Create cards for new devices —** in panel edit mode, under **Dashboard Cards**. It makes a card for every device, from every source, that has none yet, after asking what each switched output is. The setup guide’s **Create dashboard** is the same button.
-- **Add a card… —** also under Dashboard Cards. Pick a type from the grouped list (Power, Climate, Water, Lights & switches, Motors, Internet, Utility, Victron) and the card editor opens with its data source to choose. Use it for cards that stand alone: Clock, Weather, Web Link, Sleep Timer, Power Diagram, an extra Lighting card for another part of the coach.
+- **Add a card… —** also under Dashboard Cards. Pick a type from the grouped list (Power, Climate, Water, Lights & switches, Motors, Internet, Utility, Victron) and the card editor opens with its data source to choose. Use it for cards that stand alone: Clock, Weather, Web Link, Sleep Timer, Power Diagram, an extra Lighting Scenes card for another part of the coach.
 - **Add to dashboard —** on the Devices page, a device’s ⋮ menu makes its default card.
 
 Cards are placed in the panel you are looking at. **Move or copy…** in a card’s gear menu puts it on another panel.
@@ -49,7 +49,7 @@ The dashboard grid adapts to screen size, so the same configuration can be used 
 | **Card** | **What it shows / does** |
 | --- | --- |
 | Thermostat | Room temperature, setpoint, mode, and fan. Available in several layouts. |
-| Lighting | Two zone master switches plus four scene buttons. |
+| Lighting Scenes | Two zone master switches plus four scene buttons. Four layouts: 8×2 Standard, 8×1 Scenes, 2×4 Scenes and 4×2 Masters (see [Controls](#controls)). |
 | Light Dimmer | One light with on/off and brightness control. |
 | Color Light | A Shelly RGBW light: on/off, colour, white and master brightness. |
 | Tank | Fresh, gray, black, LPG or fuel tank level, with an optional heater switch. |

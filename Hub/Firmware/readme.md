@@ -17,6 +17,13 @@
 
 ##### Improvements:
 - More Bluetooth sensors: the hub now holds 16 Bluetooth sensors instead of 8.
+- The lighting card has been revised:
+
+    Lighting Scenes 8×1: a new one-row layout with four scene buttons, for when you want scenes without the zone master buttons.
+
+    Lighting Scenes editing: layout, name, zones and scenes are now in one dialog with a live preview of each layout.
+
+    Renamed: the Lighting card is now called Lighting Scenes.
 
 ------------------------
 
