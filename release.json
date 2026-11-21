@@ -1,8 +1,8 @@
 {
   "schema": 1,
-  "published": "2026-11-20T02:59:12Z",
+  "published": "2026-11-21T20:42:22Z",
   "hub": {
-    "version": "v0.8.147",
+    "version": "v0.8.151",
     "firmware": "Hub/Firmware/hub_core.bin",
     "webui": "Hub/Web-UI/storage.bin",
     "notes": "Hub/Firmware/readme.md"
@@ -12,13 +12,13 @@
       "version": "v0.8.7",
       "firmware": "Mini/Firmware/mini_ui.bin",
       "notes": "Mini/Firmware/readme.md",
-      "requires_hub": "v0.8.147"
+      "requires_hub": "v0.8.151"
     },
     "touch8": {
-      "version": "v0.8.24",
+      "version": "v0.8.26",
       "firmware": "Touch8/Firmware/touch8_ui.bin",
       "notes": "Touch8/Firmware/readme.md",
-      "requires_hub": "v0.8.147"
+      "requires_hub": "v0.8.151"
     }
   }
 }

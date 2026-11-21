@@ -1,3 +1,25 @@
+### v0.8.151
+11-21-2026
+
+##### Features:
+- New Roof Fan card: turn powered roof vents on and off, set their speed and open or close the dome from the dashboard.
+- New Bluetooth sensors:
+
+    Victron SmartLithium batteries over Bluetooth: pack voltage, temperature, lowest and highest cell, and balancer status.
+
+    Victron Smart BatteryProtect over Bluetooth: output on/off, battery and load voltage, alarms and warnings.
+
+    Ruuvi Air and older RuuviTags: the Ruuvi Air's CO2, PM2.5, VOC, NOx and light readings, and RuuviTags on the older data format 3.
+
+    SwitchBot meters: Meter, Meter Plus, Outdoor Meter, Meter Pro and Meter Pro CO2 are read directly; no SwitchBot hub needed.
+
+    BTHome sensors (Shelly BLU, Xiaomi): temperature/humidity, door/window, motion and water-leak sensors, including encrypted ones, with instant updates and use in automations.
+
+##### Improvements:
+- More Bluetooth sensors: the hub now holds 16 Bluetooth sensors instead of 8.
+
+------------------------
+
 ### v0.8.147
 11-19-2026
 
