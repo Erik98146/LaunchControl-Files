@@ -41,6 +41,8 @@ One or two sentences shown large under the chapter title.
 
 To **add a chapter**, create a new file such as `07b-the-touch-8-display.md` or renumber the
 prefixes; the table of contents and chapter numbers follow the file order automatically.
+A chapter file may open with `<!-- part: Start here -->`; that part name then heads the table of
+contents from that chapter on, until another chapter declares the next part.
 **Appendices** are files named `A-name.md`, `B-name.md` and so on. They come after every
 chapter, are labelled "Appendix A" and number their sections A.1, A.2.
 To **remove a chapter**, delete its file. Links to a chapter use its title, lower-cased with
@@ -117,6 +119,11 @@ are never changed). `guide.cfg` sets the size threshold and quality; `--no-webp`
 
 Use `<br>` inside a cell for a line break. Bold and links work inside cells.
 
+## Code samples
+
+Indent every line of the sample by four spaces, with a blank line before and after. It is
+shown in a dark box in a fixed-width font. (Triple-backtick fences are not supported.)
+
 The grouped card-binding table in Chapter 4 has its own block:
 
 ```markdown
@@ -140,4 +147,5 @@ date such as `date = August 30, 2026`.
 ## If the build prints a WARNING
 
 It names the file and the problem (an unclosed `:::`, a missing picture, an unknown box
-type). Fix it and build again; the page is still written so you can look at it.
+type, or a link such as `(#security)` that matches no heading because a chapter or section was
+renamed). Fix it and build again; the page is still written so you can look at it.

@@ -1,3 +1,4 @@
+<!-- part: Remote access -->
 # Remote Access
 
 ::: lead
@@ -10,7 +11,7 @@ Open your coach's dashboard from anywhere — the campground, the office, the ot
 | --- | --- |
 | **Open dashboard** | Control equipment or change Hub settings |
 | **Live status** | Check power, tanks, temperatures, and recent alerts without operating equipment |
-| **Manage Hub** | Manage access, sharing, and the Remote plan |
+| **Manage Hub** | Manage access, sharing, the Remote plan, and the AI assistant |
 
 For a quick check while the RV is in storage or someone else is using it, start with **Live status**. Check the report’s age before treating its readings as current.
 
@@ -29,7 +30,7 @@ The Hub opens one outgoing, encrypted connection to LaunchControl's service and 
 Remote needs three things: the Hub on a network with internet access, the Hub's clock set, and a **Dashboard PIN** set.
 
 1. **Enable it.** On the dashboard, go to **Settings → Integrations**, press **Set up** on the **LaunchControl Remote** card, then **Set up LaunchControl Remote**. The card shows *Connecting*, then *Ready to link*. (The setup wizard offers the same step at the end of a new installation.)
-2. **Link it to you.** Press **Continue in browser**, or **Scan with your phone** to show a QR code and a six‑digit link code. You can also open **remote.launchcontrol.tech** in any browser and press **Link a hub**. Sign in with your e‑mail — a sign‑in link is sent to you; there is no password to remember — and enter the six‑digit link code.
+2. **Link it to you.** Press **Continue in browser**, or **Scan with your phone** to show a QR code and a six‑digit link code. You can also open **remote.launchcontrol.tech** in any browser and press **Link a hub**. Sign in with your email — a sign‑in link is sent to you; there is no password to remember — and enter the six‑digit link code.
 3. **Open your coach.** The portal shows the hub under **My hubs**; press **Open dashboard**. Bookmark the remote address: it is yours for as long as the Hub is linked.
 
 ::: note "The PIN still applies"
@@ -46,11 +47,11 @@ A small **cloud** next to the connection dot at the top of the dashboard shows t
 
 If the Hub is not connected to Remote when you open the remote address, the page says **Hub offline** and when the Hub was last seen, in UTC. The Hub reconnects by itself as soon as it has internet again.
 
-Siri, Shortcuts and other controllers work from anywhere through Remote too: under Shortcuts & API pick **LaunchControl Remote** as the **Connection method** before copying a link (see [Voice Control, Shortcuts, Siri and Other Controllers (API)](#voice-control-shortcuts-siri-and-other-controllers-api)).
+An AI assistant such as Claude can answer questions about the coach and operate named controls through Remote; see [AI Assistant](#ai-assistant).
+
+Siri, Shortcuts and other controllers work from anywhere through Remote too: under Shortcuts & API pick **LaunchControl Remote** as the **Connection method** before copying a link (see [Siri, Shortcuts & API](#siri-shortcuts-api)).
 
 ## Live status
-
-<a id="status-page"></a>
 
 Each hub on **My hubs** has a **Live status** button next to **Open dashboard** and **Manage Hub**. It opens a one‑page summary of the coach that loads in a second and works **even when the Hub is offline**. It then shows the last report the Hub sent, and says how long ago that was.
 
@@ -76,14 +77,18 @@ Open **remote.launchcontrol.tech**, sign in and choose the hub. Its page shows t
 - **Subscribe.** Press **Subscribe · $69 a year** or **Subscribe · $6.99 a month**. The plan starts when the access the hub already has runs out, so subscribing during the free trial does not shorten it: your card is saved now and first charged on that day. Payment is by card; the receipt and card details live under **Card & receipts** on the same page. Your first paid subscription carries a 30‑day money‑back guarantee from the first charge.
 - **Auto‑renew.** Shown plainly beside the end date: *Auto‑renew on — renews on … ; your card is charged … then*, or *Auto‑renew off — access ends on …*. Turn it off and nothing more is charged; turn it back on before the end date and nothing is lost.
 - **Switch plans.** A switch takes effect when the current paid period runs out; until then nothing changes and nothing is charged. The page says so while a switch is scheduled, and you can keep the current plan instead.
-- **Reminders.** LaunchControl e‑mails you before a renewal and before access ends, and the same notices appear in the dashboard's alert inbox (the triangle in the header).
+- **Reminders.** LaunchControl emails you before a renewal and before access ends, and the same notices appear in the dashboard's alert list (the triangle in the header).
 - **If a card is declined,** remote access continues for 14 days while the charge is retried; update the card under **Card & receipts**.
 
 The ledger at the bottom of the page lists every piece of access the hub has had — the trial, each subscription period, every code — with dates.
 
+::: technical "Alternative: a VPN on your router"
+A VPN such as Tailscale running on a travel router can provide remote access without a LaunchControl Remote subscription. This requires separate router and VPN configuration, and the AI assistant is not available that way.
+:::
+
 ## Sharing a hub
 
-The owner can share a hub with other people — a partner, a co‑owner, a technician — under **Share with others** on the hub's page. Each person signs in with their own e‑mail address and finds the hub under My hubs. They can open it and use it; only the owner can change the plan, the name or the sharing, and the owner can remove anyone at any time. A shared user can also leave on their own. The Dashboard PIN applies to them as it does to you.
+The owner can share a hub with other people — a partner, a co‑owner, a technician — under **Share with others** on the hub's page. Each person signs in with their own email address and finds the hub under My hubs. They can open it and use it; only the owner can change the plan, the name or the sharing, and the owner can remove anyone at any time. A shared user can also leave on their own. The Dashboard PIN applies to them as it does to you.
 
 ## Letting LaunchControl support in
 
@@ -93,7 +98,7 @@ While the window is open, every page of your hub, on your own screen as well as 
 
 ## Selling the coach, or starting over
 
-**Turn off** pauses Remote and keeps the Hub linked to your account. **Unlink** removes the Hub from your account, cancels your plan, and gives the Hub a new code for its next owner. Find both under **Turn off or unlink** on the LaunchControl Remote card in Settings, or unlink from the Hub’s page in the portal. To close your account entirely, use **Delete my account** at the bottom of the portal: every hub is unlinked, every plan cancelled, and your sign‑in is removed.
+**Turn off** pauses Remote and keeps the Hub linked to your account. **Unlink** removes the Hub from your account, cancels your plan, and gives the Hub a new code for its next owner. Find both under **Turn off or unlink** on the LaunchControl Remote card in Settings, or unlink from the Hub’s page in the portal. To close your account entirely, use **Delete my account** at the bottom of the portal: every hub is unlinked, every plan canceled, and your sign‑in is removed.
 
 ::: warning "No subscription, no internet — still your coach"
 Remote never stands between you and the coach. If the service is unreachable, the plan has ended or the Hub has no internet, everything on the coach's own Wi‑Fi works exactly as before.
@@ -103,8 +108,3 @@ Remote never stands between you and the coach. If the service is unreachable, th
 The Hub holds one outbound WebSocket over TLS (port 443) to the relay and carries the dashboard's web requests and its live update socket inside it, so no inbound port exists on the coach side. The relay checks that the signed‑in account owns or shares the hub and that access is running, then hands each request to the Hub, where the Dashboard PIN applies as on any untrusted network. The Shortcuts API key is accepted on the remote address for its control address only. The Hub identifies itself by its serial, its own secret, and a factory token derived from its license, so a serial cannot be claimed by a different device. The relay address can be overridden under **Advanced settings** on the LaunchControl Remote card, shown when **Expert mode** at the bottom of that card is on, for bench use; leave it alone otherwise.
 :::
 
-## Free remote access
-
-::: technical "Alternative: a VPN on your router"
-A VPN such as Tailscale running on a travel router can provide remote access without a LaunchControl Remote subscription. This requires separate router and VPN configuration.
-:::

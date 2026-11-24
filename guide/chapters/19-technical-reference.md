@@ -1,4 +1,4 @@
-<!-- part: Advanced -->
+<!-- part: Reference -->
 # Technical Reference
 
 ::: lead
@@ -11,20 +11,17 @@ Everything in this chapter is optional. Normal installation and use do not requi
 - Inspect a card’s source and individual bindings.
 - Interpret RV-C DGNs, instances, and device fields.
 - Build API requests or understand their responses.
+- Publish Hub data to MQTT or add MQTT devices: see [MQTT, ESPHome & Home Assistant](#mqtt-esphome-home-assistant).
 
 For installation, start with [Set Up Your Hub](#set-up-your-hub). For an equipment problem, use [Troubleshooting](#troubleshooting) before changing advanced fields.
 
 ## Architecture in one paragraph
 
-The Hub connects to the coach RV-C bus (CAN at the physical layer), decodes bus traffic into a live device model, and serves the dashboard locally over HTTP. Dashboard state changes are pushed over WebSockets. Touch 8 subscribes to the dashboard card model so it can mirror the configured panels and cards, while Mini asks the Hub for semantic roles such as “the battery.” Commands flow back through the Hub, which is the only LaunchControl device that transmits on RV-C.
+The Hub connects to the coach’s RV-C network (CAN at the physical layer), decodes bus traffic into a live device model, and serves the dashboard locally over HTTP. Dashboard state changes are pushed over WebSockets. Touch 8 subscribes to the dashboard card model so it can mirror the configured panels and cards, while Mini asks the Hub for semantic roles such as “the battery.” Commands flow back through the Hub, which is the only LaunchControl device that transmits on RV-C.
 
 ## Hardware
 
-| **Component** | **Details** |
-| --- | --- |
-| Hub | ESP32-S3 industrial control board with isolated CAN (RV-C) and RS-485 interfaces; simultaneous Wi-Fi access-point + station operation; dual firmware slots. |
-| Touch 8 | ESP32-P4 dual-core RISC-V, 32 MB RAM; 8-inch 1024×600 IPS touch panel; Wi-Fi 6 through onboard co-processor; dual firmware slots. |
-| Mini | ESP32-S3; 1.75-inch round 466×466 AMOLED touch display; dual firmware slots. |
+Processor, memory, display, and power details for the Hub, Touch 8, and Mini, together with the capacity limits of the system, are in [Hardware Specifications](#hardware-specifications).
 
 ## Versions
 
@@ -33,7 +30,7 @@ Each component reports its own vMAJOR.MINOR.BUILD version in Settings → Status
 ## Network details
 
 - **Friendly names —** launchcontrol.local (mDNS/Bonjour), launchcontrol-xxxx.local (per-device name), the DHCP hostname launchcontrol-xxxx, and http://launchcontrol on Windows.
-- **Hub hotspot —** the Hub is 192.168.4.1 on its own hotspot. Touch 8 and Mini displays live on this private network.
+- **Hub hotspot —** the Hub is 192.168.4.1 on its own hotspot. Touch 8 and Mini displays live on this network.
 - **Network separation —** the Hub does not route traffic between its hotspot and the RV/home router network.
 - **Captive setup portal —** the automatic setup portal exists only on an unconfigured Hub. After commissioning, the hotspot behaves as a normal local network.
 
@@ -48,7 +45,18 @@ Each component reports its own vMAJOR.MINOR.BUILD version in Settings → Status
 | mDNS / Bonjour | Local-network name discovery that allows launchcontrol.local to work without a DNS server. |
 | Binding | The link between a dashboard card and the device field(s) it displays or controls. |
 | Panel | One dashboard tab: a named grid of cards. |
+| Sub-panel | A second level of panels under one tab, reached from the small arrow beside the tab’s name. |
 | Floor plan | A complete pre-built coach configuration. Loading a floor plan restores that configuration to the Hub. |
+| Zone | A group of lights switched together by a Lighting Scenes card’s master buttons. |
+| Scene | A saved set of light levels recalled with one tap. |
+| Automation | A rule that watches one reading and runs actions when it crosses a threshold. |
+| Macro | A list of actions run in order by one tap, button press, or voice command. |
+| Broker | The server MQTT devices connect to. The Hub can use an existing one, such as a Cerbo GX, or run its own. |
+| OneControl | Lippert’s control network, used in place of RV-C on some coaches. Chosen with the Hub’s connection protocol setting. |
+| Web kiosk | The dashboard in a full-screen display mode for a TV or wall tablet. |
+| Trusted network | A saved Wi-Fi network on which the Hub does not ask for the Dashboard PIN. |
+| Expert mode | A switch that shows protocol-level detail throughout the product. |
+| Hub hotspot | The Hub’s own Wi-Fi network, LaunchControl-Hub-XXXX. |
 
 ## Understanding Devices, Cards, and Dashboards
 
@@ -56,7 +64,7 @@ Four things work together to turn information from your RV’s equipment into an
 
 **Device** — a piece of equipment or a function in the RV, such as a light, water pump, thermostat, tank sensor, inverter, or battery monitor. Devices are discovered through RV-C or added through integrations such as Victron, Bluetooth, or MQTT.
 
-**Card** — the control or information display for a device. A Light Dimmer card controls a light, a Tank card shows a tank level, a Thermostat card displays and controls the climate system.
+**Card** — the control or information display for a device. A Light Dimmer card controls a light, a Tank card shows a tank level, a Climate card displays and controls the climate system.
 
 **Dashboard** — cards organized into one or more panels. Cards can be rearranged to match how you use your RV.
 
@@ -68,9 +76,9 @@ Expert mode is one switch for the whole product — at the top of the Devices pa
 
 ## Card bindings
 
-A binding connects an element on a dashboard card to information or controls provided by a device. For example a Tank card’s level display is bound to the level field of a tank device; a Light Dimmer card to the status and brightness of a lighting device; a Thermostat card to temperature, setpoint, mode and fan fields; a Battery + Power card may combine information from a battery, a shunt and other power devices.
+A binding connects an element on a dashboard card to information or controls provided by a device. For example a Tank card’s level display is bound to the level field of a tank device; a Light Dimmer card to the status and brightness of a lighting device; a Climate card to temperature, setpoint, mode and fan fields; a Battery + Power card may combine information from a battery, a shunt and other power devices.
 
-To inspect a card’s bindings: enter dashboard edit mode, open the card’s edit menu, and review the device selected as the card’s data source. **Advanced** shows every slot. Change a binding only when the suggested source is incorrect or the card needs information from another device. Structured cards use named function slots so the card knows which field represents mode, setpoint, fan, status, and similar functions.
+To inspect a card’s bindings: enter panel edit mode, open the card’s edit menu, and review the device selected as the card’s data source. **Advanced** shows every slot. Change a binding only when the suggested source is incorrect or the card needs information from another device. Structured cards use named function slots so the card knows which field represents mode, setpoint, fan, status, and similar functions.
 
 The following table illustrates typical bindings for cards that refer to multiple source devices.
 
@@ -177,10 +185,12 @@ You normally do not need to know the underlying DGN or instance numbers. LaunchC
 | --- | --- |
 | `say=<sentence>` | Free text; the Hub extracts the device, the action and any number. Also accepted as an `X-Say` request header. |
 | `device=<name>` | A card, zone, scene, macro or automation name (`#<id>` for a card id). |
-| `action=` | `on` `off` `toggle` `lock` `unlock` `run` `status` |
+| `action=` | `on` `off` `toggle` `lock` `unlock` `run` `enable` `disable` `status` |
 | `level=` `temp=` `limit=` `mode=` | A brightness %, a setpoint in the Hub's display units, a shore limit in amps, or `heat` `cool` `auto` `fan` `off` |
 | `fmt=text` | Reply as one spoken line with HTTP 200 regardless of outcome. Without it the reply is JSON (`ok`, `device`, `action`, `say`, `error`, `candidates`) with 400/404/409/502 on failure. |
 | *(no device)* | Lists every name and what each accepts, as JSON. |
 | `op=newkey` | Rotates the key; PIN or trusted-network session required. |
 
 A successful reply means the Hub accepted and sent the command, not that the device obeyed; the dashboard and displays show the real state as the device reports it.
+
+Awning, Shades, Slide, and Leveler cards are refused at this address. A worked Home Assistant example is in [MQTT, ESPHome & Home Assistant](#mqtt-esphome-home-assistant).

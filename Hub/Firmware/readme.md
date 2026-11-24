@@ -1,3 +1,19 @@
+### v0.8.155
+11-24-2026
+
+##### Improvements:
+
+- Tapping a Roof Fan card now opens its speed and dome controls.
+- Device Status: a frame that a panel repeats unchanged every few seconds no longer fills the Recent commands list. It is kept as one entry with a count; an "Expert: every frame" switch shows each frame separately.
+- A Wavetronix Fathom tank sensor that reports on its own is no longer polled by the Hub; polling remains as a fallback for a sensor that stays silent.
+
+##### Fixes:
+- Winnebago Connect ITC lights that showed their state but could not be switched after the hub restarted.
+- Winnebago Connect coaches: the Carefree awning light and the Bed Step light can now be added and controlled.
+- Fixed ITC lights that showed their state but could not be switched after the hub restarted.
+
+----------------------
+
 ### v0.8.152
 11-21-2026
 

@@ -61,6 +61,9 @@ img { display: block; max-width: 100%; height: auto; }
 .lc-toc__link { display: grid; grid-template-columns: 28px 1fr; gap: 4px; padding: 7px 9px; color: #dce9ef; border-radius: 7px; font-size: 13px; line-height: 1.27; text-decoration: none; }
 .lc-toc__link span { color: var(--lc-blue); font-weight: 800; }
 .lc-toc__link:hover { color: #fff; background: rgba(20,155,223,.14); }
+.lc-toc__part { margin: 12px 0 3px 9px; color: #84cbea; font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.lc-toc__part:first-child { margin-top: 0; }
+.lc-part { margin: 40px 0 12px 4px; color: var(--lc-blue-dark); font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
 .lc-manual__content { min-width: 0; }
 .lc-start-here { display: grid; grid-template-columns: auto minmax(0,1fr); gap: 20px; margin: 0 0 28px; padding: 25px 28px; color: #dce9ef; background: linear-gradient(120deg,var(--lc-navy),var(--lc-navy-2)); border-radius: var(--lc-radius); box-shadow: 0 14px 34px rgba(5,25,38,.13); }
 .lc-start-here__badge { align-self: start; padding: 7px 11px; color: #fff; background: var(--lc-blue-dark); border-radius: 999px; font-size: 12px; font-weight: 820; letter-spacing: .08em; text-transform: uppercase; }
@@ -106,6 +109,9 @@ th, td { padding: 13px 16px; border-bottom: 1px solid var(--lc-line); text-align
 th { font-size: 14px; letter-spacing: .015em; }
 tbody tr:nth-child(even) { background: #f7fafb; }
 tbody tr:last-child td { border-bottom: 0; }
+pre { margin: 18px 0 24px; padding: 15px 18px; color: #dce9ef; background: var(--lc-navy); border-radius: 11px; font-size: 13.5px; line-height: 1.55; overflow-x: auto; }
+code { overflow-wrap: anywhere; }
+pre code { overflow-wrap: normal; }
 .lc-figure { margin: 28px 0 32px; padding: 12px; background: #eaf0f3; border: 1px solid #d5e0e5; border-radius: 13px; }
 .lc-figure > img { width: 100%; margin: 0 auto; border-radius: 7px; }
 .lc-figure__gallery { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-start; justify-content: center; }
@@ -164,7 +170,7 @@ pre code { padding: 0; background: none; }
 </style></head><body><div class="lc-layout"><main class="lc-manual__content"><h1>Editing the LaunchControl User Guide</h1>
 <p>The published guide is <code>index.html</code> in the repo root. <strong>Never edit that file by hand</strong> — it is
 generated. Edit the files in this folder, then rebuild:</p>
-<pre class="cmd">python guide/build_guide.py</pre>
+<pre class="cmd">python C:\dev\LaunchControl-Files\guide\build_guide.py</pre>
 <p>That rewrites <code>index.html</code>. Open it in a browser to check, then commit both the sources
 and the rebuilt <code>index.html</code> (GitHub serves the built file).</p>
 <p>One-time setup on a new machine: <code>pip install markdown pillow</code>.</p>
@@ -221,6 +227,10 @@ One or two sentences shown large under the chapter title.
 <a class="lc-back-to-top" href="#top">Back to top ↑</a></section></div></div></div>
 <p>To <strong>add a chapter</strong>, create a new file such as <code>07b-the-touch-8-display.md</code> or renumber the
 prefixes; the table of contents and chapter numbers follow the file order automatically.
+A chapter file may open with <code>&lt;!-- part: Start here --&gt;</code>; that part name then heads the table of
+contents from that chapter on, until another chapter declares the next part.
+<strong>Appendices</strong> are files named <code>A-name.md</code>, <code>B-name.md</code> and so on. They come after every
+chapter, are labelled "Appendix A" and number their sections A.1, A.2.
 To <strong>remove a chapter</strong>, delete its file. Links to a chapter use its title, lower-cased with
 hyphens: <code>[see Security](#security)</code>.</p>
 <h2>Text</h2>
@@ -254,9 +264,9 @@ table.</p>
 <p>Put the file in <code>images/</code>, then on a line of its own:</p>
 <div class="ex"><div class="ex__src"><p class="ex__label">You type</p><pre>![Alt text for screen readers](images/floor-plan-page.png)
 ![Alt text](images/hub-wiring.png &quot;The caption shown under the picture&quot;)
-![Alt text](images/dashboard.png &quot;&quot;)</pre></div><div class="ex__out-wrap"><p class="ex__label">You get</p><div class="ex__out"><figure class="lc-figure"><img alt="Alt text for screen readers" decoding="async" loading="lazy" src="data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="640" height="300"><rect width="100%" height="100%" fill="%23cfe0e8"/><text x="50%" y="50%" font-family="sans-serif" font-size="26" fill="%23335" text-anchor="middle">picture</text></svg>"><figcaption>Alt text for screen readers</figcaption></figure>
-<figure class="lc-figure"><img alt="Alt text" decoding="async" loading="lazy" src="data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="640" height="300"><rect width="100%" height="100%" fill="%23cfe0e8"/><text x="50%" y="50%" font-family="sans-serif" font-size="26" fill="%23335" text-anchor="middle">picture</text></svg>"><figcaption>The caption shown under the picture</figcaption></figure>
-<figure class="lc-figure"><img alt="Alt text" decoding="async" loading="lazy" src="data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="640" height="300"><rect width="100%" height="100%" fill="%23cfe0e8"/><text x="50%" y="50%" font-family="sans-serif" font-size="26" fill="%23335" text-anchor="middle">picture</text></svg>"></figure></div></div></div>
+![Alt text](images/dashboard.png &quot;&quot;)</pre></div><div class="ex__out-wrap"><p class="ex__label">You get</p><div class="ex__out"><figure class="lc-figure"><img alt="Alt text for screen readers" decoding="async" src="data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="640" height="300"><rect width="100%" height="100%" fill="%23cfe0e8"/><text x="50%" y="50%" font-family="sans-serif" font-size="26" fill="%23335" text-anchor="middle">picture</text></svg>"><figcaption>Alt text for screen readers</figcaption></figure>
+<figure class="lc-figure"><img alt="Alt text" decoding="async" src="data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="640" height="300"><rect width="100%" height="100%" fill="%23cfe0e8"/><text x="50%" y="50%" font-family="sans-serif" font-size="26" fill="%23335" text-anchor="middle">picture</text></svg>"><figcaption>The caption shown under the picture</figcaption></figure>
+<figure class="lc-figure"><img alt="Alt text" decoding="async" src="data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="640" height="300"><rect width="100%" height="100%" fill="%23cfe0e8"/><text x="50%" y="50%" font-family="sans-serif" font-size="26" fill="%23335" text-anchor="middle">picture</text></svg>"></figure></div></div></div>
 <ul>
 <li>With no quoted caption, the alt text is used as the caption.</li>
 <li>An empty caption <code>""</code> shows the picture with no caption.</li>
@@ -266,7 +276,7 @@ table.</p>
 ![Step 1](images/setup-1.png)
 ![Step 2](images/setup-2.png)
 ![Step 3](images/setup-3.png)
-:::</pre></div><div class="ex__out-wrap"><p class="ex__label">You get</p><div class="ex__out"><figure class="lc-figure lc-figure--gallery"><div class="lc-figure__gallery"><img alt="Step 1" decoding="async" loading="lazy" src="data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="640" height="300"><rect width="100%" height="100%" fill="%23cfe0e8"/><text x="50%" y="50%" font-family="sans-serif" font-size="26" fill="%23335" text-anchor="middle">picture</text></svg>"><img alt="Step 2" decoding="async" loading="lazy" src="data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="640" height="300"><rect width="100%" height="100%" fill="%23cfe0e8"/><text x="50%" y="50%" font-family="sans-serif" font-size="26" fill="%23335" text-anchor="middle">picture</text></svg>"><img alt="Step 3" decoding="async" loading="lazy" src="data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="640" height="300"><rect width="100%" height="100%" fill="%23cfe0e8"/><text x="50%" y="50%" font-family="sans-serif" font-size="26" fill="%23335" text-anchor="middle">picture</text></svg>"></div><figcaption>Initial setup</figcaption></figure></div></div></div>
+:::</pre></div><div class="ex__out-wrap"><p class="ex__label">You get</p><div class="ex__out"><figure class="lc-figure lc-figure--gallery"><div class="lc-figure__gallery"><img alt="Step 1" decoding="async" src="data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="640" height="300"><rect width="100%" height="100%" fill="%23cfe0e8"/><text x="50%" y="50%" font-family="sans-serif" font-size="26" fill="%23335" text-anchor="middle">picture</text></svg>"><img alt="Step 2" decoding="async" src="data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="640" height="300"><rect width="100%" height="100%" fill="%23cfe0e8"/><text x="50%" y="50%" font-family="sans-serif" font-size="26" fill="%23335" text-anchor="middle">picture</text></svg>"><img alt="Step 3" decoding="async" src="data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="640" height="300"><rect width="100%" height="100%" fill="%23cfe0e8"/><text x="50%" y="50%" font-family="sans-serif" font-size="26" fill="%23335" text-anchor="middle">picture</text></svg>"></div><figcaption>Initial setup</figcaption></figure></div></div></div>
 <p>Large PNG screenshots are re-encoded as WebP inside the built page (the files in <code>images/</code>
 are never changed). <code>guide.cfg</code> sets the size threshold and quality; <code>--no-webp</code> turns it off.</p>
 <h2>Tables</h2>
@@ -292,6 +302,9 @@ are never changed). <code>guide.cfg</code> sets the size threshold and quality; 
 </tbody>
 </table></div></div></div></div>
 <p>Use <code>&lt;br&gt;</code> inside a cell for a line break. Bold and links work inside cells.</p>
+<h2>Code samples</h2>
+<p>Indent every line of the sample by four spaces, with a blank line before and after. It is
+shown in a dark box in a fixed-width font. (Triple-backtick fences are not supported.)</p>
 <p>The grouped card-binding table in Chapter 4 has its own block:</p>
 <div class="ex"><div class="ex__src"><p class="ex__label">You type</p><pre>::: bindings
 ### Inverter
@@ -317,4 +330,5 @@ Note: any plain line becomes an italic note row.
 date such as <code>date = August 30, 2026</code>.</p>
 <h2>If the build prints a WARNING</h2>
 <p>It names the file and the problem (an unclosed <code>:::</code>, a missing picture, an unknown box
-type). Fix it and build again; the page is still written so you can look at it.</p></main></div><footer class="lc-footer"><strong>LaunchControl</strong><br>User guide editing reference — generated from guide/README.md by build_guide.py --readme</footer></body></html>
+type, or a link such as <code>(#security)</code> that matches no heading because a chapter or section was
+renamed). Fix it and build again; the page is still written so you can look at it.</p></main></div><footer class="lc-footer"><strong>LaunchControl</strong><br>User guide editing reference — generated from guide/README.md by build_guide.py --readme</footer></body></html>

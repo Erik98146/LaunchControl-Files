@@ -1,7 +1,7 @@
 # Alerts
 
 ::: lead
-Have the Hub tell you when something happens in the coach — a tank filling, a battery running low, the shore power dropping. Alerts show on the Hub’s screens, and can also arrive as a phone notification, text message, or email. They are sent by an automation you set up.
+Have the Hub tell you when something happens in the coach — a tank filling, a battery running low, the shore power dropping. Alerts show in the dashboard’s alert list, and can also arrive as a phone notification, text message, or email. Most are sent by an automation you set up.
 :::
 
 ## Choose a delivery method
@@ -32,6 +32,16 @@ The Hub watches itself and raises an alert when something has been wrong for a w
 ## Update notices
 
 Once a day, when a browser is open on the dashboard or Settings and has internet access, the Hub checks for a newer firmware release. If one is available, an **Update available** alert appears; delete it once you have seen it, and it does not come back for the same release. Install from Settings → System → Software updates.
+
+## Proactive alerts
+
+**Settings → Automations → Proactive alerts** holds checks the Hub runs on its own to catch trouble early. They are off until you turn them on.
+
+**Heating & cooling check** alerts you when the heat or air conditioning has been asked to run for a while but the coach is not getting warmer or cooler: a blocked furnace exhaust, an empty propane tank, a struggling air conditioner. Turn it on, tick **Heating**, **Cooling**, or both, choose how long to wait under **Alert after** (15 minutes to 2 hours), and tick where the alert should go. It runs on the Hub itself, with or without internet.
+
+## Card alarms are not alerts
+
+A Tank card’s **Level alarm** and a Generic card’s **Value alarm** change how the card looks: an amber outline at the warning level and a blinking red outline at the alarm level. They do not add anything to the alert list or send a message. To be told about a level, create an automation on the same reading with **Send alert**, as described next.
 
 ## How automation alerts fit together
 
@@ -104,7 +114,7 @@ On-screen alerts never need it. For push and SMS the Hub holds the message and k
 - **Nothing fired at all?** The rule may have been already past its threshold when you enabled it ("Triggered · at start, not fired"). Enable it while the reading is on the normal side, then let it cross.
 - **Push:** confirm the phone is subscribed to the topic shown in Settings — a **New topic** press unsubscribes every phone.
 - **SMS:** check the credit count, and check you set a sender name on the Textbelt account page.
-- **SMS says 0 credits right after you bought some?** Textbelt reports 0 both for an empty balance and for a key it does not recognise, so the likely cause is the key rather than the purchase. Each time you press **generate a new API key** you get a *different* key, and the credits belong to the one you paid with. The Settings card shows the length and last four characters of the key the Hub is holding — compare that with the key on your Textbelt account page, and paste the right one if they differ.
+- **SMS says 0 credits right after you bought some?** Textbelt reports 0 both for an empty balance and for a key it does not recognize, so the likely cause is the key rather than the purchase. Each time you press **generate a new API key** you get a *different* key, and the credits belong to the one you paid with. The Settings card shows the length and last four characters of the key the Hub is holding — compare that with the key on your Textbelt account page, and paste the right one if they differ.
 - **Send test** in Settings tells you what the service said, in its own words.
 
 ::: note "How often can it send?"

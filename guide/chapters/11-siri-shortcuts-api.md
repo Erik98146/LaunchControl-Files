@@ -1,4 +1,4 @@
-# Voice Control, Shortcuts, Siri and Other Controllers (API)
+# Siri, Shortcuts & API
 
 ::: lead
 Say "Hey Siri, kitchen lights on" and the lights come on. LaunchControl works with the Shortcuts app that is already on every iPhone, iPad, Mac and Apple Watch — no extra hub, no HomeKit. Android phones and other automation tools can use the same links.
@@ -20,7 +20,7 @@ For Siri, a Shortcut opens that address; Siri runs the Shortcut when you say its
 
 What you can address by name:
 
-- **Switches and lights —** Light, Switch, Water Pump, Starlink, Inverter, Tank Heat and Linked Switch cards: on, off, toggle, status. Lights also take a brightness.
+- **Switches and lights —** Light Dimmer, Color Light, Generic Switch, Fan, Water Pump, Starlink, Inverter, Tank Heat, and Linked Switch cards: on, off, toggle, status. Lights also take a brightness.
 - **Thermostats —** a temperature, a mode (heat, cool, auto, fan, off), or status.
 - **Lighting zones and scenes —** each zone of a Lighting Scenes card (on, off) and every saved scene (run).
 - **Door locks —** lock, unlock, status.
@@ -28,7 +28,7 @@ What you can address by name:
 - **Macros and automations —** run a macro; enable or disable an automation.
 - **Readings —** ask for the status of any card that shows a value: battery, tanks, solar, temperatures.
 
-Awnings, shades and slides are deliberately excluded. They move only while a button is held, and a voice command has no way to stop them.
+Awnings, shades, slides, and levelers are deliberately excluded. They move only while a button is held, and a voice command has no way to stop them. Roof Fan and TV Lift cards are not available by voice yet.
 
 ## Set it up
 

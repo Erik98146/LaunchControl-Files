@@ -1,7 +1,5 @@
 # TV & Wall Displays
 
-<a id="guide-tv-displays"></a>
-
 ::: lead
 Any TV, HDMI streaming stick, or wall tablet with a web browser can show one of your dashboard panels full-screen. LaunchControl calls this a **web kiosk**. Several can run at once without slowing the Hub, your phone, or your touchscreens down.
 :::
@@ -22,7 +20,7 @@ A kiosk checks in with the Hub every 12 seconds by default, rather than holding 
 An **Amazon Fire TV Stick** with the **Fully Kiosk Browser** app (a few dollars, one-time) is the most reliable setup: it starts on its own when the TV powers on, keeps the screen awake, and reloads on a schedule. Any Android TV box, or a tablet in kiosk mode, works the same way.
 :::
 
-A wall-mounted tablet is also a good kiosk. On an iPad, add the page to the Home Screen so it opens without Safari's toolbars; on Android, use Fully Kiosk Browser as above.
+A wall-mounted tablet is also a good kiosk, including an older iPad back to iOS 12. On an iPad, add the page to the Home Screen so it opens without Safari's toolbars; on Android, use Fully Kiosk Browser as above.
 
 ## Set up a display
 
@@ -79,5 +77,5 @@ Press **Remove** beside it in Settings → Displays. Its settings are erased and
 On the display itself, a long press in the **bottom-left corner** brings up a small panel with "Reload now" and "Forget this display". This recovery panel remains available when **Allow touch** is off, so you can use it without a phone.
 
 ::: note "Do I need the PIN on every TV?"
-Only if the Hub's Dashboard PIN is on and the TV is on an untrusted network. Mark your coach's Wi-Fi as trusted in Settings → Network, and your displays never ask for a PIN. See [Security](#security).
+Only if the Hub's Dashboard PIN is on and the TV is on an untrusted network. Turn on **Trusted** for your coach's Wi-Fi under Settings → Network → Saved Wi-Fi Networks, and your displays never ask for a PIN. See [Security](#security).
 :::

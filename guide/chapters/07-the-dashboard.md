@@ -1,3 +1,4 @@
+<!-- part: Make it yours -->
 # The Dashboard
 
 ::: lead
@@ -13,7 +14,7 @@ Use any names and grouping that suit you. Panels group cards; sub-panels add a s
 ### Open a panel
 
 - **Panel tabs —** switch between groups such as Main, Power, and Climate. Each panel has its own name, icon (or two), and layout. As many tabs as fit are shown across the top; the rest are always one tap away under the **All panels** icon (the grid icon at the end of the tabs).
-- **Sub-panels —** each panel can hold up to three sub-panels. Tap a tab's name to open it, or tap the small arrow beside it to choose one of its sub-panels. While a sub-panel is open, its tab reads "Panel › Sub-panel".
+- **Sub-panels —** each panel can hold up to five sub-panels, and the dashboard holds up to six panels. Tap a tab's name to open it, or tap the small arrow beside it to choose one of its sub-panels. While a sub-panel is open, its tab reads "Panel › Sub-panel".
 - **All panels —** shows every panel and sub-panel in your order, with the one showing marked. Tap any of them to go there. With more than eight panels a search box appears. **Manage panels** at the bottom opens the panel manager.
 
 ### Manage panels
@@ -28,7 +29,7 @@ Use any names and grouping that suit you. Panels group cards; sub-panels add a s
 Most cards are created when equipment is added (see [Add or Change Equipment](#add-or-change-equipment)). For the rest:
 
 - **Create cards for new devices —** in panel edit mode, under **Dashboard Cards**. It makes a card for every device, from every source, that has none yet, after asking what each switched output is. The setup guide’s **Create dashboard** is the same button.
-- **Add a card… —** also under Dashboard Cards. Pick a type from the grouped list (Power, Climate, Water, Lights & switches, Motors, Internet, Utility, Victron) and the card editor opens with its data source to choose. Use it for cards that stand alone: Clock, Weather, Web Link, Sleep Timer, Power Diagram, an extra Lighting Scenes card for another part of the coach.
+- **Add a card… —** also under Dashboard Cards. Pick a type from the grouped list (Power, Climate, Water, Security, Lights & switches, Motors, Internet, Utility, Victron) and the card editor opens with its data source to choose. Use it for cards that stand alone: Clock, Weather, Web Link, Sleep Timer, Power Diagram, an extra Lighting Scenes card for another part of the coach.
 - **Add to dashboard —** on the Devices page, a device’s ⋮ menu makes its default card.
 
 Cards are placed in the panel you are looking at. **Move or copy…** in a card’s gear menu puts it on another panel.
@@ -38,40 +39,27 @@ Cards are placed in the panel you are looking at. **Move or copy…** in a card�
 1. **Enter panel edit mode** from the menu at the top right.
 2. **Drag cards into position.** The grab handle is in the top left of the card. Cards snap into the dashboard grid.
 3. **Open a card’s gear menu** to edit, duplicate, move or remove it.
-4. **Exit edit mode.** The layout is stored on the Hub. Narrow screens can keep a separate card order, as described below.
+4. **Exit edit mode.** The layout is stored on the Hub. Narrow screens can keep their own card positions, as described below.
 
 ::: note "Responsive layout"
 The dashboard grid adapts to screen size, so the same configuration can be used on desktop, phone, and Touch 8 displays. Narrow screens keep their own card positions: the first time you drag a card on a phone, the phone layout is yours to arrange separately.
 :::
 
-## Card gallery
+## The cards at a glance
 
-| **Card** | **What it shows / does** |
-| --- | --- |
-| Thermostat | Room temperature, setpoint, mode, and fan. Available in several layouts. |
-| Lighting Scenes | Two zone master switches plus four scene buttons. Four layouts: 8×2 Standard, 8×1 Scenes, 2×4 Scenes and 4×2 Masters (see [Controls](#controls)). |
-| Light Dimmer | One light with on/off and brightness control. |
-| Color Light | A Shelly RGBW light: on/off, colour, white and master brightness. |
-| Tank | Fresh, gray, black, LPG or fuel tank level, with an optional heater switch. |
-| Battery + Power | Battery state of charge, power flow, and history graph. Three sizes: 8×4 Standard, 4×2 Compact (no graphs or detail row; time remaining shown as e.g. "4d 18h"), and 2×2 SoC + Power (just the two numbers). |
-| Solar | Solar charging power with history graph. |
-| Shore Power | Shore connection status and power. |
-| Inverter | Inverter state with on/off control. |
-| Alternator | Engine/DC-DC charging status with graph. |
-| Water Pump, Switch, Fan, Tank Heat | Simple on/off tiles for one output. |
-| Linked Switch | Several outputs switched together by one tap. |
-| Door Lock | Lock and unlock with one tap. |
-| Awning / Shades / Slide | Extend/retract or up/down controls. |
-| Hydronic | Diesel/electric hydronic furnace control. |
-| Power Diagram | Live power flow between shore, solar, alternator, battery, inverter, and loads. |
-| Sleep Timer | Turns selected devices off at a set time each night. |
-| Automation / Macro | Shows one automation's status (tap to arm) or runs one macro. Set them up under Settings → Automations. |
-| Clock / Generic | Clock and general-purpose sensor value cards, with optional value alarms. |
-| Starlink / Travel Router | Internet equipment status and controls. |
-| Weather | Current conditions and a five-day forecast; tap for the next hours. Four sizes, from a full 8×4 card to a one-row strip. Set up under Settings → Integrations → Weather. |
-| Web Link | A tile that opens a web page. |
+The **Add a card…** list is grouped the way this table is. [Card Reference](#card-reference) describes each card’s sizes, gestures, and settings.
 
-Victron-specific cards appear in the list once the Victron integration is configured.
+| **Group** | **Cards** | **What they are for** |
+| --- | --- | --- |
+| Power | Battery + Power, Inverter, Shore Power, Solar, Alternator, Battery Charger, Power Diagram | State of charge, power flow, charging sources, the inverter, and the shore current limit |
+| Climate | Climate, Hydronic, Roof Fan | Thermostats with schedules, hydronic heat, and roof fans |
+| Water | Tank, Water Pump, Tank Heat | Tank levels with optional alarms, the pump, and tank heaters |
+| Security | Door Lock | Lock and unlock with one tap |
+| Lights & switches | Light Dimmer, Color Light, Lighting Scenes, Generic Switch, Fan, Linked Switch, Panel Backlight, Sleep Timer | Single lights, groups and scenes, plain on/off outputs, and the nightly shut-off |
+| Motors | Awning, Shades, Slide, Leveler, TV Lift | Things that move |
+| Internet | Starlink, Travel Router | Connection status, dish power, joining Wi-Fi, and speed tests |
+| Utility | Clock, Generic - Single, Generic - Dual, Automation, Macro, Web Link, Weather | A clock, any other reading with an optional alarm, one-tap automations and macros, links, and the forecast |
+| Victron | Victron MultiPlus, Battery Monitor, Shore Power, MPPT, GPS, and temperature cards | Equipment read through a Victron GX device or Victron Bluetooth |
 
 The card editor shows a preview of the card at its real size, with sample values, for every layout you pick.
 
@@ -96,11 +84,11 @@ To check or change a card’s source, enter edit mode, open the card’s gear me
 
 ## Graphs
 
-Solar, Battery + Power, Alternator, temperature, and similar cards can draw a small history graph. The Hub stores the history, so it remains available after the browser is closed and appears consistently on every display. The panel Graph History setting selects how much graph history should be shown.
+Solar, Shore Power, Battery + Power, Alternator, temperature, and similar cards can draw a small history graph. The Hub stores the history, so it remains available after the browser is closed and appears consistently on every display. Each panel’s **Graph History** setting, in panel edit mode, selects how many hours its graphs show; time and scale markers are turned on in the same place. The history starts over when the Hub restarts.
 
 ## Look and feel
 
-- **Themes —** choose the dashboard appearance in display settings; the Touch 8 follows the dashboard theme.
+- **Themes —** in panel edit mode, **Theme** offers Midnight, Slate, Gray, and Nightfall. The choice applies to every browser showing this dashboard and is saved at once. The Touch 8 and Mini keep their own look, and each TV display can have its own theme.
 - **Units —** US customary or metric, for the whole product: temperatures, volumes and speeds on every card, display and the weather. Chosen during setup and changed under **Settings → System → Units**. Individual Victron devices can override units when needed.
 - **Background regions —** optional tinted regions can visually group related cards on a panel.
 

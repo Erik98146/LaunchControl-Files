@@ -23,7 +23,7 @@ Once a day, while a browser with internet access is open on the dashboard or Set
 
 - The Hub and each display keep the previous firmware alongside the new version and can fall back if the new firmware does not start correctly.
 - A display that cannot be reached is skipped and does not block the rest of the update.
-- Each display has its own basic update page for manual fallback.
+- Each display has its own basic update page for manual fallback, at `launchcontrol-touch8-xxxx.local` or `launchcontrol-mini-xxxx.local` from a phone joined to the Hub hotspot.
 
 ## Install from file
 
@@ -31,7 +31,7 @@ When the Hub's browser has no internet access, download the update file (`.bin`)
 
 1. **Choose update file.** Nothing is installed yet. The page reads the file and shows what it is — **Firmware update** or **Web interface update** — and its version, or why it cannot be used (for example, firmware for a different device).
 2. **Install update.** Keep the Hub powered on until installation is complete. The page shows *Uploading…*, *Installing update…*, *Restarting Hub…* and *Reconnecting…*, then confirms the version now running. Devices, dashboards and settings are kept.
-3. After a web interface update, reload the page to use it.
+3. After a web interface update, reload the page to use it. If the page still looks the same, close the tab and open the dashboard again.
 
 If the Hub does not answer within the wait, the page says the result is not confirmed rather than guessing; reload a minute later and check the versions shown in the card.
 

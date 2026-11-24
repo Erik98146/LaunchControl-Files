@@ -103,6 +103,21 @@ class Images:
                 warn('Pillow is not installed; images are embedded as-is. Run:  pip install pillow')
                 self.threshold = 0
 
+    def size_attrs(self, rel):
+        """' width="W" height="H"' for the picture, or '' when it cannot be read.
+
+        With the size in the tag the browser reserves the picture's space before
+        it is decoded, so a jump to a chapter lands on the chapter. (Pictures
+        used to load lazily with no size: every one that appeared after a jump
+        pushed the target further down the page.)
+        """
+        try:
+            from PIL import Image
+            with Image.open(HERE / rel) as im:
+                return f' width="{im.width}" height="{im.height}"'
+        except Exception:
+            return ''
+
     def data_uri(self, rel):
         if rel in self.cache:
             return self.cache[rel]
@@ -133,7 +148,7 @@ def figure_html(line, images):
     m = IMG_RE.match(line)
     alt, src, cap = m.group('alt'), m.group('src'), m.group('cap')
     caption = alt if cap is None else cap
-    fig = (f'<figure class="lc-figure"><img alt="{html.escape(alt, quote=True)}" decoding="async" loading="lazy" '
+    fig = (f'<figure class="lc-figure"><img alt="{html.escape(alt, quote=True)}" decoding="async"{images.size_attrs(src)} '
            f'src="{images.data_uri(src)}">')
     if caption:
         fig += f'<figcaption>{inline_md(caption)}</figcaption>'
@@ -150,7 +165,7 @@ def gallery_html(arg, body, images):
         if not m:
             warn(f'gallery: not an image line: {line[:60]}')
             continue
-        imgs.append(f'<img alt="{html.escape(m.group("alt"), quote=True)}" decoding="async" loading="lazy" '
+        imgs.append(f'<img alt="{html.escape(m.group("alt"), quote=True)}" decoding="async"{images.size_attrs(m.group("src"))} '
                     f'src="{images.data_uri(m.group("src"))}">')
     h = '<figure class="lc-figure lc-figure--gallery"><div class="lc-figure__gallery">' + ''.join(imgs) + '</div>'
     if arg:
@@ -463,6 +478,14 @@ def main():
     left = re.findall(r'{{\w+}}', page)
     if left:
         warn(f'template placeholders not filled: {left}')
+
+    # Link check: every in-page link must land on exactly one id. A renamed
+    # chapter or section otherwise leaves a link that silently goes nowhere.
+    scan = re.sub(r'src="data:[^"]*"', 'src=""', page)
+    ids = re.findall(r'\sid="([^"]+)"', scan)
+    for target in sorted(set(re.findall(r'href="#([^"]*)"', scan))):
+        if target and ids.count(target) != 1:
+            warn(f'link "#{target}" matches {ids.count(target)} places in the page (expected 1)')
 
     out = Path(args.out)
     out.write_text(page, encoding='utf-8', newline='\n')
