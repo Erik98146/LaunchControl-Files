@@ -1,10 +1,12 @@
 # The Touch 8 Display
 
 ::: lead
-Touch 8 mirrors the dashboard you build on the web: the same panels, cards, names, and positions, with touch control for supported cards. When you change the web dashboard layout, Touch 8 updates to match. It connects to the Hub hotspot and continues to work when the RV router is off.
+Touch 8 mirrors the dashboard you build on the web: the same panels, cards, names, and positions, with touch control for supported cards. When you change the web dashboard layout, Touch 8 updates to match. It connects to the Hub hotspot directly and continues to work when the RV router is off.
 :::
 
 ## Set up a Touch 8
+
+If you plan to protect the Hub hotspot with a password, set it first under [Security](#security), then pair the display.
 
 1. **Power the display near the Hub.** A new display looks for a Hub hotspot; with exactly one in range and no hotspot password set, it joins by itself and shows the dashboard — nothing else to do.
 2. **If it shows a QR code instead,** scan it with your unlocked phone and join the temporary setup network it offers. That happens when no Hub is in range, more than one is, or the Hub hotspot has a password.
@@ -21,12 +23,6 @@ Touch 8 mirrors the dashboard you build on the web: the same panels, cards, name
 - **Alarms —** a tank or value card with an alarm set shows the same amber or red outline as the web dashboard. The alert list itself is on the web dashboard.
 
 Touch 8 is a control surface, not a configuration interface. Device setup, card editing, schedules, scene contents, and automations are configured in the web dashboard.
-
-A few cards differ on the display:
-
-- **Web Link** cards are not shown.
-- **Roof Fan** cards show their readings but are controlled from the web dashboard.
-- **Hydronic** cards show status; settings are changed from the web dashboard.
 
 ## The Settings screen
 

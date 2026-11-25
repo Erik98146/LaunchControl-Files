@@ -12,6 +12,12 @@ Ask an AI assistant such as Claude or ChatGPT about your coach in plain words, b
 
 ## Turn it on
 
+::: warning "Keep the link private"
+Anyone with the connector link can see this Hub’s status and control it through an AI assistant. Do not post or share it. If it may have leaked, press **Regenerate link** on the AI assistant card; the old link stops working and you add the new one to your assistant.
+:::
+
+Review the sharing choices in [Remote Access](#remote-access) before enabling the assistant. Check the age of readings and verify important physical states yourself; the assistant cannot confirm equipment that does not report its state.
+
 1. **Let the Hub share its key.** On the Hub, open **Settings → Integrations → LaunchControl Remote** and turn on **Let the AI assistant use this Hub**. Then press **Open AI assistant setup**.
 2. **Copy your connector link.** The portal opens the Hub’s page. On the **AI assistant** card, press **Copy link** under **Your connector link**.
 3. **Add the link to your assistant,** as described below.
@@ -32,15 +38,15 @@ The first time Claude uses one of the coach’s tools, it asks you to allow it.
 3. Name it, for example “LaunchControl”, and add the connector link.
 4. Switch authentication to **No Authentication**, check the box, and create it.
 
-::: warning "Keep the link private"
-Anyone with the connector link can see this Hub’s status and control it through an AI assistant. Do not post or share it. If it may have leaked, press **Regenerate link** on the AI assistant card; the old link stops working and you add the new one to your assistant.
-:::
+
 
 ## Real-world examples
 
 **A quick check, hands busy.** You are hooking up at a campsite. “Turn on the water pump.” “Turn all the outside lights on.” “Set the bedroom to 70.”
 
 **The coach is in storage.** “How are the batteries doing?” “Did the battery drop more last night than the night before?” “When did the shore power go off?” “Is anything unusual?” The assistant answers from the Hub’s reports, even when the Hub is offline at that moment, and tells you how old the readings are.
+
+**Help and How to** "How do I set up an automation to turn off the lights and water pump when I leave?" "Why isn't my automation working?" "How can I be notified if the shore power is disconnected?" "How do I set up lighting scenes?" "Can the hub make my coffee in the morning?"
 
 **Someone or something is in the coach.** “What’s the temperature inside, and did it go above 80 today?” “Is the air conditioning running?” “Lock the front door.”
 
@@ -60,7 +66,7 @@ Anyone with the connector link can see this Hub’s status and control it throug
 | **Never does** | Awnings, shades, slides, leveling jacks, and vents. It also cannot create or change automations, scenes, timers, the dashboard layout, or settings |
 
 - The assistant uses your card names. If two names are equally close, it asks which one you mean.
-- After each command it reads back the Hub’s own answer, so you hear what actually happened.
+- After each command it reads back the Hub’s own answer, so you can hear the Hub’s response; this is not independent confirmation of physical state.
 - A confirmation is good for one minute and one command.
 - If the Hub is offline, commands are refused, not saved for later. Readings from the Hub’s last report are still available.
 

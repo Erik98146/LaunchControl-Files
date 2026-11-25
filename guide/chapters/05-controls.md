@@ -10,7 +10,7 @@ Two gestures do almost everything:
 - **Tap** switches a device on or off, or opens a card’s controls.
 - **Press and hold** opens extra controls or starts an off-timer, depending on the card.
 
-A card that shows a dash (—) has no reading yet. The dashboard always shows what the equipment reports, so a control that did not take effect returns to the real state within a few seconds.
+A card that shows a dash (—) has no reading yet. When equipment reports its state, the card returns to that reported state if a command does not take effect. Some control-only devices show the last command instead; that is not confirmation of the physical state. A dash can also mean that no state has been received. See [Coach-Specific Notes](#coach-specific-notes).
 
 ## Lights
 
@@ -22,10 +22,10 @@ A **Color Light** card works the same way: tap for on or off, press and hold for
 
 ### Groups of lights and scenes
 
-The **Lighting Scenes** card controls groups of lights from one place:
+The **Lighting Scenes** card controls groups of lights from one place. After adding a new Lighting Scenes card, you need to edit the card to set the zones, names and icons. You can add up to eight Lighting Scenes cards for different areas; see [Hardware Specifications](#hardware-specifications) for system limits. Each Lighting Scenes card:
 
-- **Two zone masters —** an On and an Off button for each of two groups of lights, such as inside and outside.
-- **Four scenes —** one-tap lighting presets such as Evening or Movie. Each scene remembers the level of every light in it.
+- **Two zone masters —** an On and an Off button for each of two groups of lights, such as inside and outside, or kitchen and bedroom.
+- **Four scenes —** one-tap lighting presets such as Evening or Movie. Each scene remembers the level of every light in the scene.
 
 ![The 8×2 Standard layout](images/ch05-lighting-master-controls.png "The 8×2 Standard layout: a zone master either side of the four scenes")
 
@@ -39,7 +39,7 @@ The buttons also show what the lights are doing: **On** is lit while any light i
 
 Saving and using scenes:
 
-1. **Set the lights.** Use the dimmer cards, the masters, or the wall switches to get the lights the way you want them.
+1. **Set the lights.** Use the dimmer cards, or the wall switches to get the lights the way you want them.
 2. **Press and hold a scene button.** On the dashboard, confirm **Save**. On a Touch 8 the scene is saved as soon as you hold the button.
 3. **Tap the button to recall it.** Every light in the scene goes to the level it had when you saved, including lights that were off.
 
@@ -53,7 +53,7 @@ On the 8×2 Standard layout, the clock badge in the top right corner opens **Lig
 
 ## Climate
 
-The **Climate** card shows the room temperature and what the system is doing: **Heating to**, **Cooling to**, **Fan only**, or **System Off**. On the dial layout, the white dot is the room temperature and the amber tick is the setpoint.
+The **Climate** card shows the room temperature and what the system is doing: **Heating**, **Cooling**, **Fan only**, or **System Off**. On the dial layout, the white dot is the room temperature and the amber tick is the setpoint.  Climate cards are available in various layout configurations. 
 
 - **Change the temperature —** use the arrows; each press is one degree.
 - **Change the mode or fan —** open the controls: tap the cog on the wide card, the upper half of the dial, or anywhere on the compact tile. Choose **A/C**, **Heat**, or **Off**, and fan **Hi**, **Lo**, or **Auto**.
@@ -76,7 +76,7 @@ A **Hydronic** card runs a diesel and electric hydronic furnace: choose Off, Die
 
 - **Battery + Power —** state of charge, time remaining, and net power, with **Charging battery** or **Using battery power**.
 - **Inverter —** tap to switch the inverter on or off; press and hold to start an off-timer. The status line shows the power being supplied, **Charger Only**, or **Off**.
-- **Shore Power —** the power being drawn, or **Connected**, **Disconnected**, or **On generator**. Tap it to set the **Current limit** with − and +, so the coach does not trip a small campground breaker, and to enable or disable the charger.
+- **Shore Power —** the power being drawn, or **Connected**, **Disconnected**, or **On generator**. Tap it to set the **Current limit** with − and +, so the coach does not trip a small campground or home breaker, and to enable or disable the charger.
 - **Solar —** solar power and today’s yield. With a Victron solar charger, tap for the last seven days.
 - **Alternator** and **Battery Charger —** what the engine or a charger is delivering. Tap the Alternator card for detail.
 - **Power Diagram —** one picture of power flowing between shore, solar, alternator, battery, inverter, and loads, with the shore limit and inverter controls on it.
@@ -89,14 +89,16 @@ A tank can warn you as it fills or empties. Open the card’s gear menu, choose 
 
 Tap a **Water Pump** card to switch the pump; press and hold to start an off-timer.
 
-## Awnings, shades, slides, and levelers
+## Awnings, shades, and slides
 
-Tap an Awning, Shades, Slide, or Leveler card to open its two direction buttons. The card says which way it works:
+Tap an Awning, Shades, or Slide card to open its two direction buttons. The card says which way it works:
 
-- **Hold a direction to move —** the motor runs only while you hold the button. Slides and levelers always work this way.
+- **Hold a direction to move —** the motor runs only while you hold the button. Slides always work this way.
 - **Press a direction to command —** window-shade controllers start on one press and stop on the next.
 
-Awnings, slides, and levelers do not operate through LaunchControl Remote, because nobody can see what is around them; their cards say so. Shades still work.
+::: warning "Moving equipment"
+Operate moving equipment only when you can see it and the area is clear. See the control restrictions in [Remote Access](#remote-access). Do not use an indirect command or generic switch to bypass a restriction.
+:::
 
 **Move several shades at once —** edit a Shades card and tick the other shades under **Also move these shades**. One press then moves the card’s own shade and every ticked shade, from the dashboard or a Touch 8.
 
@@ -118,7 +120,7 @@ Tap a **Starlink** card to switch the dish’s power; press and hold to start an
 
 ### Device off-timers
 
-Inverter, Victron MultiPlus, Water Pump, and Starlink cards can switch themselves off after a countdown. Press and hold the card to start the timer; the device turns on if it was off, and the card shows the time remaining. Tap the card again to cancel the timer; the device stays on. A timer is not kept through a Hub restart.
+Inverter, Victron MultiPlus, Water Pump, and Starlink cards can switch themselves off after a countdown. Press and hold the card to start the timer; the device turns on if it was off, and the card shows the time remaining. Tap the card again to cancel the timer; the device stays on. Another tap would cycle the state back to off. A timer is not kept through a Hub restart.
 
 ### Sleep Timer
 

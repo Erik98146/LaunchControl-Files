@@ -8,6 +8,8 @@ Any TV, HDMI streaming stick, or wall tablet with a web browser can show one of 
 
 A web kiosk is the ordinary LaunchControl dashboard, in a display mode: one panel, edge to edge, no tabs or menus, scaled up to fill the screen. It shows exactly what your phone shows, because it *is* the same dashboard — so every card you have, and every card added in a future update, works on a TV with nothing extra to set up.
 
+If you want, you can build a dashboard specifically for the kiosk.
+
 A kiosk is **read-only by default**. To control equipment from a wall tablet or a TV with cursor mode, turn **Allow touch** on for that display alone.
 
 ::: note "It updates every few seconds, not instantly"

@@ -16,11 +16,22 @@ The Hub holds up to eight automations and four macros. They run on the Hub itsel
 
 Settings → Automations lists every automation and macro with its status, the alert channels it uses, whether it has a dashboard card, and an enable switch (or a **Run** button for a macro). Click a row to edit it, or use **New Automation** / **New Macro**. Below the list are **Proactive alerts** and the notification services; see [Alerts](#alerts).
 
+## Try a low-water alert
+
+1. **Create a rule.** Open Settings → Automations → **New Automation** and choose the fresh-water tank level as the sensor.
+2. **Set the trigger.** Choose below 20%, with a release above 25% so the rule can reset after refilling. These are example values.
+3. **Add an action.** Choose **Send alert**, write a message, and select **On-screen**. Save and enable the rule.
+4. **Test it.** Observe a safe threshold crossing and confirm that the alert arrives. Review the startup behavior below if the tank is already low.
+
+::: warning "Test before relying on an automation"
+Verify the sensor, actions, release behavior and delivery method. Automations are not a substitute for factory safety systems. Never use a macro, automation or generic switch to bypass restrictions on moving equipment.
+:::
+
 ## Automation rules
 
 An automation rule watches one sensor and acts when the reading crosses a threshold.
 
-- **Sensor —** press **Choose sensor** and expand a device to pick one of its readings: battery percentage, a tank level, a temperature, shore voltage. Any value a dashboard card can show can be watched.
+- **Sensor —** press **Choose sensor** and expand a device to pick one of its readings: battery percentage, a tank level, a temperature, shore voltage, water leak sensor. Any value a dashboard card can show can be watched.
 - **Trigger —** above or below a value, optionally held for a period you choose so a short excursion does not fire the rule.
 - **Release —** a second value where the rule resets. The gap between trigger and release prevents rapid on/off cycling.
 - **Actions —** up to four actions on trigger and four on release.
@@ -44,16 +55,16 @@ A template can fill in the condition as a starting point: **Battery guard (SoC %
 
 ### What happens at start
 
-When the Hub starts, or when an automation is edited or re-enabled, the rule adopts the current state without firing. If the reading is already past the threshold at that moment, the list shows **Triggered · at start, not fired** — nothing runs until the value crosses back and trips again. This stops a restart from repeating actions that already happened.
+Normally, restarting the Hub, editing a rule or enabling it does not run its actions again. The rule uses the current reading as its starting state. If the reading is already past the threshold at that moment, the list shows **Triggered · at start, not fired** — nothing runs until the value crosses back and trips again. This stops a restart from repeating actions that already happened.
 
 Two options change that for rules that protect the coach:
 
 - **Act if already triggered at start —** a first reading that is already past the trigger runs the actions instead of waiting for the next crossing. Use it when missing the event matters more than repeating it.
 - **Latch until reset —** once triggered, the rule stays triggered, through a restart too, and the release actions never run until you press **Reset**. The list and the rule’s dashboard card show **Latched**; tap the card, or press **Reset** in the list, to clear it. Reset runs nothing: switch things back on yourself. It is refused while the sensor still reads past the threshold.
 
-## A leak shut-off
+## A leak shut-off example
 
-This example closes the water supply and tells you when a leak sensor gets wet. It needs a leak sensor and something to switch: a water valve, the water pump, or both. See **Leak sensors and water valves** in [Add or Change Equipment](#add-or-change-equipment).
+This example closes the water supply and tells you when a leak sensor gets wet. It needs a leak sensor and something to switch: a water valve, the water pump, or both. See **Leak sensors and water valves** in [Connecting Additional Equipment](#connecting-additional-equipment).
 
 1. **Create the automation.** Settings → Automations → **New Automation**, and choose the leak sensor’s state as the **Sensor**.
 2. **Set the trigger to above 0.5.** A leak sensor reads 1 when wet and 0 when dry.

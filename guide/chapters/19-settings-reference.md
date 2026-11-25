@@ -1,4 +1,3 @@
-<!-- part: Maintain -->
 # Settings Reference
 
 ::: lead
@@ -33,7 +32,7 @@ All system configuration is organized under Settings. Use this chapter to look t
 | Automations | Every automation and macro with its editor, **Proactive alerts**, and the notification services: phone notifications, text messages, email, and notification limits. |
 | Floor Plans | Browse/load pre-built coach configurations and reset the current floor plan. |
 | Displays | Connected Touch 8 and Mini displays with the card each one uses for each control, and TV and wall displays. |
-| System | Date & time, units, the setup guide, Expert mode, software updates, backup & restore, connection protocol, factory reset, about & legal. |
+| System | Date & time, units, the setup guide, Expert mode, software updates, backup & restore, factory reset, about & legal. |
 | RV-C Tools | Diagnostics and live RV-C traffic. |
 
 
@@ -63,39 +62,31 @@ The Hub always broadcasts LaunchControl-Hub-XXXX. Touch 8 and Mini displays use 
 
 ## System
 
-Settings → System contains **Date & time**, **Units**, **Setup guide**, **Expert mode**, **Software updates**, **Backup & restore**, **Connection protocol**, **Factory reset**, and **About & Legal**.
+Settings → System contains **Date & time**, **Units**, **Setup guide**, **Expert mode**, **Software updates**, **Backup & restore**, **Factory reset**, and **About & Legal**.
 
 - **Units** changes the whole product between US customary and metric.
 - **Setup guide** reopens the seven-step checklist with completed and remaining steps.
 - **Expert mode** shows technical detail throughout the product. The Devices page has the same switch.
-- **Save changes** applies your draft edits. For the connection protocol, use **Apply and restart** instead. The page warns before you leave with unsaved changes.
+- **Save changes** applies your draft edits. The page warns before you leave with unsaved changes.
 - Only one restart action can run at a time. **Restart Hub** is under **Settings → Status**.
 
-Before changing the connection protocol or restoring a backup, read what will be replaced and download your current backup.
+Before restoring a backup, read what will be replaced and download your current backup.
 
 ## Date & time
 
 Schedules and timers need valid time. The card shows the Hub's current time and date, a status — **Synced**, **Manually set** or **Not synchronized** — and where the time came from and when. The time source is **Automatic** unless you change it: internet time whenever the Hub has it, otherwise the RV-C network, then Victron GPS, then the browser that is open. The card warns when two sources disagree by more than a couple of minutes, and says which one is being used.
 
 - **Time zone** and **Daylight saving time** apply to Victron GPS and internet time, which report UTC. RV-C and manual time are already local. Daylight saving time is unavailable for zones that do not observe it.
+::: technical "Advanced time sources and synchronization"
 - **Send Hub time to the RV-C network** lets factory panels and thermostats use the Hub's time. It is sent once a minute while the clock is set, unless the time comes from the RV-C network itself.
 - **Time source (advanced)** lists **Automatic (recommended)** and the four manual choices — RV-C network, Victron GPS, Manual and Internet time (NTP) — each with the time it is offering and, if it cannot be used, why — for example *No GPS data available*. Pick a source only to force one.
 - **Manual** shows a date and a time, and **Set to this device's time**, which saves at once. Manual time is lost when the Hub loses power. **Set the time from this browser whenever the clock is not set** restores it simply by opening Settings after a power loss.
 - **Technical details** shows the RV-C address the time comes from and whether the Hub is sending time to RV-C.
+:::
 
 ## Backup & restore
 
-**Download backup** saves one file, named after the Hub and the date, for example `launchcontrol-backup-hub-1001-2026-10-05-1348.json`. The page tells you the download started; where it is saved is up to your browser.
-
-- **Included:** devices and their names, panels and cards, lighting zones and scenes, automations, macros and schedules, alert settings, TV displays, display assignments, clock and unit settings, and the connection protocol. It contains the same kind of data as a floor plan. It also holds the encryption keys of any Bluetooth devices you added, so share it only with people you trust.
-- **Not included:** Wi-Fi networks, the Dashboard PIN, the hotspot password, the text message key, the API access key, and the connections to MQTT, Victron GX, the travel router, weather and Remote Access. After restoring to a replacement Hub, enter those again.
-
-**Restore from backup** never starts on its own:
-
-1. **Choose backup file.** The page checks the file and shows what is in it — devices, cards, panels, automations, its protocol and the file date — or says why it cannot be used.
-2. Read what will be replaced. **Download current backup** first if you may want today's setup back.
-3. **Restore backup**, then confirm **Restore this backup?** The page shows *Restoring backup…*, *Restarting Hub…* and *Reconnecting…*, and confirms once the Hub is back. If the Hub does not answer in time, it says the result is not confirmed — reload the page a minute later.
-
+See [Backups, Restores & Resets](#backups-restores-resets) for the full procedure and what is included.
 
 ## Support file
 

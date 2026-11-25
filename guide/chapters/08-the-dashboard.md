@@ -7,6 +7,14 @@ The dashboard is a set of live cards organized into panels. Cards update in real
 
 ![A finished dashboard](images/ch04-a-finished-dashboard.png)
 
+## Try moving a card
+
+1. **Enter panel edit mode** from the menu at the top right.
+2. **Drag a card** using its top-left grab handle.
+3. **Exit edit mode.** Your layout is saved on the Hub.
+
+That is all you need to move a card. On a phone, the first move creates a separate narrow-screen layout.
+
 ## Panels
 
 Use any names and grouping that suit you. Panels group cards; sub-panels add a second level when you need more room.
@@ -56,7 +64,7 @@ The **Add a card…** list is grouped the way this table is. [Card Reference](#c
 | Water | Tank, Water Pump, Tank Heat | Tank levels with optional alarms, the pump, and tank heaters |
 | Security | Door Lock | Lock and unlock with one tap |
 | Lights & switches | Light Dimmer, Color Light, Lighting Scenes, Generic Switch, Fan, Linked Switch, Panel Backlight, Sleep Timer | Single lights, groups and scenes, plain on/off outputs, and the nightly shut-off |
-| Motors | Awning, Shades, Slide, Leveler, TV Lift | Things that move |
+| Motors | Awning, Shades, Slide, TV Lift | Things that move |
 | Internet | Starlink, Travel Router | Connection status, dish power, joining Wi-Fi, and speed tests |
 | Utility | Clock, Generic - Single, Generic - Dual, Automation, Macro, Web Link, Weather | A clock, any other reading with an optional alarm, one-tap automations and macros, links, and the forecast |
 | Victron | Victron MultiPlus, Battery Monitor, Shore Power, MPPT, GPS, and temperature cards | Equipment read through a Victron GX device or Victron Bluetooth |
@@ -92,10 +100,9 @@ Solar, Shore Power, Battery + Power, Alternator, temperature, and similar cards 
 - **Units —** US customary or metric, for the whole product: temperatures, volumes and speeds on every card, display and the weather. Chosen during setup and changed under **Settings → System → Units**. Individual Victron devices can override units when needed.
 - **Background regions —** optional tinted regions can visually group related cards on a panel.
 
-## Add the dashboard to your home screen
+## Add the dashboard as an app
 
-The dashboard can sit on your phone, tablet or computer like an app, with the LaunchControl icon. Open it at the address you want the icon to use: on the coach's Wi-Fi, the Hub's own address; through LaunchControl Remote, your Remote link. A Remote shortcut gets a green cloud on its icon and is named "LC Remote", so you can keep both.
-
+The dashboard can sit on your phone, tablet or computer like an app, with the LaunchControl icon. Open LaunchControl the way you would normally (locally or through remote). Then:
 | **Device** | **How** |
 |---|---|
 | iPhone / iPad (Safari) | Share button → **Add to Home Screen** → **Add** |

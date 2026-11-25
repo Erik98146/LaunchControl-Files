@@ -70,8 +70,3 @@ WinnConnect keeps its own record of some equipment and re-sends it, which limits
 - **Inverter.** WinnConnect repeats its own inverter setting every few seconds while on shore power or generator, and so overrides a change made from LaunchControl. Use WinnConnect to switch the inverter.
 - **Generator.** The generator is not on the RV-C network. The Hub senses when it is running, and the Shore Power card then reads **On generator**. The scan offers a **Generator (start / stop)** switch. A start or stop is refused while the running state is unknown and for 45 seconds after the previous request, and it is never available through LaunchControl Remote.
 - **Tanks.** Fresh, gray, and black tank levels are not sent on the network the Hub reads on these coaches, so they cannot be shown from the coach itself. LPG is available. A Bluetooth tank monitor such as a Garnet SeeLevel is one way to add the others.
-- **Roof fans and thermostats.** Their modules can change address after a power cycle. The Hub follows them automatically. If you see the same fan or thermostat twice from an earlier software version, delete the extra one.
-
-## Wavetronix Fathom tank sensors
-
-A Fathom may not show in a scan right away, because it answers only when asked; the Hub asks every 10 seconds. Set it up with one region and let the Hub correct an odd-shaped tank. See **Wavetronix Fathom sensors** in [Add or Change Equipment](#add-or-change-equipment).

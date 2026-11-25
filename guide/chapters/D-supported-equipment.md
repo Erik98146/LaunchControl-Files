@@ -4,7 +4,7 @@
 What LaunchControl can monitor and control, grouped by how the equipment connects to the Hub. “Monitor” means its readings appear on the dashboard; “Control” means the dashboard can operate it.
 :::
 
-If your equipment is not listed, it may still work: any RV-C reading can be shown on a Generic card, and any device that publishes to MQTT can be added by hand. See [Add or Change Equipment](#add-or-change-equipment).
+If your equipment is not listed, it may still work: supported RV-C readings can be shown on a Generic card, and compatible devices that publish to MQTT can be added by hand. See [Add or Change Equipment](#add-or-change-equipment) and [Connecting Additional Equipment](#connecting-additional-equipment).
 
 ## Built into the coach (RV-C)
 
@@ -64,7 +64,7 @@ Needs Bluetooth turned on under Settings → Integrations. No GX device or gatew
 | Power | Victron Smart BatteryProtect | Yes | — | Output state, voltages, alarm and warning |
 | Power | Thornwave PowerMon battery monitors | Yes | — | Voltage, current, power, state of charge and temperature |
 | Water | Garnet SeeLevel tank monitors (709-BT, 709-BTP3, 709-BTP7, 708-RBT Soul) | Yes | — | Every tank the monitor reports, each as its own tank card |
-| Water | Mopeka tank sensors, including the Lippert LP sensor | Yes | — | Propane or tank level, temperature and sensor battery |
+| Water | Mopeka tank sensors | Yes | — | Propane or tank level, temperature and sensor battery |
 | Sensors | RuuviTag temperature sensors | Yes | — | Temperature, humidity, pressure and battery |
 | Sensors | Ruuvi Air air-quality monitor | Yes | — | CO2, PM2.5, VOC, NOx, temperature and humidity |
 | Sensors | SwitchBot meters (Meter, Meter Plus, Outdoor Meter, Meter Pro, Meter Pro CO2) | Yes | — | Temperature, humidity, battery, and CO2 on the Pro CO2 |
@@ -93,7 +93,3 @@ Reached over the network the Hub is joined to.
 | --- | --- | --- | --- | --- |
 | Internet | Starlink | Yes | Yes | Online state and ping success; dish power when wired to a switched circuit |
 | Internet | GL.iNet travel routers (Beryl and Slate families) | Yes | Yes | Uplink, signal, internet check, speed test; join campground Wi-Fi |
-
-## Lippert OneControl coaches
-
-Coaches that use Lippert OneControl in place of RV-C are supported through the Hub’s **Connection protocol** setting; see the note in [Add or Change Equipment](#add-or-change-equipment).

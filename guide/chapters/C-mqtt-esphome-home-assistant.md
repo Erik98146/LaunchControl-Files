@@ -61,7 +61,7 @@ A published RV-C field that can be switched or set also listens on its own topic
 - Only RV-C fields accept `/set`. Use the control address for everything else; see **The control address** in [Technical Reference](#technical-reference).
 
 ::: warning "Anyone on the broker can send commands"
-Every client connected to the broker can switch published fields. On the built-in broker, set a username and password if devices you do not control share your network.
+Every client connected to the broker can switch published fields. Use a private, trusted network and configure broker authentication. Never expose the broker to the internet or a shared campground network. The built-in broker uses plaintext MQTT, so credentials do not encrypt traffic.
 :::
 
 ## Add your own MQTT device

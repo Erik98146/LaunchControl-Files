@@ -1,10 +1,12 @@
 # The Mini Display
 
 ::: lead
-The Mini is a 1.75-inch round AMOLED touchscreen for glanceable status and a small set of frequently used controls. It connects to the Hub hotspot and continues to work when the RV router is off.
+The Mini is a 1.75-inch round AMOLED touchscreen for glanceable status and a small set of frequently used controls. It connects to the Hub hotspot directly and continues to work when the RV router is off.
 :::
 
 ## Set up a Mini
+
+If you plan to protect the Hub hotspot with a password, set it first under [Security](#security), then pair the display.
 
 1. **Power the display near the Hub.** A new Mini looks for a Hub hotspot; with exactly one in range and no hotspot password set, it joins by itself.
 2. **If it shows a QR code instead,** scan it with your unlocked phone and join the temporary setup network it offers. That happens when no Hub is in range, more than one is, or the Hub hotspot has a password.
@@ -22,7 +24,7 @@ Controls that switch equipment need a **press and hold of about half a second**,
 | **Status** | Inside and outside temperature, battery, power, solar, and shore | Hold the Inverter, Starlink, or Water button to switch it; keep holding about three seconds to start its off-timer. Hold the Sleep Timer icon to arm or disarm it. |
 | **Timers** | The three devices with their time remaining, and the nightly Sleep Timer | Hold a device to start or cancel its timer. Tap the Sleep Timer time to change it. |
 | **Climate** | Inside, outside, room, and set temperature | Tap the arrows to change the setpoint, **Mode** and **Fan** to choose them, or the center icon to switch the system off and back on. |
-| **Lighting** | Off and On for the inside and outside lighting zones | Hold a button to switch the zone; keep holding **On** for full brightness. **Presets** recalls a lighting scene. |
+| **Lighting** | Off and On for the two lighting masters | Hold a button to switch the zone; keep holding **On** for full brightness. **Presets** recalls a lighting scene. |
 | **Power** | Battery detail with solar, shore, and alternator power | Read-only. |
 | **Leveling** | A bubble level over an outline of the coach | See below. |
 | **Settings** | Version, connection, brightness, timing, night mode, and screen rotation | Swipe up or down between its sections. |
@@ -40,8 +42,8 @@ Readings the coach does not have are simply left off the page.
 
 ## The two buttons
 
-- **BOOT —** from the Status page, starts the night clock. From anywhere else, wakes the screen and returns to Status. Hold it for about five seconds to open Wi-Fi pairing.
-- **PWR —** goes to the Power page; press again for Leveling.
+- **NIGHT CLOCK TOGGLE/PAIRING —** from the Status page, starts the night clock. From anywhere else, wakes the screen and returns to Status. Hold it for about five seconds to open Wi-Fi pairing.
+- **SHORTCUTS —** goes to the Power page; press again for Leveling.
 
 ## Leveling
 
@@ -55,11 +57,11 @@ Set it up once, with the coach level:
 
 ## Night clock
 
-After the idle time you set, the Mini becomes a dim clock that also shows the temperatures, the three device icons, and any running timers. Nothing on the clock is a control; a touch wakes the Mini. Set the brightness and timing, or switch the clock off, on the Settings page.
+After the idle time you set, the Mini becomes a dim clock that also shows the temperatures, the three device icons, and any running timers. Nothing on the clock is a control; a touch wakes the Mini. Set the brightness and timing, or switch the clock off, on the Settings page. This is ideal when used next to a bed.
 
 ## Choose which devices it uses
 
-The Hub normally chooses the battery, water pump, climate zone, and other controls from your dashboard cards automatically. If the coach has several devices that could fill the same role, use **Settings → Displays** on the Hub to choose which card each Mini should use.
+The Hub normally chooses the battery, water pump, climate zone, and other controls from your dashboard cards automatically. If the coach has several devices that could fill the same role (a climate zone for example), use **Settings → Displays** on the Hub to choose which card each Mini should use.
 
 ## Updates
 

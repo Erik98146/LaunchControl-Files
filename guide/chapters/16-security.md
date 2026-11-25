@@ -1,3 +1,4 @@
+<!-- part: Maintain your system -->
 # Security
 
 ::: lead
@@ -11,6 +12,15 @@ A new Hub is intentionally easy to access so first-time setup cannot lock you ou
 | **API access key** | Named controls used by Shortcuts, Siri, the AI assistant, and other integrations |
 
 These serve different purposes. Changing the hotspot password means pairing displays again; replacing the API access key means updating shortcuts.
+
+## Recommended setup
+
+1. **Set a Dashboard PIN.** Use a PIN you do not share publicly.
+2. **Set a hotspot password** before pairing displays. Rejoin the protected Wi-Fi.
+3. **Trust only your own private RV or home network.** Leave shared networks untrusted.
+4. **Keep keys private.** Only enable Remote, AI and MQTT access when you need them; review their sharing and access settings.
+
+You’re done when you can reconnect using your credentials and your intended devices can still open the dashboard.
 
 ## Dashboard PIN
 
@@ -38,7 +48,7 @@ Touch 8 and Mini displays connect to the Hub hotspot. If you change its password
 
 ## API access key
 
-Shortcuts, Siri, and other integrations (see [Siri, Shortcuts & API](#siri-shortcuts-api)) use an **API access key** instead of the Dashboard PIN. It is kept masked under **Settings → Integrations → Shortcuts & API → API access key** and works for the control address only: a key that leaks can operate named controls, but cannot change settings, read a backup, or join a network. Press **Replace key** to replace it; every shortcut then needs its link updated. The key is not included in configuration backups.
+Shortcuts, Siri, and other integrations (see [Siri & Shortcuts](#siri-shortcuts)) use an **API access key** instead of the Dashboard PIN. It is kept masked under **Settings → Integrations → Shortcuts & API → API access key** and works for the control address only: a key that leaks can operate named controls, but cannot change settings, read a backup, or join a network. Press **Replace key** to replace it; every shortcut then needs its link updated. The key is not included in configuration backups.
 
 ## Remote access
 

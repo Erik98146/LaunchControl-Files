@@ -1,23 +1,25 @@
 # Alerts
 
 ::: lead
-Have the Hub tell you when something happens in the coach — a tank filling, a battery running low, the shore power dropping. Alerts show in the dashboard’s alert list, and can also arrive as a phone notification, text message, or email. Most are sent by an automation you set up.
+Have the Hub tell you when something happens in the coach — a tank filling, a battery running low, the shore power dropping. Alerts can appear in the dashboard’s alert list, and can also arrive as a phone notification, SMS text message, or email. Most are sent by an automation you set up.
 :::
 
 ## Choose a delivery method
 
+A card alarm changes the appearance of a dashboard card; an alert is a message. To receive a notification, configure a delivery method and a Send alert action. See the examples below.
+
 | Method | What you need |
 | --- | --- |
 | **On-screen** | No external service or internet connection |
-| **Push** | ntfy app and the topic shown by the Hub |
-| **SMS** | Textbelt account, credits, sender name, and API key |
-| **E-mail (Remote)** | Hub linked to LaunchControl Remote with access running; sent to the linked account |
+| **Push** | Internet connection, ntfy app and the topic shown by the Hub |
+| **SMS** | Internet connection, Textbelt account, credits, sender name, and API key |
+| **E-mail (Remote)** | Internet connection and active LaunchControl Remote; sent to the linked account |
 
 Set up the service you want, send a test, then add **Send alert** to an automation. You can select several delivery methods on one alert.
 
 ## Where alerts appear
 
-Every alert lands in the **alert list**. A red triangle with a count appears at the top right of the dashboard whenever the list holds anything; click it to open the list. The same list is always available under **Settings → Status → Alerts**.
+Select **On-screen** when you want an automation message in the **alert list**. Hub health and update notices also appear there. A red triangle with a count appears at the top right of the dashboard whenever the list holds anything; click it to open the list. The same list is always available under **Settings → Status → Alerts**.
 
 - New alerts are shown **bold** until you have looked at them; alerts you have already seen turn gray.
 - Alerts from your automations stay in the list until you delete them, one at a time with the trash can or all at once with **Delete all**.
@@ -51,7 +53,7 @@ An alert is an **action on an automation**, in the same list as "turn the pump o
 2. Add **Send alert** as one of its actions and write the message.
 3. Tick where it should go: **On-screen** (the alert list), **Push**, **SMS**, **E-mail (Remote)**.
 
-On-screen needs no service setup. E-mail (Remote) uses the account linked to the Hub and requires active Remote access; see [Remote Access](#remote-access). Set up Push and SMS below under **Settings → Automations**. SMS charges are paid to the message service.
+On-screen needs no service setup. E-mail (Remote) uses the account linked to the Hub and requires active Remote access; see [Remote Access](#remote-access). Set up Push and SMS below under **Settings → Automations**. 
 
 ## Push notifications (free)
 
@@ -66,10 +68,10 @@ Repeat steps 2–4 on every phone that should get alerts.
 
 ## Text messages (prepaid)
 
-This uses **Textbelt**, where you buy a block of messages up front.
+This uses **Textbelt**, where you buy a block of messages up front. SMS charges are paid to the message service.
 
-1. **Buy credits.** Open [textbelt.com/purchase](https://textbelt.com/purchase/) and choose **generate a new API key**. Choose a pack, and pay. Packs start around $3 for 50 messages. **Save the key; it cannot be retrieved if lost.**
-2. **Set a sender name.** On the Textbelt Account page, fill in the sender name. **Textbelt will not send anything until you do**, and it is the step almost everyone misses.
+1. **Buy credits.** Open [textbelt.com/purchase](https://textbelt.com/purchase/) and choose **generate a new API key**. Choose a pack, and pay. Check the service’s current pricing before purchasing. **Save the key; it cannot be retrieved if lost.**
+2. **Set a sender name.** On the Textbelt Account page, fill in the sender name. **Textbelt will not send anything until you do**.
 3. **Paste the key** into Settings → Automations → **Text messages** → **API key**, add your 10-digit phone number, turn on **Turn on text messages**, and press **Save changes**.
 4. **Send test text.** This sends a real message and uses one credit.
 

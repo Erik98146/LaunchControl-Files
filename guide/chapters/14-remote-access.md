@@ -1,4 +1,4 @@
-<!-- part: Remote access -->
+<!-- part: Away from your RV -->
 # Remote Access
 
 ::: lead
@@ -27,6 +27,10 @@ The Hub opens one outgoing, encrypted connection to LaunchControl's service and 
 
 ## Turn it on
 
+::: note "Review privacy choices before linking"
+**Share Hub status** and **Include location history** are on by default. Review both on the LaunchControl Remote integration card and turn off any sharing you do not want. Shared users can see Live status and its map when enabled.
+:::
+
 Remote needs three things: the Hub on a network with internet access, the Hub's clock set, and a **Dashboard PIN** set.
 
 1. **Enable it.** On the dashboard, go to **Settings → Integrations**, press **Set up** on the **LaunchControl Remote** card, then **Set up LaunchControl Remote**. The card shows *Connecting*, then *Ready to link*. (The setup wizard offers the same step at the end of a new installation.)
@@ -43,13 +47,31 @@ The remote dashboard is the real dashboard: lights, thermostats, tanks, the Sett
 
 A small **cloud** next to the connection dot at the top of the dashboard shows the remote link: green while connected, amber while reconnecting. Tap it for the remote‑use guidance. On the local network the same cloud appears while someone is viewing the Hub through Remote, so people at the coach can see that it is being used from afar.
 
-**Awnings, slides and leveling jacks do not move from Remote.** You cannot see what is around them, so the Hub refuses those commands when they arrive through Remote, whoever sends them, and their cards say "Not available remotely". Shades still work. Automations that move an awning run on the Hub itself and are unaffected. Siri and Shortcuts never move awnings, shades or slides at all.
+::: warning "Operate equipment safely from a distance"
+Remote control is not a substitute for being able to observe your equipment. Never use Remote, Siri, an API, AI, a macro or a generic switch to bypass a safety restriction. Do not operate moving equipment unless you can see it and confirm the area is clear. A command or displayed state does not necessarily confirm physical movement or position.
+:::
+
+## Control availability
+
+The table summarizes the documented direct-control restrictions. Availability depends on installed equipment and its configuration. A dash means direct control is not documented for that interface.
+
+| Equipment | Local dashboard | Remote dashboard | Named Siri/API | AI assistant |
+| --- | --- | --- | --- | --- |
+| Lights, water pump, supported switches | Yes | Yes | Yes | Yes |
+| Thermostat | Yes | Yes | Yes | Mode change requires confirmation |
+| Door locks | Yes | Yes | Yes | Unlock requires confirmation |
+| Awning, slide | Yes | Blocked | Blocked | Blocked |
+| Window shades | Yes | Available; operate only with a clear view | Blocked | Blocked |
+| TV lift | Yes | — | Not available by voice | — |
+| Roof fan | Yes | — | Not available by voice | — |
+
+Local automations execute on the Hub. Do not assume that indirect commands have the same restrictions as direct controls; never configure them to bypass a restriction. See [Automations & Macros](#automations-macros), [Siri & Shortcuts](#siri-shortcuts) and [AI Assistant](#ai-assistant) for their own limitations.
 
 If the Hub is not connected to Remote when you open the remote address, the page says **Hub offline** and when the Hub was last seen, in UTC. The Hub reconnects by itself as soon as it has internet again.
 
-An AI assistant such as Claude can answer questions about the coach and operate named controls through Remote; see [AI Assistant](#ai-assistant).
+An AI assistant such as ChatGPT or Claude can answer questions about the coach and operate named controls through Remote; see [AI Assistant](#ai-assistant).
 
-Siri, Shortcuts and other controllers work from anywhere through Remote too: under Shortcuts & API pick **LaunchControl Remote** as the **Connection method** before copying a link (see [Siri, Shortcuts & API](#siri-shortcuts-api)).
+Siri, Shortcuts and other controllers work from anywhere through Remote too: under Shortcuts & API pick **LaunchControl Remote** as the **Connection method** before copying a link (see [Siri & Shortcuts](#siri-shortcuts)).
 
 ## Live status
 
@@ -100,11 +122,10 @@ While the window is open, every page of your hub, on your own screen as well as 
 
 **Turn off** pauses Remote and keeps the Hub linked to your account. **Unlink** removes the Hub from your account, cancels your plan, and gives the Hub a new code for its next owner. Find both under **Turn off or unlink** on the LaunchControl Remote card in Settings, or unlink from the Hub’s page in the portal. To close your account entirely, use **Delete my account** at the bottom of the portal: every hub is unlinked, every plan canceled, and your sign‑in is removed.
 
-::: warning "No subscription, no internet — still your coach"
+::: note "Local control continues without Remote"
 Remote never stands between you and the coach. If the service is unreachable, the plan has ended or the Hub has no internet, everything on the coach's own Wi‑Fi works exactly as before.
 :::
 
 ::: technical
 The Hub holds one outbound WebSocket over TLS (port 443) to the relay and carries the dashboard's web requests and its live update socket inside it, so no inbound port exists on the coach side. The relay checks that the signed‑in account owns or shares the hub and that access is running, then hands each request to the Hub, where the Dashboard PIN applies as on any untrusted network. The Shortcuts API key is accepted on the remote address for its control address only. The Hub identifies itself by its serial, its own secret, and a factory token derived from its license, so a serial cannot be claimed by a different device. The relay address can be overridden under **Advanced settings** on the LaunchControl Remote card, shown when **Expert mode** at the bottom of that card is on, for bench use; leave it alone otherwise.
 :::
-

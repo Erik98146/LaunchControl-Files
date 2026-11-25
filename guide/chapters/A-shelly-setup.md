@@ -31,7 +31,7 @@ Skip this section if you are keeping a Cerbo’s broker; continue with **Configu
 
 1. **Open the MQTT card.** Go to **Settings → Integrations → MQTT** and press **Set up** (or **Manage**).
 2. **Choose the built-in broker.** Turn on MQTT and choose **Use Hub's built-in broker**.
-3. **Leave sign-in blank.** Leave the username and password empty unless you want devices to sign in. If you set them, every Shelly needs the same username and password.
+3. **Set sign-in credentials.** Use a username and password on a private RV network. Enter the same broker credentials on every Shelly. If a broker has no credentials, any client that can reach it may connect.
 4. **Save.** Press **Save changes**. The card shows the **Broker address** and how many **clients** are connected.
 
 ::: warning "One broker at a time"

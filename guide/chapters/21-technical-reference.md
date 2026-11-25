@@ -1,4 +1,4 @@
-<!-- part: Reference -->
+<!-- part: Technical and product reference -->
 # Technical Reference
 
 ::: lead
@@ -52,7 +52,6 @@ Each component reports its own vMAJOR.MINOR.BUILD version in Settings → Status
 | Automation | A rule that watches one reading and runs actions when it crosses a threshold. |
 | Macro | A list of actions run in order by one tap, button press, or voice command. |
 | Broker | The server MQTT devices connect to. The Hub can use an existing one, such as a Cerbo GX, or run its own. |
-| OneControl | Lippert’s control network, used in place of RV-C on some coaches. Chosen with the Hub’s connection protocol setting. |
 | Web kiosk | The dashboard in a full-screen display mode for a TV or wall tablet. |
 | Trusted network | A saved Wi-Fi network on which the Hub does not ask for the Dashboard PIN. |
 | Expert mode | A switch that shows protocol-level detail throughout the product. |
@@ -115,7 +114,7 @@ Note: Charger enable ties to 1FFC7.
 | Fan Speed | Thermostat | 1FFE2 | Fan Speed |
 :::
 
-Bindings may point to an RV-C instance/field, a Victron MQTT value, a Bluetooth sensor reading, a Shelly/MQTT device field or a OneControl device.
+Bindings may point to an RV-C instance/field, a Victron MQTT value, a Bluetooth sensor reading, or a Shelly/MQTT device field.
 
 ## Understanding RV-C Devices, DGNs, and Instances
 
@@ -176,6 +175,11 @@ Dashboard cards are then bound to these fields. For example, a Climate card migh
 A device’s **Advanced** settings expose its individual fields and allow changing the field name and unit rounding as well as the calculated offset and multiplier (which are set by default to the RV-C specification); Expert mode lists every field the device defines.
 
 You normally do not need to know the underlying DGN or instance numbers. LaunchControl discovers and manages them automatically, but understanding the relationship can be helpful when identifying devices or troubleshooting an RV-C installation.
+
+## API and custom integrations
+
+Any tool that can open a web address can use the same links: Android's Shortcut Maker or Tasker, a browser bookmark, a Stream Deck, or a Home Assistant *rest_command*. The **API & custom integrations** tab builds request URLs for them — by device and action, or as a plain‑language command — with a text or JSON response, and **API documentation** lists every parameter. The link is a plain GET request; the answer is one line of text, or JSON if you leave `fmt=text` off.
+
 
 ## The control address
 

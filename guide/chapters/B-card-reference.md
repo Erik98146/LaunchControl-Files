@@ -179,11 +179,6 @@ Things to know:
 - **Also move these shades** on a Shades card adds up to 12 other shades that move with it.
 - **Through Remote:** Awning and Slide cards read **Unavailable remotely**. Shades still work.
 
-### Leveler
-
-- **Sizes:** 4×1 or 2×2. For Lippert OneControl leveling systems.
-- **Hold LEVEL** to auto-level, or **HITCH** to return to hitch height; the card shows progress. Releasing the button stops it. Not available through Remote.
-
 ### TV Lift
 
 - **Size:** 2×2. **Tap** sends the lift up or down. After a Hub restart the card shows a dash until the lift is next used, because the lift does not report its position.

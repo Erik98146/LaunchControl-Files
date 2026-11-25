@@ -1,4 +1,4 @@
-# Siri, Shortcuts & API
+# Siri & Shortcuts
 
 ::: lead
 Say "Hey Siri, kitchen lights on" and the lights come on. LaunchControl works with the Shortcuts app that is already on every iPhone, iPad, Mac and Apple Watch — no extra hub, no HomeKit. Android phones and other automation tools can use the same links.
@@ -28,7 +28,7 @@ What you can address by name:
 - **Macros and automations —** run a macro; enable or disable an automation.
 - **Readings —** ask for the status of any card that shows a value: battery, tanks, solar, temperatures.
 
-Awnings, shades, slides, and levelers are deliberately excluded. They move only while a button is held, and a voice command has no way to stop them. Roof Fan and TV Lift cards are not available by voice yet.
+Awnings, shades, slides, and levelers are deliberately excluded from named voice commands. Operate moving equipment only when you can see it and the area is clear. Roof Fan and TV Lift cards are not available by voice yet.
 
 ## Set it up
 
@@ -86,14 +86,11 @@ Shortcuts synced to the watch appear in its Shortcuts app and respond to "Hey Si
 
 A link works from anywhere the phone can reach the Hub. On the coach's Wi‑Fi that is the local address. From the road, use LaunchControl Remote: under **Connection method** pick **LaunchControl Remote** before copying, and the links — and Siri — work wherever the phone has internet; the API key is accepted there too. A VPN such as Tailscale on the coach router works the same way with its address. The Hub does not need to be exposed to the internet — never forward its port.
 
-## Other phones and apps
-
-Any tool that can open a web address can use the same links: Android's Shortcut Maker or Tasker, a browser bookmark, a Stream Deck, or a Home Assistant *rest_command*. The **API & custom integrations** tab builds request URLs for them — by device and action, or as a plain‑language command — with a text or JSON response, and **API documentation** lists every parameter. The link is a plain GET request; the answer is one line of text, or JSON if you leave `fmt=text` off.
-
 ::: warning "Names change the links"
 A link names the card. If you rename a card, a zone or a scene, update the shortcuts that use the old name — the Hub answers *I don't know a device called …* until you do.
 :::
 
-## API reference
 
-For request parameters, authentication, response formats, and error codes, see **The control address** in [Technical Reference](#technical-reference).
+## Custom integrations
+
+For other phones, apps, and API requests, see [Technical Reference](#technical-reference).

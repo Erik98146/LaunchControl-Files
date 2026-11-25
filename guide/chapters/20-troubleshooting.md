@@ -1,4 +1,4 @@
-<!-- part: Something isn't working -->
+<!-- part: Help and troubleshooting -->
 # Troubleshooting
 
 ::: lead
@@ -16,6 +16,12 @@ For detailed notification checks, see [Alerts](#alerts). For Shelly relay, butto
 
 ## I can't connect to LaunchControl
 
+1. **Check Hub power.** If there is no power, check the approved power source and connections safely.
+2. **Join LaunchControl-Hub-XXXX.** If you cannot join, check Wi-Fi range and the hotspot password.
+3. **Open [192.168.4.1](http://192.168.4.1).** Stay on the Hub’s Wi-Fi even if your phone reports no internet.
+4. **If local access works,** the Hub is reachable. Check the RV router or Remote connection separately. If it does not work, follow the checks below before considering any reset.
+
+
 - **launchcontrol.local does not open.** Make sure your phone or computer is on the same Wi-Fi as the Hub. On Android, use the router's device list to find launchcontrol-xxxx. For direct access, join **LaunchControl-Hub-XXXX** and open [192.168.4.1](http://192.168.4.1). If you cannot join or have forgotten the password, see [Security](#security).
 - **The page stops loading while I am on the Hub hotspot.** The Hub hotspot has no internet, so a phone may quietly switch to cellular data or another Wi-Fi network. Rejoin LaunchControl-Hub-XXXX and choose to stay connected if the phone asks. Turning cellular data off for a moment settles it.
 - **New router, or the router changed.** Join the Hub hotspot, open the dashboard, and add the new network under Settings → Network.
@@ -25,9 +31,8 @@ For detailed notification checks, see [Alerts](#alerts). For Shelly relay, butto
 
 ## No RV equipment appears
 
-- **Settings → Status shows no RV-C activity**, or the setup guide's first step is not done. Check Hub power and the physical RV-C connection. Reversed RV-C data wires do not damage anything, they simply do not work, so try swapping them. Never swap the RV-C and power wires. Confirm the correct coach connection or adapter using the LaunchControl FAQ.
+- **Settings → Status shows no RV-C activity**, or the setup guide's first step is not done. Check Hub power and the physical RV-C connection. Disconnect power before inspecting or changing wiring. Verify CAN-H and CAN-L against the correct wiring diagram. Never swap data and power wires. If unsure, contact support before changing connections. Confirm the correct coach connection or adapter using the LaunchControl FAQ.
 - **The scan is empty but Status shows data.** Operate one light, pump, or switched circuit in the RV and watch **Devices you just operated**. Devices awaiting identification may also be under **Needs identification**. Everything you already added is folded under **Already configured**, and anything you hid is under **Hidden**; press **Show** to see them.
-- **A Lippert coach.** Lippert OneControl coaches do not speak RV-C. Switch the protocol under Settings → System → Connection protocol and restart; the scan then lists OneControl devices. The setup guide’s **Fix connection** says the same.
 
 ## A device is missing
 
@@ -48,7 +53,7 @@ For detailed notification checks, see [Alerts](#alerts). For Shelly relay, butto
 
 - **Nothing happens when I tap.** Check that the device is listed and reporting on the Devices page, and test it there. If the test works and the card does not, check the card’s data source.
 - **The card operates the wrong device.** Correct its data source before using it again.
-- **The card switches back by itself.** The dashboard shows what the equipment reports. If the equipment did not obey, or the coach’s own control system overrode the command, the card returns to the real state. Some coaches do this by design; see [Coach-Specific Notes](#coach-specific-notes).
+- **The card switches back by itself.** For equipment that reports state, the dashboard shows that reported state. Control-only devices may instead show the last command. For a reporting device, if the equipment did not obey or the coach’s own control system overrode the command, the card returns to the reported state. Some coaches do this by design; see [Coach-Specific Notes](#coach-specific-notes).
 - **An awning or shade does not stop.** On press-to-command cards, press the same direction again to stop.
 - **A lighting scene does nothing.** It has not been saved yet. Set the lights, then press and hold the scene button.
 
@@ -57,7 +62,7 @@ For detailed notification checks, see [Alerts](#alerts). For Shelly relay, butto
 - **LaunchControl Remote stays on “Connecting”.** The Hub needs internet and a valid clock. Check Settings → Status for the network, and Settings → System → Date & time. Whether the service itself is up is shown at remote.launchcontrol.tech/status.
 - **“Identity conflict”.** The Hub was reset or re-flashed while linked. Sign in at remote.launchcontrol.tech, open the hub under My hubs and press Unlink, then turn Remote on again and link it with the new code.
 - **“Access expired” or “Payment needed”.** The trial or plan ran out, or a renewal charge failed. Local control is unaffected. Open the hub's page in the portal to subscribe, update the card, or redeem a code.
-- **An awning, slide, or leveler will not move.** They never move through Remote, by design; use the dashboard on the coach's own Wi-Fi or a Touch 8.
+- **An awning or slide will not move.** They never move through Remote, by design; use the dashboard on the coach's own Wi-Fi or a Touch 8.
 - **The AI assistant does not answer or act.** See **If it does not work** in [AI Assistant](#ai-assistant).
 
 ## A display won't connect

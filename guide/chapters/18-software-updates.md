@@ -6,14 +6,14 @@ LaunchControl updates are released as a tested set of compatible Hub, web dashbo
 
 ## Before updating
 
-Keep the Hub and displays powered until the update finishes. The Hub restarts during installation. For an online update, the phone or computer running the browser needs internet; for an offline update, use **Install from file** below.
+Download a configuration backup first, ensure you have stable power and time to complete the update, and avoid updating while relying on the equipment for a critical task. Keep the Hub and displays powered until the update finishes. The Hub restarts during installation. For an online update, the phone or computer running the browser needs internet; for an offline update, use **Install from file** below.
 
 ## Update the system
 
 1. **Open Settings → System → Software updates and select Check for Updates.** The phone or computer running the browser needs internet access. The Hub does not require internet access to update.
 2. **Review the available versions and release notes.**
 3. **Select Update All.** Update order is handled automatically.
-4. **Wait for completion.** The Hub restarts, then touchscreen updates are delivered through the Hub. The page reports each result.
+4. **Wait for completion.** The Hub restarts, then touchscreen updates are delivered through the Hub. The page reports each result. You’re done when the expected versions are shown and the dashboard and displays reconnect. Check essential controls and readings before relying on them.
 
 ::: note "Update notices"
 Once a day, while a browser with internet access is open on the dashboard or Settings, the Hub checks for a newer release and adds an **Update available** alert to the alert list. Delete it once seen. Settings → Status also shows an **Upgrade available** button beside the firmware version whenever a newer Hub release is out; tap it to go straight to the update.
