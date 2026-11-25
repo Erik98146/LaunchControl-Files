@@ -22,7 +22,7 @@ A **Color Light** card works the same way: tap for on or off, press and hold for
 
 ### Groups of lights and scenes
 
-The **Lighting Scenes** card controls groups of lights from one place. After adding a new Lighting Scenes card, you need to edit the card to set the zones, names and icons. You can add up to eight Lighting Scenes cards for different areas; see [Hardware Specifications](#hardware-specifications) for system limits. Each Lighting Scenes card:
+The **Lighting Scenes** card controls groups of lights from one place. You can add up to eight Lighting Scenes cards for different areas; see [Hardware Specifications](#hardware-specifications) for system limits. After adding a new Lighting Scenes card, you need to edit the card to set the zones, names and icons. Each Lighting Scenes card:
 
 - **Two zone masters —** an On and an Off button for each of two groups of lights, such as inside and outside, or kitchen and bedroom.
 - **Four scenes —** one-tap lighting presets such as Evening or Movie. Each scene remembers the level of every light in the scene.

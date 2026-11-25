@@ -53,8 +53,8 @@ You choose the names and organization of your equipment and panels. Names in thi
 
 ## System overview
 
-::: technical "Components, connections and browser compatibility"
-**More terminology**
+
+**Terminology**
 
 | Word | Meaning |
 | --- | --- |
@@ -94,4 +94,4 @@ Any current phone, tablet, or computer browser works: Safari, Chrome, Edge, Fire
 
 
 The Hub and displays start within a few seconds. Network connections, a Victron Cerbo GX, and the RV router may take longer. The Hub tolerates power disconnections; no shutdown procedure is required.
-:::
+

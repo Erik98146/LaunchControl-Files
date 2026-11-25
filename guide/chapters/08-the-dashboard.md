@@ -13,11 +13,11 @@ The dashboard is a set of live cards organized into panels. Cards update in real
 2. **Drag a card** using its top-left grab handle.
 3. **Exit edit mode.** Your layout is saved on the Hub.
 
-That is all you need to move a card. On a phone, the first move creates a separate narrow-screen layout.
+That is all you need to move a card. YOu can have a different layout on a phone. When editing from a phone, or small device, the first move creates a separate narrow-screen layout that will be seen wehn opening from that type of device.
 
 ## Panels
 
-Use any names and grouping that suit you. Panels group cards; sub-panels add a second level when you need more room.
+Panels create additional names and/or icons at the top of the dashboard. Use any names and grouping that suit you. Panels group cards; sub-panels add a second level when you need more room.
 
 ### Open a panel
 
@@ -103,6 +103,7 @@ Solar, Shore Power, Battery + Power, Alternator, temperature, and similar cards 
 ## Add the dashboard as an app
 
 The dashboard can sit on your phone, tablet or computer like an app, with the LaunchControl icon. Open LaunchControl the way you would normally (locally or through remote). Then:
+
 | **Device** | **How** |
 |---|---|
 | iPhone / iPad (Safari) | Share button → **Add to Home Screen** → **Add** |

@@ -17,7 +17,7 @@ Disconnect power before wiring or changing connections. Power the Hub from eithe
 ## Get your first dashboard working
 
 ::: warning "Before loading a floor plan or testing equipment"
-Back up a Hub you have already customized before loading a floor plan: loading replaces the current configuration. Keep people and objects clear of moving equipment. Test controls only when you can see the equipment and confirm it is safe to operate.
+Keep people and objects clear of moving equipment. Test controls only when you can see the equipment and confirm it is safe to operate.
 :::
 
 1. **Connect the Hub.** Connect the RV-C cable, then connect the supported power source. If your installation uses only separate equipment such as Victron or Bluetooth, follow the relevant integration instructions instead of connecting RV-C.

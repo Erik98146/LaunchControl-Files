@@ -33,12 +33,11 @@ The easiest way to tell which row is which is to operate the device in the RV.
 1. **Turn it on, then off,** from the RV’s own switch or panel.
 2. **Watch the list.** The device that just changed moves to the top under **Devices you just operated**, ticked and highlighted in green. Work with one device at a time so it stays clear which row is which.
 
+The other direction works too: press a row’s **ID** button to switch that output on from the Hub and see which light comes on. Press **ID** again to switch it back off. ID is offered only for lights and switched circuits; awnings, slides, and shades show a dash, because they should never be operated without someone watching them.
+
 ::: warning "Identify equipment safely"
 Use the RV’s original switch first. An ID command energizes a switched output and may operate a door lock or other connected equipment. Only use ID when you know it is safe and can observe the output.
 :::
-
-The other direction works too: press a row’s **ID** button to switch that output on from the Hub and see which light comes on. Press **ID** again to switch it back off. ID is offered only for lights and switched circuits; awnings, slides, and shades show a dash, because they should never be operated without someone watching them.
-
 
 ### Add the devices
 
@@ -78,7 +77,8 @@ A tank sensor reports a percentage. Two optional settings turn that into an amou
 
 Enter how much the tank holds when full under **Tank size** and press **Save**. The Tank card then shows how much is in the tank as well as the percentage, in gallons or liters according to the Hub’s units setting. This is all a rectangular tank needs.
 
-::: technical "Geometry Lookup for an odd-shaped tank"
+### Geometry Lookup for an odd-shaped tank
+
 A sensor measures the liquid level, which does not match the contents of an irregular shaped tank. **Geometry Lookup** corrects it with a table you build once by adding known amounts of water.
 
 1. **Level the RV and empty the tank.**
@@ -87,9 +87,10 @@ A sensor measures the liquid level, which does not match the contents of an irre
 4. **Press Finish when the tank is full.** This also sets the tank size, so there is no need to enter it separately.
 
 The correction applies immediately on the dashboard and the displays. **Export CSV** saves the table for backup or for another coach with the same tank; **Import CSV** loads one instead of entering the points by hand. **Recalibrate** starts over and **Remove Table** returns to the plain sensor reading.
-:::
 
-::: technical "Wavetronix Fathom (radar) sensors"
+
+### Wavetronix Fathom (radar) sensors
+
 A Fathom sensor arrives set up as fresh tank 1 on a tank 39.3 inches deep, so it needs to be told what it is really mounted on. Press **Fathom sensor setup…** in the tank’s editor, or **Set up** on its row in the scan.
 
 1. **Choose the tank** the sensor is on: fresh, gray, or black, 1 to 3.
@@ -97,8 +98,6 @@ A Fathom sensor arrives set up as fresh tank 1 on a tank 39.3 inches deep, so it
 3. **Press Program sensor.** With the tank empty, **Tank is empty** lets the sensor size itself.
 
 Changing which tank the sensor reports makes it come back as a new device: add it from the scan, then remove the old entry.
-:::
-
 
 ## Check your equipment
 

@@ -109,7 +109,9 @@ Loading a floor plan replaces the current configuration, including devices and p
 3. **Press Load.** The Hub restarts with the supported devices, panels, cards, and bindings configured for that coach.
 4. **Review the dashboard.** Confirm that the panels and controls match your installation.
 
+::: note "Victron equipment"
 A floor plan with Victron equipment still needs its Victron integration configured under **Settings → Integrations**, because passwords and integration IDs are unique to each installation.
+:::
 
 ![Floor plan page.](images/ch02-floor-plan-page.png)
 
